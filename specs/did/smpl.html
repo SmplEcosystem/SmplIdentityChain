@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Smpl DID Method Specification (WIP)</title>
+    <style>
+        #instructions {
+            border: dashed 1px black;
+            padding: 1em;
+            background-color: #d0d0d0;
+        }
+
+        .replace-me {
+            font-style: italic;
+            color: magenta
+        }
+    </style>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+</head>
+<body>
+<section class="introductory">
+    <h2>About</h2>
+    <p>The Smpl DID method specification conforms to the requirements specified in the DID specification
+        currently published by the W3C Credentials Community Group. For more information about DIDs and
+        DID method specifications, please see the <a
+                href="https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2017/blob/master/topics-and-advance-readings/did-primer.md"
+                target="_blank">DID Primer</a> and <a href="https://w3c-ccg.github.io/did-spec/">DID Spec</a>.</p>
+</section>
+<section id='abstract'>
+    <p>
+        Smpl is a public ledger designed specifically for privacy-preserving
+        self-sovereign identity.
+    </p>
+</section>
+<section id='sotd'>
+    <p>&nbsp;
+    </p>
+</section>
+<section>
+    <h2>Smpl DID Method </h2>
+    <p>The namestring that shall identify this DID method is: <code>smpl</code></p>
+    <p>A DID that uses this method MUST begin with the following prefix: <code>did:smpl</code>.
+        Per the DID specification, this string MUST be in lowercase. The remainder of the DID, after the prefix,
+        is the NSI specified below.</p>
+</section>
+<section>
+    <h2>Target System(s)</h2>
+    <p></p>
+</section>
+<section>
+    <h2>Namespace Specific Identifier (NSI)</h2>
+    <p>
+        The Smpl DID scheme is defined by the following <a
+            href="ftp://ftp.rfc-editor.org/in-notes/std/std68.txt">ABNF</a>:<br><br>
+        <code>
+            smplrin-did = "did:smpl:" idstring *(":" subnamespace)<br>
+            idstring = 21*22(base58char)<br>
+            subnamespace = ALPHA *(ALPHA / DIGIT / "_" / "-")<br>
+            base58char = "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8" / "9" / "A" / "B" / "C"<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;/ "D" / "E" / "F" / "G" / "H" / "J" / "K" / "L" / "M" / "N" / "P" / "Q"<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;/ "R" / "S" / "T" / "U" / "V" / "W" / "X" / "Y" / "Z" / "a" / "b" / "c"<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;/ "d" / "e" / "f" / "g" / "h" / "i" / "j" / "k" / "m" / "n" / "o" / "p"<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;/ "q" / "r" / "s" / "t" / "u" / "v" / "w" / "x" / "y" / "z"<br>
+        </code><br>
+    </p>
+    <h3>Namestring Generation Method</h3>
+    <p>The 128-bit uuid underlying a Smpl DID can be generated in various ways--using standard uuid methods.
+    </p>
+    <p>A convenient regex to match <code>smpl</code> DIDs is: <br><br>
+        <code>^[1-9A-HJ-NP-Za-km-z]{21,22}$</code><br><br>
+        A convenient regex to match the entire did string is:<br><br>
+        <code>^did:smpl:[1-9A-HJ-NP-Za-km-z]{21,22}(?&lt;namespace&gt;(?::\w[-\w]*)*)$</code>
+    </p>
+    <h3>Examples</h3>
+    <p>A valid <code>smpl</code> DID might be: <code>did:smpl:2wJPyULfLLnYTEFYzByfUR</code>.</p>
+</section>
+<section>
+    <h2>JSON-LD Context Definition</h2>
+    <p>On Smpl, public DIDs and their corresponding documents are stored on the ledger.</p>
+</section>
+<section>
+    <h2>CRUD Operation Definitions</h2>
+
+    <h3>Create (Register)</h3>
+    <p>
+        The DID method specification must specify how a client creates a DID record—the combination of a DID and its
+        associated document—on the target system, including all cryptographic operations necessary to establish proof of
+        ownership.
+
+    </p>
+
+    <h4>DID Service Endpoint</h4>
+
+    <p>
+    </p>
+
+    <h3>Read (Resolve)</h3>
+
+    <p>
+    </p>
+
+    <p></p>
+
+    <h4>DID Service Endpoint</h4>
+
+    <p>When reading (resolving) a Smpl DID, in addition to querying the DID record, a query MUST be performed for a
+        related DID Service endpoint.
+    </p>
+
+    <h4>Resolver DID Document Format</h4>
+
+    <h4>DID Document Notes</h4>
+
+    <h3>Update (Replace)</h3>
+
+    <h3>Delete (Revoke)</h3>
+</section>
+</body>
+</html>
