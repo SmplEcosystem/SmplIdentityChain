@@ -1,0 +1,7 @@
+syntax = "proto3";
+package smplidentitychain.smplidentitychain;
+
+option go_package = "SmplIdentityChain/x/smplidentitychain/types";
+
+// Msg defines the Msg service.
+service Msg {}
