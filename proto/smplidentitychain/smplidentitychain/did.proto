@@ -1,0 +1,10 @@
+syntax = "proto3";
+package smplidentitychain.smplidentitychain;
+
+option go_package = "SmplIdentityChain/x/smplidentitychain/types";
+
+message Did {
+  
+  string id = 1;
+  string fingerprint = 2;
+}
