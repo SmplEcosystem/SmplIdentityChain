@@ -7,4 +7,5 @@ message Did {
   
   string id = 1;
   string fingerprint = 2;
+  string base_account_id = 3;
 }

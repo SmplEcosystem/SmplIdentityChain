@@ -12,6 +12,8 @@ const (
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_smplidentitychain"
+
+	DidKey = "did"
 )
 
 func KeyPrefix(p string) []byte {

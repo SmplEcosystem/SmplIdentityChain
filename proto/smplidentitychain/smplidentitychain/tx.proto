@@ -1,7 +1,19 @@
 syntax = "proto3";
+
 package smplidentitychain.smplidentitychain;
 
 option go_package = "SmplIdentityChain/x/smplidentitychain/types";
 
 // Msg defines the Msg service.
-service Msg {}
+service Msg {
+  rpc GetDid (MsgGetDid) returns (MsgGetDidResponse);
+}
+message MsgGetDid {
+  string creator     = 1;
+  string fingerprint = 2;
+}
+
+message MsgGetDidResponse {
+  string did = 1;
+}
+

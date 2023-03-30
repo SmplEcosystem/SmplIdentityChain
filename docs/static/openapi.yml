@@ -74952,6 +74952,11 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
+  smplidentitychain.smplidentitychain.MsgGetDidResponse:
+    type: object
+    properties:
+      did:
+        type: string
   smplidentitychain.smplidentitychain.Params:
     type: object
     description: Params defines the parameters for the module.
