@@ -3,7 +3,7 @@ package cmd
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"SmplIdentityChain/app"
+	"github.com/SmplEcosystem/SmplIdentityChain/app"
 )
 
 func initSDKConfig() {

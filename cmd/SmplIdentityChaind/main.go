@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"SmplIdentityChain/app"
-	"SmplIdentityChain/cmd/SmplIdentityChaind/cmd"
+	"github.com/SmplEcosystem/SmplIdentityChain/app"
+	"github.com/SmplEcosystem/SmplIdentityChain/cmd/SmplIdentityChaind/cmd"
 )
 
 func main() {
