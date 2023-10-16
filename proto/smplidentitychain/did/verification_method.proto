@@ -1,0 +1,12 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+
+message VerificationMethod {
+  
+  string id = 1; 
+  string type = 2;
+  repeated string controller = 3; 
+  string publicKeyBase58 = 4; 
+}
