@@ -1,7 +1,0 @@
-syntax = "proto3";
-package smplidentitychain.did;
-
-option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
-
-// Msg defines the Msg service.
-service Msg {}
