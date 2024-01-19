@@ -1,0 +1,12 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+option java_multiple_files = true;
+
+message VerificationMethod {
+  string id = 1;
+  string type = 2;
+  string controller = 3;
+  string public_key_base58 = 4;
+}
