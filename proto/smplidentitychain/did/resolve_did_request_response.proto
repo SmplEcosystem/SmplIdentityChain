@@ -1,0 +1,14 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+import "smplidentitychain/did/did_document.proto";
+import "smplidentitychain/did/did_document_metadata.proto";
+import "smplidentitychain/did/did_resolution_metadata.proto";
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+option java_multiple_files = true;
+
+message ResolveDidRequestResponse {
+  DIDDocument didDocument = 1;
+  DidResolutionMetadata didResolutionMetadata = 2;
+  DidDocumentMetadata didDocumentMetadata = 3;
+}

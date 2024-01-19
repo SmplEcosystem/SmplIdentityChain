@@ -17,6 +17,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:       "params",
 					Short:     "Shows the parameters of the module",
 				},
+				{
+					RpcMethod:      "ResolveDidRequest",
+					Use:            "resolve-did-request [did]",
+					Short:          "Query ResolveDidRequest",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "did"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -27,6 +34,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				{
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
+				},
+				{
+					RpcMethod:      "UpsertDid",
+					Use:            "upsert-did [did-document] [did-document-metadata]",
+					Short:          "Send a UpsertDid tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "didDocument"}, {ProtoField: "didDocumentMetadata"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
