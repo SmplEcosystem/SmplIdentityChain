@@ -44,6 +44,7 @@ message MsgUpsertDid {
   string              creator             = 1;
   DIDDocument         didDocument         = 2;
   DidDocumentMetadata didDocumentMetadata = 3;
+  string              signature           = 4;
 }
 
 message MsgUpsertDidResponse {}

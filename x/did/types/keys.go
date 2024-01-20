@@ -15,6 +15,10 @@ var (
 	ParamsKey = []byte("p_did")
 )
 
+var (
+	DIDKeyPrefix = []byte{0x00}
+)
+
 func KeyPrefix(p string) []byte {
 	return []byte(p)
 }

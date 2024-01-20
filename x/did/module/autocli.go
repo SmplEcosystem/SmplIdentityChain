@@ -39,7 +39,7 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod:      "UpsertDid",
 					Use:            "upsert-did [did-document] [did-document-metadata]",
 					Short:          "Send a UpsertDid tx",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "didDocument"}, {ProtoField: "didDocumentMetadata"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "didDocument"}, {ProtoField: "didDocumentMetadata"}, {ProtoField: "signature"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},

@@ -19143,6 +19143,8 @@ paths:
                     type: boolean
                   versionId:
                     type: string
+              signature:
+                type: string
       tags:
         - Msg
 definitions:
@@ -27372,5 +27374,7 @@ definitions:
             type: boolean
           versionId:
             type: string
+      signature:
+        type: string
   smplidentitychain.did.MsgUpsertDidResponse:
     type: object
