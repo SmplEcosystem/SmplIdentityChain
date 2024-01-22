@@ -2,8 +2,7 @@
 import {
   GeneratedType,
   OfflineSigner,
-  EncodeObject,
-  Registry,
+  EncodeObject, Registry,
 } from "@cosmjs/proto-signing";
 import { SigningStargateClient, StdFee } from "@cosmjs/stargate";
 import { Env } from "./env";
