@@ -16,6 +16,7 @@ faucet:
 client:
   typescript:
     path: ts-client
+    package: @smplecosystem/smpl-identity-core
   openapi:
     path: docs/static/openapi.yml
 validators:
