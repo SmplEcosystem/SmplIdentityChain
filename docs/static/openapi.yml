@@ -132,6 +132,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -169,7 +173,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -379,6 +382,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -416,7 +423,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -566,6 +572,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -603,7 +613,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -780,6 +789,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -817,7 +830,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -971,6 +983,10 @@ paths:
                           if (any.is(Foo.class)) {
                             foo = any.unpack(Foo.class);
                           }
+                          // or ...
+                          if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                            foo = any.unpack(Foo.getDefaultInstance());
+                          }
 
                       Example 3: Pack and unpack a message in Python.
 
@@ -1008,7 +1024,6 @@ paths:
                       yield type
 
                       name "y.z".
-
 
 
                       JSON
@@ -1190,6 +1205,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -1227,7 +1246,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -2702,6 +2720,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -2739,7 +2761,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -2986,6 +3007,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3023,7 +3048,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -3281,6 +3305,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3318,7 +3346,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -3499,6 +3526,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3536,7 +3567,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -3741,6 +3771,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3778,7 +3812,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -3959,6 +3992,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3996,7 +4033,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -4197,6 +4233,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4234,7 +4274,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -4485,6 +4524,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4522,7 +4565,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -4671,6 +4713,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4708,7 +4754,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -4927,6 +4972,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4964,7 +5013,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -5275,6 +5323,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5312,7 +5364,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -5504,6 +5555,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5541,7 +5596,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -5745,6 +5799,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5782,7 +5840,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -5986,6 +6043,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -6023,7 +6084,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -6284,6 +6344,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -6321,7 +6385,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -6514,6 +6577,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -6551,7 +6618,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -7102,6 +7168,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -7139,7 +7209,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -7344,6 +7413,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -7381,7 +7454,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -7580,6 +7652,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -7617,7 +7693,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -7821,6 +7896,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -7858,7 +7937,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -8034,6 +8112,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8071,7 +8153,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -8268,6 +8349,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8305,7 +8390,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -8538,6 +8622,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8575,7 +8663,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -8780,6 +8867,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8817,7 +8908,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -9043,6 +9133,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9080,7 +9174,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -9336,6 +9429,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9373,7 +9470,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -9652,6 +9748,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9689,7 +9789,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -9885,6 +9984,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9922,7 +10025,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -10113,6 +10215,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10150,7 +10256,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -10329,6 +10434,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10366,7 +10475,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -10570,6 +10678,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10607,7 +10719,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -10856,6 +10967,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10893,7 +11008,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -11128,6 +11242,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11165,7 +11283,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -11375,6 +11492,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11412,7 +11533,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -11698,6 +11818,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11735,7 +11859,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -11953,6 +12076,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11990,7 +12117,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -12170,6 +12296,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12207,7 +12337,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -12437,6 +12566,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12474,7 +12607,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -12699,6 +12831,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12736,7 +12872,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -12996,6 +13131,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -13033,7 +13172,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -13353,6 +13491,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -13390,7 +13532,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -13683,6 +13824,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -13720,7 +13865,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -14018,6 +14162,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -14055,7 +14203,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -14345,6 +14492,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -14382,7 +14533,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -14524,6 +14674,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -14561,7 +14715,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -14791,6 +14944,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -14828,7 +14985,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -15205,6 +15361,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -15242,7 +15402,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -15435,6 +15594,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -15472,7 +15635,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -15624,6 +15786,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -15661,7 +15827,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -15829,6 +15994,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -15866,7 +16035,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -16016,6 +16184,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -16053,7 +16225,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -16217,6 +16388,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -16254,7 +16429,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -16451,6 +16625,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -16488,7 +16666,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -16633,6 +16810,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -16670,7 +16851,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -16806,6 +16986,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -16843,7 +17027,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -17017,6 +17200,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -17054,7 +17241,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -17218,6 +17404,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -17255,7 +17445,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -17514,6 +17703,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -17551,7 +17744,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -17778,6 +17970,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -17815,7 +18011,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -18050,6 +18245,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -18087,7 +18286,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -18240,6 +18438,10 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
+                      // or ...
+                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                        foo = any.unpack(Foo.getDefaultInstance());
+                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -18277,7 +18479,6 @@ paths:
                   type
 
                   name "y.z".
-
 
 
                   JSON
@@ -18591,6 +18792,10 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
+                        // or ...
+                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                          foo = any.unpack(Foo.getDefaultInstance());
+                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -18628,7 +18833,6 @@ paths:
                     type
 
                     name "y.z".
-
 
 
                     JSON
@@ -18704,6 +18908,447 @@ paths:
             description: >-
               MsgUpdateParams defines the sdk.Msg type to update the connection
               parameters.
+      tags:
+        - Msg
+  /SmplEcosystem/SmplIdentityChain/did/params:
+    get:
+      summary: Parameters queries the parameters of the module.
+      operationId: SmplidentitychainDidQuery_Params
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                description: params holds all the parameters of this module.
+                type: object
+            description: >-
+              QueryParamsResponse is response type for the Query/Params RPC
+              method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /SmplEcosystem/SmplIdentityChain/did/resolve_did_request/{did}:
+    get:
+      summary: Queries a list of ResolveDidRequest items.
+      operationId: SmplidentitychainDidQuery_ResolveDidRequest
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              resolveDidRequestResponse:
+                type: object
+                properties:
+                  didDocument:
+                    type: object
+                    properties:
+                      contexts:
+                        type: array
+                        items:
+                          type: string
+                      id:
+                        type: string
+                      verification_methods:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                      authentications:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                      assertion_methods:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                      key_agreements:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                      capability_invocations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                      capability_delegations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                      services:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            service_endpoint:
+                              type: string
+                  didResolutionMetadata:
+                    type: object
+                    properties:
+                      contentType:
+                        type: string
+                      error:
+                        type: string
+                  didDocumentMetadata:
+                    type: object
+                    properties:
+                      created:
+                        type: string
+                      updated:
+                        type: string
+                      deactivated:
+                        type: boolean
+                      versionId:
+                        type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: did
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /smplidentitychain.did.Msg/UpdateParams:
+    post:
+      summary: |-
+        UpdateParams defines a (governance) operation for updating the module
+        parameters. The authority defaults to the x/gov module account.
+      operationId: SmplidentitychainDidMsg_UpdateParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            description: >-
+              MsgUpdateParamsResponse defines the response structure for
+              executing a
+
+              MsgUpdateParams message.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          description: MsgUpdateParams is the Msg/UpdateParams request type.
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              authority:
+                type: string
+                description: >-
+                  authority is the address that controls the module (defaults to
+                  x/gov unless overwritten).
+              params:
+                description: 'NOTE: All parameters must be supplied.'
+                type: object
+            description: MsgUpdateParams is the Msg/UpdateParams request type.
+      tags:
+        - Msg
+  /smplidentitychain.did.Msg/UpsertDid:
+    post:
+      operationId: SmplidentitychainDidMsg_UpsertDid
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              didDocument:
+                type: object
+                properties:
+                  contexts:
+                    type: array
+                    items:
+                      type: string
+                  id:
+                    type: string
+                  verification_methods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                  authentications:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  assertion_methods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  key_agreements:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  capability_invocations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  capability_delegations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  services:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        service_endpoint:
+                          type: string
+              didDocumentMetadata:
+                type: object
+                properties:
+                  created:
+                    type: string
+                  updated:
+                    type: string
+                  deactivated:
+                    type: boolean
+                  versionId:
+                    type: string
+              signature:
+                type: string
       tags:
         - Msg
 definitions:
@@ -18850,6 +19495,10 @@ definitions:
           if (any.is(Foo.class)) {
             foo = any.unpack(Foo.class);
           }
+          // or ...
+          if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+            foo = any.unpack(Foo.getDefaultInstance());
+          }
 
       Example 3: Pack and unpack a message in Python.
 
@@ -18883,7 +19532,6 @@ definitions:
       in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
       name "y.z".
-
 
 
       JSON
@@ -19019,6 +19667,10 @@ definitions:
                 if (any.is(Foo.class)) {
                   foo = any.unpack(Foo.class);
                 }
+                // or ...
+                if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                  foo = any.unpack(Foo.getDefaultInstance());
+                }
 
             Example 3: Pack and unpack a message in Python.
 
@@ -19052,7 +19704,6 @@ definitions:
             in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
             name "y.z".
-
 
 
             JSON
@@ -19178,6 +19829,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -19211,7 +19866,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -19357,6 +20011,10 @@ definitions:
                 if (any.is(Foo.class)) {
                   foo = any.unpack(Foo.class);
                 }
+                // or ...
+                if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                  foo = any.unpack(Foo.getDefaultInstance());
+                }
 
             Example 3: Pack and unpack a message in Python.
 
@@ -19390,7 +20048,6 @@ definitions:
             in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
             name "y.z".
-
 
 
             JSON
@@ -19547,6 +20204,10 @@ definitions:
                   if (any.is(Foo.class)) {
                     foo = any.unpack(Foo.class);
                   }
+                  // or ...
+                  if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                    foo = any.unpack(Foo.getDefaultInstance());
+                  }
 
               Example 3: Pack and unpack a message in Python.
 
@@ -19581,7 +20242,6 @@ definitions:
               in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
               name "y.z".
-
 
 
               JSON
@@ -20895,6 +21555,10 @@ definitions:
                 if (any.is(Foo.class)) {
                   foo = any.unpack(Foo.class);
                 }
+                // or ...
+                if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                  foo = any.unpack(Foo.getDefaultInstance());
+                }
 
             Example 3: Pack and unpack a message in Python.
 
@@ -20928,7 +21592,6 @@ definitions:
             in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
             name "y.z".
-
 
 
             JSON
@@ -22075,6 +22738,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -22108,7 +22775,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -24374,6 +25040,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -24407,7 +25077,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -24835,6 +25504,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -24868,7 +25541,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -25010,6 +25682,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25043,7 +25719,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -25212,6 +25887,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25245,7 +25924,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -25373,6 +26051,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25406,7 +26088,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -25631,6 +26312,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25664,7 +26349,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -26018,6 +26702,10 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
+              // or ...
+              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
+                foo = any.unpack(Foo.getDefaultInstance());
+              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -26051,7 +26739,6 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
-
 
 
           JSON
@@ -26299,3 +26986,641 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
+  smplidentitychain.did.DIDDocument:
+    type: object
+    properties:
+      contexts:
+        type: array
+        items:
+          type: string
+      id:
+        type: string
+      verification_methods:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            controller:
+              type: string
+            public_key_base58:
+              type: string
+      authentications:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+      assertion_methods:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+      key_agreements:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+      capability_invocations:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+      capability_delegations:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+      services:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            service_endpoint:
+              type: string
+  smplidentitychain.did.DidDocumentMetadata:
+    type: object
+    properties:
+      created:
+        type: string
+      updated:
+        type: string
+      deactivated:
+        type: boolean
+      versionId:
+        type: string
+  smplidentitychain.did.DidResolutionMetadata:
+    type: object
+    properties:
+      contentType:
+        type: string
+      error:
+        type: string
+  smplidentitychain.did.Params:
+    type: object
+    description: Params defines the parameters for the module.
+  smplidentitychain.did.QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        description: params holds all the parameters of this module.
+        type: object
+    description: QueryParamsResponse is response type for the Query/Params RPC method.
+  smplidentitychain.did.QueryResolveDidResponse:
+    type: object
+    properties:
+      resolveDidRequestResponse:
+        type: object
+        properties:
+          didDocument:
+            type: object
+            properties:
+              contexts:
+                type: array
+                items:
+                  type: string
+              id:
+                type: string
+              verification_methods:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+              authentications:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+              assertion_methods:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+              key_agreements:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+              capability_invocations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+              capability_delegations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+              services:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    service_endpoint:
+                      type: string
+          didResolutionMetadata:
+            type: object
+            properties:
+              contentType:
+                type: string
+              error:
+                type: string
+          didDocumentMetadata:
+            type: object
+            properties:
+              created:
+                type: string
+              updated:
+                type: string
+              deactivated:
+                type: boolean
+              versionId:
+                type: string
+  smplidentitychain.did.ResolveDidRequestResponse:
+    type: object
+    properties:
+      didDocument:
+        type: object
+        properties:
+          contexts:
+            type: array
+            items:
+              type: string
+          id:
+            type: string
+          verification_methods:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+          authentications:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          assertion_methods:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          key_agreements:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          capability_invocations:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          capability_delegations:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          services:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                service_endpoint:
+                  type: string
+      didResolutionMetadata:
+        type: object
+        properties:
+          contentType:
+            type: string
+          error:
+            type: string
+      didDocumentMetadata:
+        type: object
+        properties:
+          created:
+            type: string
+          updated:
+            type: string
+          deactivated:
+            type: boolean
+          versionId:
+            type: string
+  smplidentitychain.did.Service:
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      service_endpoint:
+        type: string
+  smplidentitychain.did.VerificationMethod:
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      controller:
+        type: string
+      public_key_base58:
+        type: string
+  smplidentitychain.did.VerificationRelationship:
+    type: object
+    properties:
+      verification_method_id:
+        type: string
+      verification_method:
+        type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          controller:
+            type: string
+          public_key_base58:
+            type: string
+  smplidentitychain.did.MsgUpdateParams:
+    type: object
+    properties:
+      authority:
+        type: string
+        description: >-
+          authority is the address that controls the module (defaults to x/gov
+          unless overwritten).
+      params:
+        description: 'NOTE: All parameters must be supplied.'
+        type: object
+    description: MsgUpdateParams is the Msg/UpdateParams request type.
+  smplidentitychain.did.MsgUpdateParamsResponse:
+    type: object
+    description: |-
+      MsgUpdateParamsResponse defines the response structure for executing a
+      MsgUpdateParams message.
+  smplidentitychain.did.MsgUpsertDid:
+    type: object
+    properties:
+      creator:
+        type: string
+      didDocument:
+        type: object
+        properties:
+          contexts:
+            type: array
+            items:
+              type: string
+          id:
+            type: string
+          verification_methods:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+          authentications:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          assertion_methods:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          key_agreements:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          capability_invocations:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          capability_delegations:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+          services:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                service_endpoint:
+                  type: string
+      didDocumentMetadata:
+        type: object
+        properties:
+          created:
+            type: string
+          updated:
+            type: string
+          deactivated:
+            type: boolean
+          versionId:
+            type: string
+      signature:
+        type: string
+  smplidentitychain.did.MsgUpsertDidResponse:
+    type: object

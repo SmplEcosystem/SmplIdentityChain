@@ -19,7 +19,7 @@ export interface QueryResolveDidRequest {
   did: string;
 }
 
-export interface QueryResolveDidRequestResponse {
+export interface QueryResolveDidResponse {
   resolveDidRequestResponse: ResolveDidRequestResponse | undefined;
 }
 
@@ -182,19 +182,19 @@ export const QueryResolveDidRequest = {
   },
 };
 
-function createBaseQueryResolveDidRequestResponse(): QueryResolveDidRequestResponse {
+function createBaseQueryResolveDidRequestResponse(): QueryResolveDidResponse {
   return { resolveDidRequestResponse: undefined };
 }
 
 export const QueryResolveDidRequestResponse = {
-  encode(message: QueryResolveDidRequestResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryResolveDidResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.resolveDidRequestResponse !== undefined) {
       ResolveDidRequestResponse.encode(message.resolveDidRequestResponse, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryResolveDidRequestResponse {
+  decode(input: _m0.Reader | Uint8Array, length?: number): QueryResolveDidResponse {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryResolveDidRequestResponse();
@@ -217,7 +217,7 @@ export const QueryResolveDidRequestResponse = {
     return message;
   },
 
-  fromJSON(object: any): QueryResolveDidRequestResponse {
+  fromJSON(object: any): QueryResolveDidResponse {
     return {
       resolveDidRequestResponse: isSet(object.resolveDidRequestResponse)
         ? ResolveDidRequestResponse.fromJSON(object.resolveDidRequestResponse)
@@ -225,7 +225,7 @@ export const QueryResolveDidRequestResponse = {
     };
   },
 
-  toJSON(message: QueryResolveDidRequestResponse): unknown {
+  toJSON(message: QueryResolveDidResponse): unknown {
     const obj: any = {};
     if (message.resolveDidRequestResponse !== undefined) {
       obj.resolveDidRequestResponse = ResolveDidRequestResponse.toJSON(message.resolveDidRequestResponse);
@@ -233,12 +233,12 @@ export const QueryResolveDidRequestResponse = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryResolveDidRequestResponse>, I>>(base?: I): QueryResolveDidRequestResponse {
+  create<I extends Exact<DeepPartial<QueryResolveDidResponse>, I>>(base?: I): QueryResolveDidResponse {
     return QueryResolveDidRequestResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryResolveDidRequestResponse>, I>>(
+  fromPartial<I extends Exact<DeepPartial<QueryResolveDidResponse>, I>>(
     object: I,
-  ): QueryResolveDidRequestResponse {
+  ): QueryResolveDidResponse {
     const message = createBaseQueryResolveDidRequestResponse();
     message.resolveDidRequestResponse =
       (object.resolveDidRequestResponse !== undefined && object.resolveDidRequestResponse !== null)
@@ -253,7 +253,7 @@ export interface Query {
   /** Parameters queries the parameters of the module. */
   Params(request: QueryParamsRequest): Promise<QueryParamsResponse>;
   /** Queries a list of ResolveDidRequest items. */
-  ResolveDidRequest(request: QueryResolveDidRequest): Promise<QueryResolveDidRequestResponse>;
+  ResolveDidRequest(request: QueryResolveDidRequest): Promise<QueryResolveDidResponse>;
 }
 
 export const QueryServiceName = "smplidentitychain.did.Query";
@@ -272,7 +272,7 @@ export class QueryClientImpl implements Query {
     return promise.then((data) => QueryParamsResponse.decode(_m0.Reader.create(data)));
   }
 
-  ResolveDidRequest(request: QueryResolveDidRequest): Promise<QueryResolveDidRequestResponse> {
+  ResolveDidRequest(request: QueryResolveDidRequest): Promise<QueryResolveDidResponse> {
     const data = QueryResolveDidRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "ResolveDidRequest", data);
     return promise.then((data) => QueryResolveDidRequestResponse.decode(_m0.Reader.create(data)));

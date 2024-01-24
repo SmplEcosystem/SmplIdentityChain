@@ -30,7 +30,7 @@ type QueryClient interface {
 	// Parameters queries the parameters of the module.
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
 	// Queries a list of ResolveDidRequest items.
-	ResolveDidRequest(ctx context.Context, in *QueryResolveDidRequest, opts ...grpc.CallOption) (*QueryResolveDidRequestResponse, error)
+	ResolveDidRequest(ctx context.Context, in *QueryResolveDidRequest, opts ...grpc.CallOption) (*QueryResolveDidResponse, error)
 }
 
 type queryClient struct {
@@ -50,8 +50,8 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 	return out, nil
 }
 
-func (c *queryClient) ResolveDidRequest(ctx context.Context, in *QueryResolveDidRequest, opts ...grpc.CallOption) (*QueryResolveDidRequestResponse, error) {
-	out := new(QueryResolveDidRequestResponse)
+func (c *queryClient) ResolveDidRequest(ctx context.Context, in *QueryResolveDidRequest, opts ...grpc.CallOption) (*QueryResolveDidResponse, error) {
+	out := new(QueryResolveDidResponse)
 	err := c.cc.Invoke(ctx, Query_ResolveDidRequest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -66,7 +66,7 @@ type QueryServer interface {
 	// Parameters queries the parameters of the module.
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
 	// Queries a list of ResolveDidRequest items.
-	ResolveDidRequest(context.Context, *QueryResolveDidRequest) (*QueryResolveDidRequestResponse, error)
+	ResolveDidRequest(context.Context, *QueryResolveDidRequest) (*QueryResolveDidResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -77,7 +77,7 @@ type UnimplementedQueryServer struct {
 func (UnimplementedQueryServer) Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
 }
-func (UnimplementedQueryServer) ResolveDidRequest(context.Context, *QueryResolveDidRequest) (*QueryResolveDidRequestResponse, error) {
+func (UnimplementedQueryServer) ResolveDidRequest(context.Context, *QueryResolveDidRequest) (*QueryResolveDidResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResolveDidRequest not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}

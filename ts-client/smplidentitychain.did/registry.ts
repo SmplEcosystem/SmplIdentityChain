@@ -15,7 +15,7 @@ import { GenesisState } from "./types/smplidentitychain/did/genesis";
 import { QueryParamsRequest } from "./types/smplidentitychain/did/query";
 import { QueryParamsResponse } from "./types/smplidentitychain/did/query";
 import { QueryResolveDidRequest } from "./types/smplidentitychain/did/query";
-import { QueryResolveDidRequestResponse } from "./types/smplidentitychain/did/query";
+import { QueryResolveDidResponse } from "./types/smplidentitychain/did/query";
 import { MsgUpsertDidResponse } from "./types/smplidentitychain/did/tx";
 
 const msgTypes: Array<[string, GeneratedType]>  = [

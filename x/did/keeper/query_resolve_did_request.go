@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-func (k Keeper) ResolveDidRequest(goCtx context.Context, req *types.QueryResolveDidRequest) (*types.QueryResolveDidRequestResponse, error) {
+func (k Keeper) ResolveDidRequest(goCtx context.Context, req *types.QueryResolveDidRequest) (*types.QueryResolveDidResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}

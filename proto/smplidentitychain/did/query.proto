@@ -21,7 +21,7 @@ service Query {
   }
   
   // Queries a list of ResolveDidRequest items.
-  rpc ResolveDidRequest (QueryResolveDidRequest) returns (QueryResolveDidRequestResponse) {
+  rpc ResolveDidRequest (QueryResolveDidRequest) returns (QueryResolveDidResponse) {
     option (google.api.http).get = "/SmplEcosystem/SmplIdentityChain/did/resolve_did_request/{did}";
   
   }
@@ -40,7 +40,7 @@ message QueryResolveDidRequest {
   string did = 1;
 }
 
-message QueryResolveDidRequestResponse {
+message QueryResolveDidResponse {
   ResolveDidRequestResponse resolveDidRequestResponse = 1;
 }
 

@@ -22,11 +22,11 @@ import { GenesisState } from "./types/smplidentitychain/did/genesis";
 import { QueryParamsRequest } from "./types/smplidentitychain/did/query";
 import { QueryParamsResponse } from "./types/smplidentitychain/did/query";
 import { QueryResolveDidRequest } from "./types/smplidentitychain/did/query";
-import { QueryResolveDidRequestResponse } from "./types/smplidentitychain/did/query";
+import { QueryResolveDidResponse } from "./types/smplidentitychain/did/query";
 import { MsgUpsertDidResponse } from "./types/smplidentitychain/did/tx";
 
 
-export { VerificationRelationship, ResolveDidRequestResponse, Service, DIDDocument, ResolutionOptions, Params, MsgUpdateParams, MsgUpdateParamsResponse, MsgUpsertDid, VerificationMethod, DidResolutionMetadata, DidDocumentMetadata, GenesisState, QueryParamsRequest, QueryParamsResponse, QueryResolveDidRequest, QueryResolveDidRequestResponse, MsgUpsertDidResponse };
+export { VerificationRelationship, ResolveDidRequestResponse, Service, DIDDocument, ResolutionOptions, Params, MsgUpdateParams, MsgUpdateParamsResponse, MsgUpsertDid, VerificationMethod, DidResolutionMetadata, DidDocumentMetadata, GenesisState, QueryParamsRequest, QueryParamsResponse, QueryResolveDidRequest, QueryResolveDidResponse, MsgUpsertDidResponse };
 
 type sendVerificationRelationshipParams = {
   value: VerificationRelationship,
@@ -125,7 +125,7 @@ type sendQueryResolveDidRequestParams = {
 };
 
 type sendQueryResolveDidRequestResponseParams = {
-  value: QueryResolveDidRequestResponse,
+  value: QueryResolveDidResponse,
   fee?: StdFee,
   memo?: string
 };
@@ -202,7 +202,7 @@ type queryResolveDidRequestParams = {
 };
 
 type queryResolveDidRequestResponseParams = {
-  value: QueryResolveDidRequestResponse,
+  value: QueryResolveDidResponse,
 };
 
 type msgUpsertDidResponseParams = {
@@ -470,7 +470,7 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryResolveDidRequestResponse({ value: QueryResolveDidRequestResponse.fromPartial(value) })
+				let msg = this.queryResolveDidRequestResponse({ value: QueryResolveDidResponse.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
 				throw new Error('TxClient:sendQueryResolveDidRequestResponse: Could not broadcast Tx: '+ e.message)
