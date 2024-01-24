@@ -11,19 +11,26 @@ func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 	key := []byte(msg.DidDocument.Id)
-	bz := k.cdc.MustMarshalLengthPrefixed(msg)
+	var Documents = &types.ResolveDidRequestResponse{
+		DidDocument:         msg.DidDocument,
+		DidDocumentMetadata: msg.DidDocumentMetadata,
+	}
+	var DocumentStore = &types.QueryResolveDidRequestResponse{
+		ResolveDidRequestResponse: Documents,
+	}
+	bz := k.cdc.MustMarshalLengthPrefixed(DocumentStore)
 	store.Set(key, bz)
 }
-func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) types.QueryResolveDidRequestResponse {
+func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) *types.QueryResolveDidRequestResponse {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 	key := []byte(did)
 	bz := store.Get(key)
 	if bz == nil {
-		return types.QueryResolveDidRequestResponse{}
+		return nil
 	}
 
-	var doc types.QueryResolveDidRequestResponse
-	k.cdc.MustUnmarshalLengthPrefixed(bz, &doc)
+	var doc *types.QueryResolveDidRequestResponse
+	k.cdc.MustUnmarshalLengthPrefixed(bz, doc)
 	return doc
 }

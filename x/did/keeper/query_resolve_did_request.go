@@ -16,8 +16,10 @@ func (k Keeper) ResolveDidRequest(goCtx context.Context, req *types.QueryResolve
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	// TODO: Process the query
+	DidReturn := k.GetDIDDocument(ctx, req.Did)
+
+	//k.GetDIDDocument(ctx, req.Did)
 	_ = ctx
 
-	return &types.QueryResolveDidRequestResponse{}, nil
+	return DidReturn, nil
 }
