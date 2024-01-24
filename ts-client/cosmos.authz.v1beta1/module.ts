@@ -6,43 +6,37 @@ import { msgTypes } from './registry';
 import { IgniteClient } from "../client"
 import { MissingWalletError } from "../helpers"
 import { Api } from "./rest";
-import { QueryGrantsResponse } from "./types/cosmos/authz/v1beta1/query";
-import { EventRevoke } from "./types/cosmos/authz/v1beta1/event";
-import { MsgGrant } from "./types/cosmos/authz/v1beta1/tx";
+import { GenericAuthorization } from "./types/cosmos/authz/v1beta1/authz";
+import { EventGrant } from "./types/cosmos/authz/v1beta1/event";
 import { MsgExec } from "./types/cosmos/authz/v1beta1/tx";
 import { MsgExecResponse } from "./types/cosmos/authz/v1beta1/tx";
-import { MsgGrantResponse } from "./types/cosmos/authz/v1beta1/tx";
-import { QueryGranterGrantsRequest } from "./types/cosmos/authz/v1beta1/query";
-import { QueryGranterGrantsResponse } from "./types/cosmos/authz/v1beta1/query";
-import { GenericAuthorization } from "./types/cosmos/authz/v1beta1/authz";
+import { QueryGranteeGrantsRequest } from "./types/cosmos/authz/v1beta1/query";
 import { Grant } from "./types/cosmos/authz/v1beta1/authz";
 import { GrantAuthorization } from "./types/cosmos/authz/v1beta1/authz";
-import { GrantQueueItem } from "./types/cosmos/authz/v1beta1/authz";
-import { MsgRevokeResponse } from "./types/cosmos/authz/v1beta1/tx";
-import { GenesisState } from "./types/cosmos/authz/v1beta1/genesis";
+import { EventRevoke } from "./types/cosmos/authz/v1beta1/event";
 import { QueryGrantsRequest } from "./types/cosmos/authz/v1beta1/query";
-import { QueryGranteeGrantsRequest } from "./types/cosmos/authz/v1beta1/query";
+import { QueryGrantsResponse } from "./types/cosmos/authz/v1beta1/query";
+import { QueryGranterGrantsRequest } from "./types/cosmos/authz/v1beta1/query";
 import { QueryGranteeGrantsResponse } from "./types/cosmos/authz/v1beta1/query";
-import { EventGrant } from "./types/cosmos/authz/v1beta1/event";
+import { GenesisState } from "./types/cosmos/authz/v1beta1/genesis";
+import { MsgGrant } from "./types/cosmos/authz/v1beta1/tx";
+import { GrantQueueItem } from "./types/cosmos/authz/v1beta1/authz";
+import { MsgGrantResponse } from "./types/cosmos/authz/v1beta1/tx";
 import { MsgRevoke } from "./types/cosmos/authz/v1beta1/tx";
+import { MsgRevokeResponse } from "./types/cosmos/authz/v1beta1/tx";
+import { QueryGranterGrantsResponse } from "./types/cosmos/authz/v1beta1/query";
 
 
-export { QueryGrantsResponse, EventRevoke, MsgGrant, MsgExec, MsgExecResponse, MsgGrantResponse, QueryGranterGrantsRequest, QueryGranterGrantsResponse, GenericAuthorization, Grant, GrantAuthorization, GrantQueueItem, MsgRevokeResponse, GenesisState, QueryGrantsRequest, QueryGranteeGrantsRequest, QueryGranteeGrantsResponse, EventGrant, MsgRevoke };
+export { GenericAuthorization, EventGrant, MsgExec, MsgExecResponse, QueryGranteeGrantsRequest, Grant, GrantAuthorization, EventRevoke, QueryGrantsRequest, QueryGrantsResponse, QueryGranterGrantsRequest, QueryGranteeGrantsResponse, GenesisState, MsgGrant, GrantQueueItem, MsgGrantResponse, MsgRevoke, MsgRevokeResponse, QueryGranterGrantsResponse };
 
-type sendQueryGrantsResponseParams = {
-  value: QueryGrantsResponse,
+type sendGenericAuthorizationParams = {
+  value: GenericAuthorization,
   fee?: StdFee,
   memo?: string
 };
 
-type sendEventRevokeParams = {
-  value: EventRevoke,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendMsgGrantParams = {
-  value: MsgGrant,
+type sendEventGrantParams = {
+  value: EventGrant,
   fee?: StdFee,
   memo?: string
 };
@@ -59,26 +53,8 @@ type sendMsgExecResponseParams = {
   memo?: string
 };
 
-type sendMsgGrantResponseParams = {
-  value: MsgGrantResponse,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendQueryGranterGrantsRequestParams = {
-  value: QueryGranterGrantsRequest,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendQueryGranterGrantsResponseParams = {
-  value: QueryGranterGrantsResponse,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendGenericAuthorizationParams = {
-  value: GenericAuthorization,
+type sendQueryGranteeGrantsRequestParams = {
+  value: QueryGranteeGrantsRequest,
   fee?: StdFee,
   memo?: string
 };
@@ -95,20 +71,8 @@ type sendGrantAuthorizationParams = {
   memo?: string
 };
 
-type sendGrantQueueItemParams = {
-  value: GrantQueueItem,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendMsgRevokeResponseParams = {
-  value: MsgRevokeResponse,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendGenesisStateParams = {
-  value: GenesisState,
+type sendEventRevokeParams = {
+  value: EventRevoke,
   fee?: StdFee,
   memo?: string
 };
@@ -119,8 +83,14 @@ type sendQueryGrantsRequestParams = {
   memo?: string
 };
 
-type sendQueryGranteeGrantsRequestParams = {
-  value: QueryGranteeGrantsRequest,
+type sendQueryGrantsResponseParams = {
+  value: QueryGrantsResponse,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendQueryGranterGrantsRequestParams = {
+  value: QueryGranterGrantsRequest,
   fee?: StdFee,
   memo?: string
 };
@@ -131,8 +101,26 @@ type sendQueryGranteeGrantsResponseParams = {
   memo?: string
 };
 
-type sendEventGrantParams = {
-  value: EventGrant,
+type sendGenesisStateParams = {
+  value: GenesisState,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendMsgGrantParams = {
+  value: MsgGrant,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendGrantQueueItemParams = {
+  value: GrantQueueItem,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendMsgGrantResponseParams = {
+  value: MsgGrantResponse,
   fee?: StdFee,
   memo?: string
 };
@@ -143,17 +131,25 @@ type sendMsgRevokeParams = {
   memo?: string
 };
 
-
-type queryGrantsResponseParams = {
-  value: QueryGrantsResponse,
+type sendMsgRevokeResponseParams = {
+  value: MsgRevokeResponse,
+  fee?: StdFee,
+  memo?: string
 };
 
-type eventRevokeParams = {
-  value: EventRevoke,
+type sendQueryGranterGrantsResponseParams = {
+  value: QueryGranterGrantsResponse,
+  fee?: StdFee,
+  memo?: string
 };
 
-type msgGrantParams = {
-  value: MsgGrant,
+
+type genericAuthorizationParams = {
+  value: GenericAuthorization,
+};
+
+type eventGrantParams = {
+  value: EventGrant,
 };
 
 type msgExecParams = {
@@ -164,20 +160,8 @@ type msgExecResponseParams = {
   value: MsgExecResponse,
 };
 
-type msgGrantResponseParams = {
-  value: MsgGrantResponse,
-};
-
-type queryGranterGrantsRequestParams = {
-  value: QueryGranterGrantsRequest,
-};
-
-type queryGranterGrantsResponseParams = {
-  value: QueryGranterGrantsResponse,
-};
-
-type genericAuthorizationParams = {
-  value: GenericAuthorization,
+type queryGranteeGrantsRequestParams = {
+  value: QueryGranteeGrantsRequest,
 };
 
 type grantParams = {
@@ -188,36 +172,52 @@ type grantAuthorizationParams = {
   value: GrantAuthorization,
 };
 
-type grantQueueItemParams = {
-  value: GrantQueueItem,
-};
-
-type msgRevokeResponseParams = {
-  value: MsgRevokeResponse,
-};
-
-type genesisStateParams = {
-  value: GenesisState,
+type eventRevokeParams = {
+  value: EventRevoke,
 };
 
 type queryGrantsRequestParams = {
   value: QueryGrantsRequest,
 };
 
-type queryGranteeGrantsRequestParams = {
-  value: QueryGranteeGrantsRequest,
+type queryGrantsResponseParams = {
+  value: QueryGrantsResponse,
+};
+
+type queryGranterGrantsRequestParams = {
+  value: QueryGranterGrantsRequest,
 };
 
 type queryGranteeGrantsResponseParams = {
   value: QueryGranteeGrantsResponse,
 };
 
-type eventGrantParams = {
-  value: EventGrant,
+type genesisStateParams = {
+  value: GenesisState,
+};
+
+type msgGrantParams = {
+  value: MsgGrant,
+};
+
+type grantQueueItemParams = {
+  value: GrantQueueItem,
+};
+
+type msgGrantResponseParams = {
+  value: MsgGrantResponse,
 };
 
 type msgRevokeParams = {
   value: MsgRevoke,
+};
+
+type msgRevokeResponseParams = {
+  value: MsgRevokeResponse,
+};
+
+type queryGranterGrantsResponseParams = {
+  value: QueryGranterGrantsResponse,
 };
 
 
@@ -250,45 +250,31 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 
   return {
 		
-		async sendQueryGrantsResponse({ value, fee, memo }: sendQueryGrantsResponseParams): Promise<DeliverTxResponse> {
+		async sendGenericAuthorization({ value, fee, memo }: sendGenericAuthorizationParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendQueryGrantsResponse: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendGenericAuthorization: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryGrantsResponse({ value: QueryGrantsResponse.fromPartial(value) })
+				let msg = this.genericAuthorization({ value: GenericAuthorization.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendQueryGrantsResponse: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendGenericAuthorization: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
-		async sendEventRevoke({ value, fee, memo }: sendEventRevokeParams): Promise<DeliverTxResponse> {
+		async sendEventGrant({ value, fee, memo }: sendEventGrantParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendEventRevoke: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendEventGrant: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.eventRevoke({ value: EventRevoke.fromPartial(value) })
+				let msg = this.eventGrant({ value: EventGrant.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendEventRevoke: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendMsgGrant({ value, fee, memo }: sendMsgGrantParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendMsgGrant: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.msgGrant({ value: MsgGrant.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendMsgGrant: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendEventGrant: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -320,59 +306,17 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		async sendMsgGrantResponse({ value, fee, memo }: sendMsgGrantResponseParams): Promise<DeliverTxResponse> {
+		async sendQueryGranteeGrantsRequest({ value, fee, memo }: sendQueryGranteeGrantsRequestParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendMsgGrantResponse: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendQueryGranteeGrantsRequest: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.msgGrantResponse({ value: MsgGrantResponse.fromPartial(value) })
+				let msg = this.queryGranteeGrantsRequest({ value: QueryGranteeGrantsRequest.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendMsgGrantResponse: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendQueryGranterGrantsRequest({ value, fee, memo }: sendQueryGranterGrantsRequestParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendQueryGranterGrantsRequest: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryGranterGrantsRequest({ value: QueryGranterGrantsRequest.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendQueryGranterGrantsRequest: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendQueryGranterGrantsResponse({ value, fee, memo }: sendQueryGranterGrantsResponseParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendQueryGranterGrantsResponse: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryGranterGrantsResponse({ value: QueryGranterGrantsResponse.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendQueryGranterGrantsResponse: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendGenericAuthorization({ value, fee, memo }: sendGenericAuthorizationParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendGenericAuthorization: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.genericAuthorization({ value: GenericAuthorization.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendGenericAuthorization: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendQueryGranteeGrantsRequest: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -404,45 +348,17 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		async sendGrantQueueItem({ value, fee, memo }: sendGrantQueueItemParams): Promise<DeliverTxResponse> {
+		async sendEventRevoke({ value, fee, memo }: sendEventRevokeParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendGrantQueueItem: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendEventRevoke: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.grantQueueItem({ value: GrantQueueItem.fromPartial(value) })
+				let msg = this.eventRevoke({ value: EventRevoke.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendGrantQueueItem: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendMsgRevokeResponse({ value, fee, memo }: sendMsgRevokeResponseParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendMsgRevokeResponse: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.msgRevokeResponse({ value: MsgRevokeResponse.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendMsgRevokeResponse: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendGenesisState({ value, fee, memo }: sendGenesisStateParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendGenesisState: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.genesisState({ value: GenesisState.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendGenesisState: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendEventRevoke: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -460,17 +376,31 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		async sendQueryGranteeGrantsRequest({ value, fee, memo }: sendQueryGranteeGrantsRequestParams): Promise<DeliverTxResponse> {
+		async sendQueryGrantsResponse({ value, fee, memo }: sendQueryGrantsResponseParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendQueryGranteeGrantsRequest: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendQueryGrantsResponse: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryGranteeGrantsRequest({ value: QueryGranteeGrantsRequest.fromPartial(value) })
+				let msg = this.queryGrantsResponse({ value: QueryGrantsResponse.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendQueryGranteeGrantsRequest: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendQueryGrantsResponse: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendQueryGranterGrantsRequest({ value, fee, memo }: sendQueryGranterGrantsRequestParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendQueryGranterGrantsRequest: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.queryGranterGrantsRequest({ value: QueryGranterGrantsRequest.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendQueryGranterGrantsRequest: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -488,17 +418,59 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		async sendEventGrant({ value, fee, memo }: sendEventGrantParams): Promise<DeliverTxResponse> {
+		async sendGenesisState({ value, fee, memo }: sendGenesisStateParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendEventGrant: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendGenesisState: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.eventGrant({ value: EventGrant.fromPartial(value) })
+				let msg = this.genesisState({ value: GenesisState.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendEventGrant: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendGenesisState: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendMsgGrant({ value, fee, memo }: sendMsgGrantParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgGrant: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.msgGrant({ value: MsgGrant.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendMsgGrant: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendGrantQueueItem({ value, fee, memo }: sendGrantQueueItemParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendGrantQueueItem: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.grantQueueItem({ value: GrantQueueItem.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendGrantQueueItem: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendMsgGrantResponse({ value, fee, memo }: sendMsgGrantResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgGrantResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.msgGrantResponse({ value: MsgGrantResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendMsgGrantResponse: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -516,28 +488,48 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		
-		queryGrantsResponse({ value }: queryGrantsResponseParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.QueryGrantsResponse", value: QueryGrantsResponse.fromPartial( value ) }  
+		async sendMsgRevokeResponse({ value, fee, memo }: sendMsgRevokeResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgRevokeResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.msgRevokeResponse({ value: MsgRevokeResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:QueryGrantsResponse: Could not create message: ' + e.message)
+				throw new Error('TxClient:sendMsgRevokeResponse: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
-		eventRevoke({ value }: eventRevokeParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.EventRevoke", value: EventRevoke.fromPartial( value ) }  
+		async sendQueryGranterGrantsResponse({ value, fee, memo }: sendQueryGranterGrantsResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendQueryGranterGrantsResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.queryGranterGrantsResponse({ value: QueryGranterGrantsResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:EventRevoke: Could not create message: ' + e.message)
+				throw new Error('TxClient:sendQueryGranterGrantsResponse: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
-		msgGrant({ value }: msgGrantParams): EncodeObject {
+		
+		genericAuthorization({ value }: genericAuthorizationParams): EncodeObject {
 			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.MsgGrant", value: MsgGrant.fromPartial( value ) }  
+				return { typeUrl: "/cosmos.authz.v1beta1.GenericAuthorization", value: GenericAuthorization.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:MsgGrant: Could not create message: ' + e.message)
+				throw new Error('TxClient:GenericAuthorization: Could not create message: ' + e.message)
+			}
+		},
+		
+		eventGrant({ value }: eventGrantParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.EventGrant", value: EventGrant.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:EventGrant: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -557,35 +549,11 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		msgGrantResponse({ value }: msgGrantResponseParams): EncodeObject {
+		queryGranteeGrantsRequest({ value }: queryGranteeGrantsRequestParams): EncodeObject {
 			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.MsgGrantResponse", value: MsgGrantResponse.fromPartial( value ) }  
+				return { typeUrl: "/cosmos.authz.v1beta1.QueryGranteeGrantsRequest", value: QueryGranteeGrantsRequest.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:MsgGrantResponse: Could not create message: ' + e.message)
-			}
-		},
-		
-		queryGranterGrantsRequest({ value }: queryGranterGrantsRequestParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.QueryGranterGrantsRequest", value: QueryGranterGrantsRequest.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:QueryGranterGrantsRequest: Could not create message: ' + e.message)
-			}
-		},
-		
-		queryGranterGrantsResponse({ value }: queryGranterGrantsResponseParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.QueryGranterGrantsResponse", value: QueryGranterGrantsResponse.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:QueryGranterGrantsResponse: Could not create message: ' + e.message)
-			}
-		},
-		
-		genericAuthorization({ value }: genericAuthorizationParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.GenericAuthorization", value: GenericAuthorization.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:GenericAuthorization: Could not create message: ' + e.message)
+				throw new Error('TxClient:QueryGranteeGrantsRequest: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -605,27 +573,11 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		grantQueueItem({ value }: grantQueueItemParams): EncodeObject {
+		eventRevoke({ value }: eventRevokeParams): EncodeObject {
 			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.GrantQueueItem", value: GrantQueueItem.fromPartial( value ) }  
+				return { typeUrl: "/cosmos.authz.v1beta1.EventRevoke", value: EventRevoke.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:GrantQueueItem: Could not create message: ' + e.message)
-			}
-		},
-		
-		msgRevokeResponse({ value }: msgRevokeResponseParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.MsgRevokeResponse", value: MsgRevokeResponse.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:MsgRevokeResponse: Could not create message: ' + e.message)
-			}
-		},
-		
-		genesisState({ value }: genesisStateParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.GenesisState", value: GenesisState.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:GenesisState: Could not create message: ' + e.message)
+				throw new Error('TxClient:EventRevoke: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -637,11 +589,19 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		queryGranteeGrantsRequest({ value }: queryGranteeGrantsRequestParams): EncodeObject {
+		queryGrantsResponse({ value }: queryGrantsResponseParams): EncodeObject {
 			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.QueryGranteeGrantsRequest", value: QueryGranteeGrantsRequest.fromPartial( value ) }  
+				return { typeUrl: "/cosmos.authz.v1beta1.QueryGrantsResponse", value: QueryGrantsResponse.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:QueryGranteeGrantsRequest: Could not create message: ' + e.message)
+				throw new Error('TxClient:QueryGrantsResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		queryGranterGrantsRequest({ value }: queryGranterGrantsRequestParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.QueryGranterGrantsRequest", value: QueryGranterGrantsRequest.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:QueryGranterGrantsRequest: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -653,11 +613,35 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		eventGrant({ value }: eventGrantParams): EncodeObject {
+		genesisState({ value }: genesisStateParams): EncodeObject {
 			try {
-				return { typeUrl: "/cosmos.authz.v1beta1.EventGrant", value: EventGrant.fromPartial( value ) }  
+				return { typeUrl: "/cosmos.authz.v1beta1.GenesisState", value: GenesisState.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:EventGrant: Could not create message: ' + e.message)
+				throw new Error('TxClient:GenesisState: Could not create message: ' + e.message)
+			}
+		},
+		
+		msgGrant({ value }: msgGrantParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.MsgGrant", value: MsgGrant.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgGrant: Could not create message: ' + e.message)
+			}
+		},
+		
+		grantQueueItem({ value }: grantQueueItemParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.GrantQueueItem", value: GrantQueueItem.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:GrantQueueItem: Could not create message: ' + e.message)
+			}
+		},
+		
+		msgGrantResponse({ value }: msgGrantResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.MsgGrantResponse", value: MsgGrantResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgGrantResponse: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -666,6 +650,22 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				return { typeUrl: "/cosmos.authz.v1beta1.MsgRevoke", value: MsgRevoke.fromPartial( value ) }  
 			} catch (e: any) {
 				throw new Error('TxClient:MsgRevoke: Could not create message: ' + e.message)
+			}
+		},
+		
+		msgRevokeResponse({ value }: msgRevokeResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.MsgRevokeResponse", value: MsgRevokeResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgRevokeResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		queryGranterGrantsResponse({ value }: queryGranterGrantsResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.authz.v1beta1.QueryGranterGrantsResponse", value: QueryGranterGrantsResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:QueryGranterGrantsResponse: Could not create message: ' + e.message)
 			}
 		},
 		
