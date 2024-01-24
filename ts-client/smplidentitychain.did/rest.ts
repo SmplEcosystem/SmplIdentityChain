@@ -65,7 +65,7 @@ export interface QueryParamsResponse {
   params?: object;
 }
 
-export interface QueryResolveDidRequestResponse {
+export interface QueryResolveDidResponse {
   resolveDidRequestResponse?: {
     didDocument?: {
       contexts?: string[];

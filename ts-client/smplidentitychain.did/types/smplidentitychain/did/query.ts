@@ -182,11 +182,11 @@ export const QueryResolveDidRequest = {
   },
 };
 
-function createBaseQueryResolveDidRequestResponse(): QueryResolveDidResponse {
+function createBaseQueryResolveDidResponse(): QueryResolveDidResponse {
   return { resolveDidRequestResponse: undefined };
 }
 
-export const QueryResolveDidRequestResponse = {
+export const QueryResolveDidResponse = {
   encode(message: QueryResolveDidResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.resolveDidRequestResponse !== undefined) {
       ResolveDidRequestResponse.encode(message.resolveDidRequestResponse, writer.uint32(10).fork()).ldelim();
@@ -197,7 +197,7 @@ export const QueryResolveDidRequestResponse = {
   decode(input: _m0.Reader | Uint8Array, length?: number): QueryResolveDidResponse {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseQueryResolveDidRequestResponse();
+    const message = createBaseQueryResolveDidResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -234,12 +234,10 @@ export const QueryResolveDidRequestResponse = {
   },
 
   create<I extends Exact<DeepPartial<QueryResolveDidResponse>, I>>(base?: I): QueryResolveDidResponse {
-    return QueryResolveDidRequestResponse.fromPartial(base ?? ({} as any));
+    return QueryResolveDidResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryResolveDidResponse>, I>>(
-    object: I,
-  ): QueryResolveDidResponse {
-    const message = createBaseQueryResolveDidRequestResponse();
+  fromPartial<I extends Exact<DeepPartial<QueryResolveDidResponse>, I>>(object: I): QueryResolveDidResponse {
+    const message = createBaseQueryResolveDidResponse();
     message.resolveDidRequestResponse =
       (object.resolveDidRequestResponse !== undefined && object.resolveDidRequestResponse !== null)
         ? ResolveDidRequestResponse.fromPartial(object.resolveDidRequestResponse)
@@ -275,7 +273,7 @@ export class QueryClientImpl implements Query {
   ResolveDidRequest(request: QueryResolveDidRequest): Promise<QueryResolveDidResponse> {
     const data = QueryResolveDidRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "ResolveDidRequest", data);
-    return promise.then((data) => QueryResolveDidRequestResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) => QueryResolveDidResponse.decode(_m0.Reader.create(data)));
   }
 }
 
