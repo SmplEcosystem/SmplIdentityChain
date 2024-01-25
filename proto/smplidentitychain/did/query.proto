@@ -7,7 +7,9 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "smplidentitychain/did/params.proto";
-import "smplidentitychain/did/resolve_did_request_response.proto";
+import "smplidentitychain/did/did_document.proto";
+import "smplidentitychain/did/did_document_metadata.proto";
+import "smplidentitychain/did/did_resolution_metadata.proto";
 
 option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
 
@@ -41,6 +43,8 @@ message QueryResolveDidRequest {
 }
 
 message QueryResolveDidResponse {
-  ResolveDidRequestResponse resolveDidRequestResponse = 1;
+  DIDDocument didDocument = 1;
+  DidResolutionMetadata didResolutionMetadata = 2;
+  DidDocumentMetadata didDocumentMetadata = 3;
 }
 
