@@ -384,7 +384,7 @@ definitions:
     properties:
       params:
         type: object
-  QueryResolveDidRequestResponse:
+  QueryResolveDidResponse:
     type: object
     properties:
       resolveDidRequestResponse:
