@@ -75,7 +75,7 @@ func processString(input string) error {
 	return nil
 }
 
-func (k Keeper) VerifyDIDOwnership(doc *types.DIDDocument, seq uint64, verificationMethodID string, sig []byte) (uint64, error) {
+func (k Keeper) VerifyDidOwnership(doc *types.DIDDocument, seq uint64, verificationMethodID string, sig []byte) (uint64, error) {
 	verificationMethod, ok := k.VerificationMethodFrom(doc.VerificationMethods, verificationMethodID)
 	if !ok {
 		return 0, sdkerrors.Wrapf(types.ErrVerificationMethodIDNotFound, "VerificationMethodId: %s", verificationMethodID)
