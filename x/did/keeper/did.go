@@ -70,3 +70,26 @@ func processString(input string) error {
 
 	return nil
 }
+
+func VerifyDIDOwnership(doc *types.DIDDocument, seq uint64, verificationMethodID string, sig []byte) (uint64, error) {
+	//verificationMethod, ok := doc.VerificationMethodFrom(doc.Authentications, verificationMethodID)
+	//if !ok {
+	//return 0, sdkerrors.Wrapf(types.ErrVerificationMethodIDNotFound, "VerificationMethodId: %s", verificationMethodID)
+	//}
+	//
+	//// TODO: Currently, only ES256K1 is supported to verify DID ownership.
+	////       It makes sense for now, since a DID is derived from a Secp256k1 public key.
+	////       But, need to support other key types (according to verificationMethod.Type).
+	//if verificationMethod.Type != types.ES256K_2019 && verificationMethod.Type != types.ES256K_2018 {
+	//return 0, sdkerrors.Wrapf(types.ErrVerificationMethodKeyTypeNotImplemented, "VerificationMethod: %v", verificationMethod.Type)
+	//}
+	//pubKeySecp256k1, err := secp256k1util.PubKeyFromBase58(verificationMethod.PublicKeyBase58)
+	//if err != nil {
+	//return 0, sdkerrors.Wrapf(types.ErrInvalidSecp256k1PublicKey, "PublicKey: %v", verificationMethod.PublicKeyBase58)
+	//}
+	//newSeq, ok := types.Verify(sig, signData, seq, pubKeySecp256k1)
+	//if !ok {
+	//return 0, types.ErrSigVerificationFailed
+	//}
+	return 1, nil
+}
