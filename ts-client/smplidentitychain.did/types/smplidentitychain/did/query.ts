@@ -1,7 +1,9 @@
 /* eslint-disable */
 import _m0 from "protobufjs/minimal";
+import { DIDDocument } from "./did_document";
+import { DidDocumentMetadata } from "./did_document_metadata";
+import { DidResolutionMetadata } from "./did_resolution_metadata";
 import { Params } from "./params";
-import { ResolveDidRequestResponse } from "./resolve_did_request_response";
 
 export const protobufPackage = "smplidentitychain.did";
 
@@ -20,7 +22,9 @@ export interface QueryResolveDidRequest {
 }
 
 export interface QueryResolveDidResponse {
-  resolveDidRequestResponse: ResolveDidRequestResponse | undefined;
+  didDocument: DIDDocument | undefined;
+  didResolutionMetadata: DidResolutionMetadata | undefined;
+  didDocumentMetadata: DidDocumentMetadata | undefined;
 }
 
 function createBaseQueryParamsRequest(): QueryParamsRequest {
@@ -183,13 +187,19 @@ export const QueryResolveDidRequest = {
 };
 
 function createBaseQueryResolveDidResponse(): QueryResolveDidResponse {
-  return { resolveDidRequestResponse: undefined };
+  return { didDocument: undefined, didResolutionMetadata: undefined, didDocumentMetadata: undefined };
 }
 
 export const QueryResolveDidResponse = {
   encode(message: QueryResolveDidResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.resolveDidRequestResponse !== undefined) {
-      ResolveDidRequestResponse.encode(message.resolveDidRequestResponse, writer.uint32(10).fork()).ldelim();
+    if (message.didDocument !== undefined) {
+      DIDDocument.encode(message.didDocument, writer.uint32(10).fork()).ldelim();
+    }
+    if (message.didResolutionMetadata !== undefined) {
+      DidResolutionMetadata.encode(message.didResolutionMetadata, writer.uint32(18).fork()).ldelim();
+    }
+    if (message.didDocumentMetadata !== undefined) {
+      DidDocumentMetadata.encode(message.didDocumentMetadata, writer.uint32(26).fork()).ldelim();
     }
     return writer;
   },
@@ -206,7 +216,21 @@ export const QueryResolveDidResponse = {
             break;
           }
 
-          message.resolveDidRequestResponse = ResolveDidRequestResponse.decode(reader, reader.uint32());
+          message.didDocument = DIDDocument.decode(reader, reader.uint32());
+          continue;
+        case 2:
+          if (tag !== 18) {
+            break;
+          }
+
+          message.didResolutionMetadata = DidResolutionMetadata.decode(reader, reader.uint32());
+          continue;
+        case 3:
+          if (tag !== 26) {
+            break;
+          }
+
+          message.didDocumentMetadata = DidDocumentMetadata.decode(reader, reader.uint32());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -219,16 +243,26 @@ export const QueryResolveDidResponse = {
 
   fromJSON(object: any): QueryResolveDidResponse {
     return {
-      resolveDidRequestResponse: isSet(object.resolveDidRequestResponse)
-        ? ResolveDidRequestResponse.fromJSON(object.resolveDidRequestResponse)
+      didDocument: isSet(object.didDocument) ? DIDDocument.fromJSON(object.didDocument) : undefined,
+      didResolutionMetadata: isSet(object.didResolutionMetadata)
+        ? DidResolutionMetadata.fromJSON(object.didResolutionMetadata)
+        : undefined,
+      didDocumentMetadata: isSet(object.didDocumentMetadata)
+        ? DidDocumentMetadata.fromJSON(object.didDocumentMetadata)
         : undefined,
     };
   },
 
   toJSON(message: QueryResolveDidResponse): unknown {
     const obj: any = {};
-    if (message.resolveDidRequestResponse !== undefined) {
-      obj.resolveDidRequestResponse = ResolveDidRequestResponse.toJSON(message.resolveDidRequestResponse);
+    if (message.didDocument !== undefined) {
+      obj.didDocument = DIDDocument.toJSON(message.didDocument);
+    }
+    if (message.didResolutionMetadata !== undefined) {
+      obj.didResolutionMetadata = DidResolutionMetadata.toJSON(message.didResolutionMetadata);
+    }
+    if (message.didDocumentMetadata !== undefined) {
+      obj.didDocumentMetadata = DidDocumentMetadata.toJSON(message.didDocumentMetadata);
     }
     return obj;
   },
@@ -238,10 +272,16 @@ export const QueryResolveDidResponse = {
   },
   fromPartial<I extends Exact<DeepPartial<QueryResolveDidResponse>, I>>(object: I): QueryResolveDidResponse {
     const message = createBaseQueryResolveDidResponse();
-    message.resolveDidRequestResponse =
-      (object.resolveDidRequestResponse !== undefined && object.resolveDidRequestResponse !== null)
-        ? ResolveDidRequestResponse.fromPartial(object.resolveDidRequestResponse)
+    message.didDocument = (object.didDocument !== undefined && object.didDocument !== null)
+      ? DIDDocument.fromPartial(object.didDocument)
+      : undefined;
+    message.didResolutionMetadata =
+      (object.didResolutionMetadata !== undefined && object.didResolutionMetadata !== null)
+        ? DidResolutionMetadata.fromPartial(object.didResolutionMetadata)
         : undefined;
+    message.didDocumentMetadata = (object.didDocumentMetadata !== undefined && object.didDocumentMetadata !== null)
+      ? DidDocumentMetadata.fromPartial(object.didDocumentMetadata)
+      : undefined;
     return message;
   },
 };

@@ -10,7 +10,6 @@ import (
 	"github.com/cosmos/btcutil/base58"
 	"github.com/cosmos/cosmos-sdk/runtime"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/gogoproto/proto"
 	"regexp"
 	"strings"
 )
@@ -93,29 +92,29 @@ func (k Keeper) VerifyDIDOwnership(doc *types.DIDDocument, seq uint64, verificat
 		return 0, sdkerrors.Wrapf(types.ErrInvalidSecp256k1PublicKey, "PublicKey: %v", verificationMethod.PublicKeyBase58)
 	}
 	newSeq, ok := k.Verify(sig, doc, seq, pubKeySecp256k1)
-	//if !ok {
-	//return 0, types.ErrSigVerificationFailed
-	//}
-	return 1, nil
+	if !ok {
+		return 0, types.ErrSigVerificationFailed
+	}
+	return newSeq, nil
 }
 
-func (k Keeper) Verify(signature []byte, signableData proto.Message, seq uint64, pubKey crypto.PubKey) (uint64, bool) {
+func (k Keeper) Verify(signature []byte, signableData *types.DIDDocument, seq uint64, pubKey crypto.PubKey) (uint64, bool) {
 	signBytes := mustGetSignBytesWithSeq(signableData, seq)
 
 	if !pubKey.VerifySignature(signBytes, signature) {
 		return 0, false
 	}
-	return nextSequence(seq), true
+	return seq + 1, true
 }
 
 // mustGetSignBytesWithSeq returns a byte slice which is the combination of data and seq.
 // The return value is deterministic, so that it can be used for signing.
-func mustGetSignBytesWithSeq(signableData proto.Message, seq uint64) []byte {
-	dAtA, err := proto.Marshal(signableData)
+func mustGetSignBytesWithSeq(signableData *types.DIDDocument, seq uint64) []byte {
+	dAtA, err := signableData.Marshal()
 	if err != nil {
 		panic(fmt.Sprintf("marshal failed: %s, signableData: %s", err.Error(), signableData))
 	}
-	dataWithSeq := types.DidInfo{
+	dataWithSeq := types.DataWithSequence{
 		Data:     dAtA,
 		Sequence: seq,
 	}

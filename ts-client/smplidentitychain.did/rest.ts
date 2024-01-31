@@ -66,39 +66,6 @@ export interface QueryParamsResponse {
 }
 
 export interface QueryResolveDidResponse {
-  resolveDidRequestResponse?: {
-    didDocument?: {
-      contexts?: string[];
-      id?: string;
-      verification_methods?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
-      authentications?: {
-        verification_method_id?: string;
-        verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-      }[];
-      assertion_methods?: {
-        verification_method_id?: string;
-        verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-      }[];
-      key_agreements?: {
-        verification_method_id?: string;
-        verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-      }[];
-      capability_invocations?: {
-        verification_method_id?: string;
-        verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-      }[];
-      capability_delegations?: {
-        verification_method_id?: string;
-        verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-      }[];
-      services?: { id?: string; type?: string; service_endpoint?: string }[];
-    };
-    didResolutionMetadata?: { contentType?: string; error?: string };
-    didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
-  };
-}
-
-export interface ResolveDidRequestResponse {
   didDocument?: {
     contexts?: string[];
     id?: string;
@@ -299,36 +266,34 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
   queryResolveDidRequest = (did: string, params: RequestParams = {}) =>
     this.request<
       {
-        resolveDidRequestResponse?: {
-          didDocument?: {
-            contexts?: string[];
-            id?: string;
-            verification_methods?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
-            authentications?: {
-              verification_method_id?: string;
-              verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-            }[];
-            assertion_methods?: {
-              verification_method_id?: string;
-              verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-            }[];
-            key_agreements?: {
-              verification_method_id?: string;
-              verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-            }[];
-            capability_invocations?: {
-              verification_method_id?: string;
-              verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-            }[];
-            capability_delegations?: {
-              verification_method_id?: string;
-              verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
-            }[];
-            services?: { id?: string; type?: string; service_endpoint?: string }[];
-          };
-          didResolutionMetadata?: { contentType?: string; error?: string };
-          didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
+        didDocument?: {
+          contexts?: string[];
+          id?: string;
+          verification_methods?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+          authentications?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          assertion_methods?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          key_agreements?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          capability_invocations?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          capability_delegations?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          services?: { id?: string; type?: string; service_endpoint?: string }[];
         };
+        didResolutionMetadata?: { contentType?: string; error?: string };
+        didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
       },
       { code?: number; message?: string; details?: { "@type"?: string }[] }
     >({

@@ -44,21 +44,36 @@ paths:
           schema:
             type: object
             properties:
-              resolveDidRequestResponse:
+              didDocument:
                 type: object
                 properties:
-                  didDocument:
-                    type: object
-                    properties:
-                      contexts:
-                        type: array
-                        items:
+                  contexts:
+                    type: array
+                    items:
+                      type: string
+                  id:
+                    type: string
+                  verification_methods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
                           type: string
-                      id:
-                        type: string
-                      verification_methods:
-                        type: array
-                        items:
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                  authentications:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
                           type: object
                           properties:
                             id:
@@ -69,125 +84,107 @@ paths:
                               type: string
                             public_key_base58:
                               type: string
-                      authentications:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            verification_method_id:
-                              type: string
-                            verification_method:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                type:
-                                  type: string
-                                controller:
-                                  type: string
-                                public_key_base58:
-                                  type: string
-                      assertion_methods:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            verification_method_id:
-                              type: string
-                            verification_method:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                type:
-                                  type: string
-                                controller:
-                                  type: string
-                                public_key_base58:
-                                  type: string
-                      key_agreements:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            verification_method_id:
-                              type: string
-                            verification_method:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                type:
-                                  type: string
-                                controller:
-                                  type: string
-                                public_key_base58:
-                                  type: string
-                      capability_invocations:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            verification_method_id:
-                              type: string
-                            verification_method:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                type:
-                                  type: string
-                                controller:
-                                  type: string
-                                public_key_base58:
-                                  type: string
-                      capability_delegations:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            verification_method_id:
-                              type: string
-                            verification_method:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                type:
-                                  type: string
-                                controller:
-                                  type: string
-                                public_key_base58:
-                                  type: string
-                      services:
-                        type: array
-                        items:
+                  assertion_methods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
                           type: object
                           properties:
                             id:
                               type: string
                             type:
                               type: string
-                            service_endpoint:
+                            controller:
                               type: string
-                  didResolutionMetadata:
-                    type: object
-                    properties:
-                      contentType:
-                        type: string
-                      error:
-                        type: string
-                  didDocumentMetadata:
-                    type: object
-                    properties:
-                      created:
-                        type: string
-                      updated:
-                        type: string
-                      deactivated:
-                        type: boolean
-                      versionId:
-                        type: string
+                            public_key_base58:
+                              type: string
+                  key_agreements:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  capability_invocations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  capability_delegations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verification_method_id:
+                          type: string
+                        verification_method:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                  services:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        service_endpoint:
+                          type: string
+              didResolutionMetadata:
+                type: object
+                properties:
+                  contentType:
+                    type: string
+                  error:
+                    type: string
+              didDocumentMetadata:
+                type: object
+                properties:
+                  created:
+                    type: string
+                  updated:
+                    type: string
+                  deactivated:
+                    type: boolean
+                  versionId:
+                    type: string
         default:
           description: An unexpected error response.
           schema:
@@ -385,153 +382,6 @@ definitions:
       params:
         type: object
   QueryResolveDidResponse:
-    type: object
-    properties:
-      resolveDidRequestResponse:
-        type: object
-        properties:
-          didDocument:
-            type: object
-            properties:
-              contexts:
-                type: array
-                items:
-                  type: string
-              id:
-                type: string
-              verification_methods:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    type:
-                      type: string
-                    controller:
-                      type: string
-                    public_key_base58:
-                      type: string
-              authentications:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    verification_method_id:
-                      type: string
-                    verification_method:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                        type:
-                          type: string
-                        controller:
-                          type: string
-                        public_key_base58:
-                          type: string
-              assertion_methods:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    verification_method_id:
-                      type: string
-                    verification_method:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                        type:
-                          type: string
-                        controller:
-                          type: string
-                        public_key_base58:
-                          type: string
-              key_agreements:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    verification_method_id:
-                      type: string
-                    verification_method:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                        type:
-                          type: string
-                        controller:
-                          type: string
-                        public_key_base58:
-                          type: string
-              capability_invocations:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    verification_method_id:
-                      type: string
-                    verification_method:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                        type:
-                          type: string
-                        controller:
-                          type: string
-                        public_key_base58:
-                          type: string
-              capability_delegations:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    verification_method_id:
-                      type: string
-                    verification_method:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                        type:
-                          type: string
-                        controller:
-                          type: string
-                        public_key_base58:
-                          type: string
-              services:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    type:
-                      type: string
-                    service_endpoint:
-                      type: string
-          didResolutionMetadata:
-            type: object
-            properties:
-              contentType:
-                type: string
-              error:
-                type: string
-          didDocumentMetadata:
-            type: object
-            properties:
-              created:
-                type: string
-              updated:
-                type: string
-              deactivated:
-                type: boolean
-              versionId:
-                type: string
-  ResolveDidRequestResponse:
     type: object
     properties:
       didDocument:
