@@ -9,4 +9,5 @@ option java_multiple_files = true;
 message DidInfo {
   DIDDocument didDocument = 1;
   DidDocumentMetadata didDocumentMetadata = 2;
+  uint64 sequence = 3;
 }
