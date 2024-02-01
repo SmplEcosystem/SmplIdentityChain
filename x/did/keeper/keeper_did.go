@@ -17,12 +17,20 @@ import (
 func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
 	validator := processString(msg.DidDocument.Id)
 	if validator == nil {
+		var seq uint64
+		DocumentOldVersion := k.GetDIDDocument(ctx, msg.DidDocument.Id)
+		if DocumentOldVersion == nil {
+			seq = 0
+		} else {
+			seq = DocumentOldVersion.Sequence + 1
+		}
 		storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 		store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 		key := []byte(msg.DidDocument.Id)
 		var Documents = &types.DidInfo{
 			DidDocument:         msg.DidDocument,
 			DidDocumentMetadata: msg.DidDocumentMetadata,
+			Sequence:            seq,
 		}
 		bz := k.cdc.MustMarshalLengthPrefixed(Documents)
 		store.Set(key, bz)
@@ -47,6 +55,7 @@ func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) *types.QueryResolveD
 		DidDocument:           doc.DidDocument,
 		DidResolutionMetadata: ResolutionMetadata,
 		DidDocumentMetadata:   doc.DidDocumentMetadata,
+		Sequence:              doc.Sequence,
 	}
 
 	return DidDocuments

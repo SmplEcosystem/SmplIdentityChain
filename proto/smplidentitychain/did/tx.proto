@@ -41,10 +41,11 @@ message MsgUpdateParamsResponse {}
 
 message MsgUpsertDid {
   option (cosmos.msg.v1.signer) = "creator";
-  string              creator             = 1;
-  DIDDocument         didDocument         = 2;
-  DidDocumentMetadata didDocumentMetadata = 3;
-  string              signature           = 4;
+  string              creator                = 1;
+  DIDDocument         didDocument            = 2;
+  DidDocumentMetadata didDocumentMetadata    = 3;
+  string              signature              = 4;
+  string              verificationMethodId = 5;
 }
 
 message MsgUpsertDidResponse {}

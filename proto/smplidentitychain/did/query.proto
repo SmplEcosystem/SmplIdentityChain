@@ -46,5 +46,6 @@ message QueryResolveDidResponse {
   DIDDocument didDocument = 1;
   DidResolutionMetadata didResolutionMetadata = 2;
   DidDocumentMetadata didDocumentMetadata = 3;
+  uint64              sequence            = 4;
 }
 
