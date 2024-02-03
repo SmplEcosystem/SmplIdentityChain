@@ -16,7 +16,7 @@ func (k msgServer) UpsertDid(goCtx context.Context, msg *types.MsgUpsertDid) (*t
 		seq = DocumentToChange.Sequence
 	}
 
-	_, err := k.VerifyDidOwnership(msg.DidDocument, seq, msg.VerificationMethodId, []byte(msg.Signature))
+	_, err := k.VerifyDidOwnership(msg.DidDocument, seq, msg.Signature, msg.VerificationMethodId)
 	if err != nil {
 		return nil, err
 	}

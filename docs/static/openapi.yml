@@ -19147,6 +19147,7 @@ paths:
                 type: string
               verificationMethodId:
                 type: string
+                format: byte
       tags:
         - Msg
 definitions:
@@ -27236,5 +27237,6 @@ definitions:
         type: string
       verificationMethodId:
         type: string
+        format: byte
   smplidentitychain.did.MsgUpsertDidResponse:
     type: object

@@ -3,6 +3,10 @@ package keeper
 import (
 	sdkerrors "cosmossdk.io/errors"
 	"cosmossdk.io/store/prefix"
+	"crypto/ecdsa"
+	"crypto/sha256"
+	"crypto/x509"
+	"encoding/asn1"
 	"fmt"
 	"github.com/SmplEcosystem/SmplIdentityChain/x/did/types"
 	"github.com/cometbft/cometbft/crypto"
@@ -10,6 +14,7 @@ import (
 	"github.com/cosmos/btcutil/base58"
 	"github.com/cosmos/cosmos-sdk/runtime"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"math/big"
 	"regexp"
 	"strings"
 )
@@ -90,21 +95,36 @@ func (k Keeper) VerifyDidOwnership(doc *types.DIDDocument, seq uint64, verificat
 		return 0, sdkerrors.Wrapf(types.ErrVerificationMethodIDNotFound, "VerificationMethodId: %s", verificationMethodID)
 	}
 
-	// TODO: Currently, only ES256K1 is supported to verify DID ownership.
-	//       It makes sense for now, since a DID is derived from a Secp256k1 public key.
-	//       But, need to support other key types (according to verificationMethod.Type).
-	if verificationMethod.Type != types.ES256K_2019 && verificationMethod.Type != types.ES256K_2018 {
+	if verificationMethod.Type != types.ES256K_2019 {
 		return 0, sdkerrors.Wrapf(types.ErrVerificationMethodKeyTypeNotImplemented, "VerificationMethod: %v", verificationMethod.Type)
 	}
-	pubKeySecp256k1, err := k.PubKeyFromBase58(verificationMethod.PublicKeyBase58)
+
+	data := doc.Id // replace this with actual data to be verified
+	dataHash := sha256.Sum256([]byte(data))
+
+	r := new(big.Int)
+	s := new(big.Int)
+
+	// The signature is in ASN.1 DER format - decode it
+	signature := struct{ R, S *big.Int }{}
+	_, err := asn1.Unmarshal(sig, &signature)
 	if err != nil {
-		return 0, sdkerrors.Wrapf(types.ErrInvalidSecp256k1PublicKey, "PublicKey: %v", verificationMethod.PublicKeyBase58)
+		return 0, err
 	}
-	newSeq, ok := k.Verify(sig, doc, seq, pubKeySecp256k1)
-	if !ok {
-		return 0, types.ErrSigVerificationFailed
+
+	publicKeyBytes := verificationMethod.PublicKeyBase58
+	publicKey, err := x509.ParsePKIXPublicKey([]byte(publicKeyBytes))
+	if err != nil {
+		return 0, err
 	}
-	return newSeq, nil
+
+	// verification
+	verified := ecdsa.Verify(publicKey.(*ecdsa.PublicKey), dataHash[:], r, s)
+	if !verified {
+		return 0, fmt.Errorf("signature is not valid")
+	}
+
+	return seq, nil
 }
 
 func (k Keeper) Verify(signature []byte, signableData *types.DIDDocument, seq uint64, pubKey crypto.PubKey) (uint64, bool) {
