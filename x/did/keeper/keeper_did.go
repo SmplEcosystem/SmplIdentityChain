@@ -20,7 +20,7 @@ import (
 )
 
 func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
-	validator := processString(msg.DidDocument.Id)
+	validator := verifyIdStruct(msg.DidDocument.Id)
 	if validator == nil {
 		var seq uint64
 		DocumentOldVersion := k.GetDIDDocument(ctx, msg.DidDocument.Id)
@@ -65,7 +65,7 @@ func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) *types.QueryResolveD
 
 	return DidDocuments
 }
-func processString(input string) error {
+func verifyIdStruct(input string) error {
 	parts := strings.Split(input, ":")
 
 	if len(parts) != 3 {
