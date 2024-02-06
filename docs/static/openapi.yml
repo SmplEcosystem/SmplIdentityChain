@@ -18891,8 +18891,6 @@ paths:
                     type: string
                   deactivated:
                     type: boolean
-                  versionId:
-                    type: string
               sequence:
                 type: string
                 format: uint64
@@ -19141,8 +19139,6 @@ paths:
                     type: string
                   deactivated:
                     type: boolean
-                  versionId:
-                    type: string
               signature:
                 type: string
               verificationMethodId:
@@ -26875,8 +26871,6 @@ definitions:
         type: string
       deactivated:
         type: boolean
-      versionId:
-        type: string
   smplidentitychain.did.DidResolutionMetadata:
     type: object
     properties:
@@ -27036,8 +27030,6 @@ definitions:
             type: string
           deactivated:
             type: boolean
-          versionId:
-            type: string
       sequence:
         type: string
         format: uint64
@@ -27231,8 +27223,6 @@ definitions:
             type: string
           deactivated:
             type: boolean
-          versionId:
-            type: string
       signature:
         type: string
       verificationMethodId:
