@@ -100,12 +100,12 @@ func (k Keeper) VerifyDidOwnership(doc *types.DIDDocument, seq uint64, verificat
 	}
 
 	//Fake stuff
-	fakePublicKey, newSig, err := fakeStuff(data)
-	if err != nil {
-		return 0, sdkerrors.Wrapf(types.DidDocumentMarshalFailed, "VerificationMethod: %v", verificationMethod.Type)
-	}
-	verificationMethod.PublicKeyBase58 = base58.Encode(fakePublicKey)
-	sig = newSig
+	//fakePublicKey, newSig, err := fakeStuff(data)
+	//if err != nil {
+	//	return 0, sdkerrors.Wrapf(types.DidDocumentMarshalFailed, "VerificationMethod: %v", verificationMethod.Type)
+	//}
+	//verificationMethod.PublicKeyBase58 = base58.Encode(fakePublicKey)
+	//sig = newSig
 	//Fake stuff
 
 	publicKeyBytes := base58.Decode(verificationMethod.PublicKeyBase58)
@@ -118,17 +118,6 @@ func (k Keeper) VerifyDidOwnership(doc *types.DIDDocument, seq uint64, verificat
 	return seq + 1, nil
 }
 
-func fakeStuff(didDocBytes []byte) (ed25519.PublicKey, []byte, error) {
-	publicKey, privateKey, err := ed25519.GenerateKey(rand.Reader)
-	if err != nil {
-		return nil, nil, sdkerrors.Wrapf(types.ErrSigVerificationFailed, "Could not generate keys")
-	}
-
-	signature := ed25519.Sign(privateKey, didDocBytes)
-
-	return publicKey, signature, nil
-}
-
 func (k Keeper) VerificationMethodFrom(verificationMethods []*types.VerificationMethod, id string) (types.VerificationMethod, bool) {
 	var foundVerificationMethod types.VerificationMethod
 	for _, verificationMethod := range verificationMethods {
@@ -139,4 +128,15 @@ func (k Keeper) VerificationMethodFrom(verificationMethods []*types.Verification
 	}
 
 	return types.VerificationMethod{}, false
+}
+
+func fakeStuff(didDocBytes []byte) (ed25519.PublicKey, []byte, error) {
+	publicKey, privateKey, err := ed25519.GenerateKey(rand.Reader)
+	if err != nil {
+		return nil, nil, sdkerrors.Wrapf(types.ErrSigVerificationFailed, "Could not generate keys")
+	}
+
+	signature := ed25519.Sign(privateKey, didDocBytes)
+
+	return publicKey, signature, nil
 }
