@@ -74,17 +74,18 @@ func (k Keeper) generateDocumentsToStore(msg *types.MsgUpsertDid, ctx sdk.Contex
 }
 
 func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) (*types.QueryResolveDidResponse, error) {
+	var ResolutionMetadata = &types.DidResolutionMetadata{}
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 	key := []byte(did)
 	bz := store.Get(key)
 	if bz == nil {
-		return nil, sdkerrors.Wrap(types.ErrNoDidFound, "cannot find did")
+		err := sdkerrors.Wrap(types.ErrNoDidFound, "cannot find did")
+		ResolutionMetadata.Error = err.Error()
 	}
 
 	var doc types.DidInfo
 	k.cdc.MustUnmarshalLengthPrefixed(bz, &doc)
-	var ResolutionMetadata = &types.DidResolutionMetadata{}
 	var DidDocuments = &types.QueryResolveDidResponse{
 		DidDocument:           doc.DidDocument,
 		DidResolutionMetadata: ResolutionMetadata,

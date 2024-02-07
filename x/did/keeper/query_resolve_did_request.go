@@ -16,10 +16,7 @@ func (k Keeper) ResolveDidRequest(goCtx context.Context, req *types.QueryResolve
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	DidReturn, err := k.GetDIDDocument(ctx, req.Did)
-	if err != nil {
-		return nil, err
-	}
+	DidReturn, _ := k.GetDIDDocument(ctx, req.Did)
 
 	//k.GetDIDDocument(ctx, req.Did)
 	_ = ctx
