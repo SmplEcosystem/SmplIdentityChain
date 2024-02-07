@@ -12,4 +12,8 @@ var (
 	ErrInvalidSecp256k1PublicKey               = sdkerrors.Register(ModuleName, 1103, "Invalid Secp256k1 public key")
 	ErrSigVerificationFailed                   = sdkerrors.Register(ModuleName, 1104, "DID signature verification was failed")
 	DidDocumentMarshalFailed                   = sdkerrors.Register(ModuleName, 1105, "DID Document marshaling to byte array failed")
+	ErrNoChanges                               = sdkerrors.Register(ModuleName, 1106, "No changes to did document found")
+	ErrInvalidDidId                            = sdkerrors.Register(ModuleName, 1107, "Invalid Did Id provided")
+	ErrCantDeactivate                          = sdkerrors.Register(ModuleName, 1108, "Can't Deactivate Did")
+	ErrNoDidFound                              = sdkerrors.Register(ModuleName, 1109, "Can't find did")
 )

@@ -15,11 +15,11 @@ import (
 	"time"
 )
 
-func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
+func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) error {
 	validator := verifyIdStruct(msg.DidDocument.Id)
 	if validator == nil {
 		var seq uint64
-		DocumentOldVersion := k.GetDIDDocument(ctx, msg.DidDocument.Id)
+		DocumentOldVersion, _ := k.GetDIDDocument(ctx, msg.DidDocument.Id)
 		if DocumentOldVersion == nil {
 			seq = 0
 		} else {
@@ -28,16 +28,21 @@ func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
 		storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 		store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 		key := []byte(msg.DidDocument.Id)
-		Documents := k.generateDocumentsToStore(msg, ctx, seq)
+		Documents, err := k.generateDocumentsToStore(msg, ctx, seq)
+		if err != nil {
+			return err
+		}
 		bz := k.cdc.MustMarshalLengthPrefixed(Documents)
 		store.Set(key, bz)
+		return nil
 	} else {
+		return sdkerrors.Wrap(types.ErrInvalidDidId, "No valid id found")
 	}
 }
 
-func (k Keeper) generateDocumentsToStore(msg *types.MsgUpsertDid, ctx sdk.Context, seq uint64) *types.DidInfo {
+func (k Keeper) generateDocumentsToStore(msg *types.MsgUpsertDid, ctx sdk.Context, seq uint64) (*types.DidInfo, error) {
 	var Documents = &types.DidInfo{}
-	DocToDeactivate := k.GetDIDDocument(ctx, msg.DidDocument.Id)
+	DocToDeactivate, _ := k.GetDIDDocument(ctx, msg.DidDocument.Id)
 	if seq == 0 {
 		createdTime := time.Now()
 		createdString := createdTime.Format(time.RFC3339)
@@ -56,7 +61,7 @@ func (k Keeper) generateDocumentsToStore(msg *types.MsgUpsertDid, ctx sdk.Contex
 		}
 	} else {
 		if DocToDeactivate == nil {
-			return nil
+			return nil, sdkerrors.Wrap(types.ErrCantDeactivate, "can't deactivate a doc that does not exist")
 		} else {
 			Documents = &types.DidInfo{
 				DidDocument:         DocToDeactivate.DidDocument,
@@ -65,16 +70,16 @@ func (k Keeper) generateDocumentsToStore(msg *types.MsgUpsertDid, ctx sdk.Contex
 			}
 		}
 	}
-	return Documents
+	return Documents, nil
 }
 
-func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) *types.QueryResolveDidResponse {
+func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) (*types.QueryResolveDidResponse, error) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 	key := []byte(did)
 	bz := store.Get(key)
 	if bz == nil {
-		return nil
+		return nil, sdkerrors.Wrap(types.ErrNoDidFound, "cannot find did")
 	}
 
 	var doc types.DidInfo
@@ -87,7 +92,7 @@ func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) *types.QueryResolveD
 		Sequence:              doc.Sequence,
 	}
 
-	return DidDocuments
+	return DidDocuments, nil
 }
 func verifyIdStruct(input string) error {
 	parts := strings.Split(input, ":")

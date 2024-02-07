@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+	sdkerrors "cosmossdk.io/errors"
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
@@ -33,21 +34,30 @@ func (k msgServer) UpsertDid(goCtx context.Context, msg *types.MsgUpsertDid) (*t
 		CurrentDocHash := hasher.Sum(nil)
 		if hex.EncodeToString(DocHash) == hex.EncodeToString(CurrentDocHash) {
 			if msg.DidDocumentMetadata.Deactivated == true {
-				k.SetDid(ctx, msg)
+				err := k.SetDid(ctx, msg)
+				if err != nil {
+					return nil, err
+				}
 				_ = ctx
 
 				return &types.MsgUpsertDidResponse{}, nil
 			} else {
-				return nil, nil
+				return nil, sdkerrors.Wrap(types.ErrNoChanges, "No changes to did")
 			}
 		} else {
-			k.SetDid(ctx, msg)
+			err := k.SetDid(ctx, msg)
+			if err != nil {
+				return nil, err
+			}
 			_ = ctx
 
 			return &types.MsgUpsertDidResponse{}, nil
 		}
 	} else {
-		k.SetDid(ctx, msg)
+		err := k.SetDid(ctx, msg)
+		if err != nil {
+			return nil, err
+		}
 		_ = ctx
 
 		return &types.MsgUpsertDidResponse{}, nil
