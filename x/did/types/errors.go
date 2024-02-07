@@ -11,4 +11,5 @@ var (
 	ErrVerificationMethodKeyTypeNotImplemented = sdkerrors.Register(ModuleName, 1102, "Verification not implemented with key type")
 	ErrInvalidSecp256k1PublicKey               = sdkerrors.Register(ModuleName, 1103, "Invalid Secp256k1 public key")
 	ErrSigVerificationFailed                   = sdkerrors.Register(ModuleName, 1104, "DID signature verification was failed")
+	DidDocumentMarshalFailed                   = sdkerrors.Register(ModuleName, 1105, "DID Document marshaling to byte array failed")
 )

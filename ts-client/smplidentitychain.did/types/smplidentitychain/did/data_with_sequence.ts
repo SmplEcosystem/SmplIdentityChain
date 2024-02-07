@@ -5,18 +5,18 @@ import _m0 from "protobufjs/minimal";
 export const protobufPackage = "smplidentitychain.did";
 
 export interface DataWithSequence {
-  data: string[];
+  data: Uint8Array;
   sequence: number;
 }
 
 function createBaseDataWithSequence(): DataWithSequence {
-  return { data: [], sequence: 0 };
+  return { data: new Uint8Array(0), sequence: 0 };
 }
 
 export const DataWithSequence = {
   encode(message: DataWithSequence, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    for (const v of message.data) {
-      writer.uint32(10).string(v!);
+    if (message.data.length !== 0) {
+      writer.uint32(10).bytes(message.data);
     }
     if (message.sequence !== 0) {
       writer.uint32(16).uint64(message.sequence);
@@ -36,7 +36,7 @@ export const DataWithSequence = {
             break;
           }
 
-          message.data.push(reader.string());
+          message.data = reader.bytes();
           continue;
         case 2:
           if (tag !== 16) {
@@ -56,15 +56,15 @@ export const DataWithSequence = {
 
   fromJSON(object: any): DataWithSequence {
     return {
-      data: Array.isArray(object?.data) ? object.data.map((e: any) => String(e)) : [],
+      data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(0),
       sequence: isSet(object.sequence) ? Number(object.sequence) : 0,
     };
   },
 
   toJSON(message: DataWithSequence): unknown {
     const obj: any = {};
-    if (message.data?.length) {
-      obj.data = message.data;
+    if (message.data.length !== 0) {
+      obj.data = base64FromBytes(message.data);
     }
     if (message.sequence !== 0) {
       obj.sequence = Math.round(message.sequence);
@@ -77,7 +77,7 @@ export const DataWithSequence = {
   },
   fromPartial<I extends Exact<DeepPartial<DataWithSequence>, I>>(object: I): DataWithSequence {
     const message = createBaseDataWithSequence();
-    message.data = object.data?.map((e) => e) || [];
+    message.data = object.data ?? new Uint8Array(0);
     message.sequence = object.sequence ?? 0;
     return message;
   },
@@ -101,6 +101,31 @@ const tsProtoGlobalThis: any = (() => {
   }
   throw "Unable to locate global object";
 })();
+
+function bytesFromBase64(b64: string): Uint8Array {
+  if (tsProtoGlobalThis.Buffer) {
+    return Uint8Array.from(tsProtoGlobalThis.Buffer.from(b64, "base64"));
+  } else {
+    const bin = tsProtoGlobalThis.atob(b64);
+    const arr = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; ++i) {
+      arr[i] = bin.charCodeAt(i);
+    }
+    return arr;
+  }
+}
+
+function base64FromBytes(arr: Uint8Array): string {
+  if (tsProtoGlobalThis.Buffer) {
+    return tsProtoGlobalThis.Buffer.from(arr).toString("base64");
+  } else {
+    const bin: string[] = [];
+    arr.forEach((byte) => {
+      bin.push(String.fromCharCode(byte));
+    });
+    return tsProtoGlobalThis.btoa(bin.join(""));
+  }
+}
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
