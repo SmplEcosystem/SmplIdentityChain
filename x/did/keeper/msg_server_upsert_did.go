@@ -13,7 +13,7 @@ import (
 func (k msgServer) UpsertDid(goCtx context.Context, msg *types.MsgUpsertDid) (*types.MsgUpsertDidResponse, error) {
 	var seq = uint64(0)
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	CurrentDoc := k.GetDIDDocument(ctx, msg.DidDocument.Id)
+	CurrentDoc, _ := k.GetDIDDocument(ctx, msg.DidDocument.Id)
 	if CurrentDoc == nil {
 		seq = 0
 	} else {
