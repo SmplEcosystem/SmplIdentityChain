@@ -51,7 +51,6 @@ export interface DidDocumentMetadata {
   created?: string;
   updated?: string;
   deactivated?: boolean;
-  versionId?: string;
 }
 
 export interface DidResolutionMetadata {
@@ -93,7 +92,7 @@ export interface QueryResolveDidResponse {
     services?: { id?: string; type?: string; service_endpoint?: string }[];
   };
   didResolutionMetadata?: { contentType?: string; error?: string };
-  didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
+  didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean };
 
   /** @format uint64 */
   sequence?: string;
@@ -296,7 +295,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
           services?: { id?: string; type?: string; service_endpoint?: string }[];
         };
         didResolutionMetadata?: { contentType?: string; error?: string };
-        didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
+        didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean };
         sequence?: string;
       },
       { code?: number; message?: string; details?: { "@type"?: string }[] }

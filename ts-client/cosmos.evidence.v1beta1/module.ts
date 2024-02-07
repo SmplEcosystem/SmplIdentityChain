@@ -6,23 +6,17 @@ import { msgTypes } from './registry';
 import { IgniteClient } from "../client"
 import { MissingWalletError } from "../helpers"
 import { Api } from "./rest";
-import { Equivocation } from "./types/cosmos/evidence/v1beta1/evidence";
 import { GenesisState } from "./types/cosmos/evidence/v1beta1/genesis";
-import { QueryEvidenceResponse } from "./types/cosmos/evidence/v1beta1/query";
-import { MsgSubmitEvidence } from "./types/cosmos/evidence/v1beta1/tx";
+import { Equivocation } from "./types/cosmos/evidence/v1beta1/evidence";
 import { QueryEvidenceRequest } from "./types/cosmos/evidence/v1beta1/query";
 import { QueryAllEvidenceRequest } from "./types/cosmos/evidence/v1beta1/query";
 import { QueryAllEvidenceResponse } from "./types/cosmos/evidence/v1beta1/query";
+import { MsgSubmitEvidence } from "./types/cosmos/evidence/v1beta1/tx";
 import { MsgSubmitEvidenceResponse } from "./types/cosmos/evidence/v1beta1/tx";
+import { QueryEvidenceResponse } from "./types/cosmos/evidence/v1beta1/query";
 
 
-export { Equivocation, GenesisState, QueryEvidenceResponse, MsgSubmitEvidence, QueryEvidenceRequest, QueryAllEvidenceRequest, QueryAllEvidenceResponse, MsgSubmitEvidenceResponse };
-
-type sendEquivocationParams = {
-  value: Equivocation,
-  fee?: StdFee,
-  memo?: string
-};
+export { GenesisState, Equivocation, QueryEvidenceRequest, QueryAllEvidenceRequest, QueryAllEvidenceResponse, MsgSubmitEvidence, MsgSubmitEvidenceResponse, QueryEvidenceResponse };
 
 type sendGenesisStateParams = {
   value: GenesisState,
@@ -30,14 +24,8 @@ type sendGenesisStateParams = {
   memo?: string
 };
 
-type sendQueryEvidenceResponseParams = {
-  value: QueryEvidenceResponse,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendMsgSubmitEvidenceParams = {
-  value: MsgSubmitEvidence,
+type sendEquivocationParams = {
+  value: Equivocation,
   fee?: StdFee,
   memo?: string
 };
@@ -60,27 +48,31 @@ type sendQueryAllEvidenceResponseParams = {
   memo?: string
 };
 
+type sendMsgSubmitEvidenceParams = {
+  value: MsgSubmitEvidence,
+  fee?: StdFee,
+  memo?: string
+};
+
 type sendMsgSubmitEvidenceResponseParams = {
   value: MsgSubmitEvidenceResponse,
   fee?: StdFee,
   memo?: string
 };
 
-
-type equivocationParams = {
-  value: Equivocation,
+type sendQueryEvidenceResponseParams = {
+  value: QueryEvidenceResponse,
+  fee?: StdFee,
+  memo?: string
 };
+
 
 type genesisStateParams = {
   value: GenesisState,
 };
 
-type queryEvidenceResponseParams = {
-  value: QueryEvidenceResponse,
-};
-
-type msgSubmitEvidenceParams = {
-  value: MsgSubmitEvidence,
+type equivocationParams = {
+  value: Equivocation,
 };
 
 type queryEvidenceRequestParams = {
@@ -95,8 +87,16 @@ type queryAllEvidenceResponseParams = {
   value: QueryAllEvidenceResponse,
 };
 
+type msgSubmitEvidenceParams = {
+  value: MsgSubmitEvidence,
+};
+
 type msgSubmitEvidenceResponseParams = {
   value: MsgSubmitEvidenceResponse,
+};
+
+type queryEvidenceResponseParams = {
+  value: QueryEvidenceResponse,
 };
 
 
@@ -129,20 +129,6 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 
   return {
 		
-		async sendEquivocation({ value, fee, memo }: sendEquivocationParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendEquivocation: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.equivocation({ value: Equivocation.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendEquivocation: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
 		async sendGenesisState({ value, fee, memo }: sendGenesisStateParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendGenesisState: Unable to sign Tx. Signer is not present.')
@@ -157,31 +143,17 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		async sendQueryEvidenceResponse({ value, fee, memo }: sendQueryEvidenceResponseParams): Promise<DeliverTxResponse> {
+		async sendEquivocation({ value, fee, memo }: sendEquivocationParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendQueryEvidenceResponse: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendEquivocation: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryEvidenceResponse({ value: QueryEvidenceResponse.fromPartial(value) })
+				let msg = this.equivocation({ value: Equivocation.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendQueryEvidenceResponse: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendMsgSubmitEvidence({ value, fee, memo }: sendMsgSubmitEvidenceParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendMsgSubmitEvidence: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.msgSubmitEvidence({ value: MsgSubmitEvidence.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendMsgSubmitEvidence: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendEquivocation: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -227,6 +199,20 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
+		async sendMsgSubmitEvidence({ value, fee, memo }: sendMsgSubmitEvidenceParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgSubmitEvidence: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.msgSubmitEvidence({ value: MsgSubmitEvidence.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendMsgSubmitEvidence: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
 		async sendMsgSubmitEvidenceResponse({ value, fee, memo }: sendMsgSubmitEvidenceResponseParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendMsgSubmitEvidenceResponse: Unable to sign Tx. Signer is not present.')
@@ -241,14 +227,20 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		
-		equivocation({ value }: equivocationParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.evidence.v1beta1.Equivocation", value: Equivocation.fromPartial( value ) }  
+		async sendQueryEvidenceResponse({ value, fee, memo }: sendQueryEvidenceResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendQueryEvidenceResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.queryEvidenceResponse({ value: QueryEvidenceResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:Equivocation: Could not create message: ' + e.message)
+				throw new Error('TxClient:sendQueryEvidenceResponse: Could not broadcast Tx: '+ e.message)
 			}
 		},
+		
 		
 		genesisState({ value }: genesisStateParams): EncodeObject {
 			try {
@@ -258,19 +250,11 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		queryEvidenceResponse({ value }: queryEvidenceResponseParams): EncodeObject {
+		equivocation({ value }: equivocationParams): EncodeObject {
 			try {
-				return { typeUrl: "/cosmos.evidence.v1beta1.QueryEvidenceResponse", value: QueryEvidenceResponse.fromPartial( value ) }  
+				return { typeUrl: "/cosmos.evidence.v1beta1.Equivocation", value: Equivocation.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:QueryEvidenceResponse: Could not create message: ' + e.message)
-			}
-		},
-		
-		msgSubmitEvidence({ value }: msgSubmitEvidenceParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.evidence.v1beta1.MsgSubmitEvidence", value: MsgSubmitEvidence.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:MsgSubmitEvidence: Could not create message: ' + e.message)
+				throw new Error('TxClient:Equivocation: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -298,11 +282,27 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
+		msgSubmitEvidence({ value }: msgSubmitEvidenceParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.evidence.v1beta1.MsgSubmitEvidence", value: MsgSubmitEvidence.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgSubmitEvidence: Could not create message: ' + e.message)
+			}
+		},
+		
 		msgSubmitEvidenceResponse({ value }: msgSubmitEvidenceResponseParams): EncodeObject {
 			try {
 				return { typeUrl: "/cosmos.evidence.v1beta1.MsgSubmitEvidenceResponse", value: MsgSubmitEvidenceResponse.fromPartial( value ) }  
 			} catch (e: any) {
 				throw new Error('TxClient:MsgSubmitEvidenceResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		queryEvidenceResponse({ value }: queryEvidenceResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.evidence.v1beta1.QueryEvidenceResponse", value: QueryEvidenceResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:QueryEvidenceResponse: Could not create message: ' + e.message)
 			}
 		},
 		

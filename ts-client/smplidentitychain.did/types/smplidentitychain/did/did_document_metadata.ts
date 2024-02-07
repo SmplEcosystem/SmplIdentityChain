@@ -7,11 +7,10 @@ export interface DidDocumentMetadata {
   created: string;
   updated: string;
   deactivated: boolean;
-  versionId: string;
 }
 
 function createBaseDidDocumentMetadata(): DidDocumentMetadata {
-  return { created: "", updated: "", deactivated: false, versionId: "" };
+  return { created: "", updated: "", deactivated: false };
 }
 
 export const DidDocumentMetadata = {
@@ -24,9 +23,6 @@ export const DidDocumentMetadata = {
     }
     if (message.deactivated === true) {
       writer.uint32(24).bool(message.deactivated);
-    }
-    if (message.versionId !== "") {
-      writer.uint32(34).string(message.versionId);
     }
     return writer;
   },
@@ -59,13 +55,6 @@ export const DidDocumentMetadata = {
 
           message.deactivated = reader.bool();
           continue;
-        case 4:
-          if (tag !== 34) {
-            break;
-          }
-
-          message.versionId = reader.string();
-          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -80,7 +69,6 @@ export const DidDocumentMetadata = {
       created: isSet(object.created) ? String(object.created) : "",
       updated: isSet(object.updated) ? String(object.updated) : "",
       deactivated: isSet(object.deactivated) ? Boolean(object.deactivated) : false,
-      versionId: isSet(object.versionId) ? String(object.versionId) : "",
     };
   },
 
@@ -95,9 +83,6 @@ export const DidDocumentMetadata = {
     if (message.deactivated === true) {
       obj.deactivated = message.deactivated;
     }
-    if (message.versionId !== "") {
-      obj.versionId = message.versionId;
-    }
     return obj;
   },
 
@@ -109,7 +94,6 @@ export const DidDocumentMetadata = {
     message.created = object.created ?? "";
     message.updated = object.updated ?? "";
     message.deactivated = object.deactivated ?? false;
-    message.versionId = object.versionId ?? "";
     return message;
   },
 };

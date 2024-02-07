@@ -183,8 +183,6 @@ paths:
                     type: string
                   deactivated:
                     type: boolean
-                  versionId:
-                    type: string
               sequence:
                 type: string
                 format: uint64
@@ -368,8 +366,6 @@ definitions:
         type: string
       deactivated:
         type: boolean
-      versionId:
-        type: string
   DidResolutionMetadata:
     type: object
     properties:
@@ -526,8 +522,6 @@ definitions:
             type: string
           deactivated:
             type: boolean
-          versionId:
-            type: string
       sequence:
         type: string
         format: uint64
