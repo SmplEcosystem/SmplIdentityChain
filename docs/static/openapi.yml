@@ -132,10 +132,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -173,6 +169,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -382,10 +379,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -423,6 +416,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -572,10 +566,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -613,6 +603,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -789,10 +780,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -830,6 +817,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -983,10 +971,6 @@ paths:
                           if (any.is(Foo.class)) {
                             foo = any.unpack(Foo.class);
                           }
-                          // or ...
-                          if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                            foo = any.unpack(Foo.getDefaultInstance());
-                          }
 
                       Example 3: Pack and unpack a message in Python.
 
@@ -1024,6 +1008,7 @@ paths:
                       yield type
 
                       name "y.z".
+
 
 
                       JSON
@@ -1205,10 +1190,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -1246,6 +1227,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -2720,10 +2702,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -2761,6 +2739,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -3007,10 +2986,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3048,6 +3023,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -3305,10 +3281,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3346,6 +3318,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -3526,10 +3499,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3567,6 +3536,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -3771,10 +3741,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -3812,6 +3778,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -3992,10 +3959,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4033,6 +3996,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -4233,10 +4197,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4274,6 +4234,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -4524,10 +4485,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4565,6 +4522,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -4713,10 +4671,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -4754,6 +4708,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -4972,10 +4927,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5013,6 +4964,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -5323,10 +5275,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5364,6 +5312,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -5555,10 +5504,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5596,6 +5541,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -5799,10 +5745,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -5840,6 +5782,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -6043,10 +5986,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -6084,6 +6023,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -6344,10 +6284,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -6385,6 +6321,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -6577,10 +6514,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -6618,6 +6551,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -7168,10 +7102,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -7209,6 +7139,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -7413,10 +7344,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -7454,6 +7381,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -7652,10 +7580,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -7693,6 +7617,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -7896,10 +7821,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -7937,6 +7858,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -8112,10 +8034,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8153,6 +8071,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -8349,10 +8268,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8390,6 +8305,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -8622,10 +8538,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8663,6 +8575,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -8867,10 +8780,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -8908,6 +8817,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -9133,10 +9043,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9174,6 +9080,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -9429,10 +9336,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9470,6 +9373,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -9748,10 +9652,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -9789,6 +9689,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -9984,10 +9885,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10025,6 +9922,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -10215,10 +10113,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10256,6 +10150,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -10434,10 +10329,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10475,6 +10366,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -10678,10 +10570,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -10719,6 +10607,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -10967,10 +10856,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11008,6 +10893,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -11242,10 +11128,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11283,6 +11165,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -11492,10 +11375,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11533,6 +11412,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -11818,10 +11698,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -11859,6 +11735,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -12076,10 +11953,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12117,6 +11990,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -12296,10 +12170,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12337,6 +12207,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -12566,10 +12437,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12607,6 +12474,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -12831,10 +12699,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -12872,6 +12736,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -13131,10 +12996,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -13172,6 +13033,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -13491,10 +13353,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -13532,6 +13390,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -13824,10 +13683,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -13865,6 +13720,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -14162,10 +14018,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -14203,6 +14055,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -14492,10 +14345,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -14533,6 +14382,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -14674,10 +14524,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -14715,6 +14561,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -14944,10 +14791,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -14985,6 +14828,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -15361,10 +15205,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -15402,6 +15242,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -15594,10 +15435,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -15635,6 +15472,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -15786,10 +15624,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -15827,6 +15661,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -15994,10 +15829,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -16035,6 +15866,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -16184,10 +16016,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -16225,6 +16053,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -16388,10 +16217,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -16429,6 +16254,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -16625,10 +16451,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -16666,6 +16488,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -16810,10 +16633,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -16851,6 +16670,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -16986,10 +16806,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -17027,6 +16843,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -17200,10 +17017,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -17241,6 +17054,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -17404,10 +17218,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -17445,6 +17255,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -17703,10 +17514,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -17744,6 +17551,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -17970,10 +17778,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -18011,6 +17815,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -18245,10 +18050,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -18286,6 +18087,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -18438,10 +18240,6 @@ paths:
                       if (any.is(Foo.class)) {
                         foo = any.unpack(Foo.class);
                       }
-                      // or ...
-                      if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                        foo = any.unpack(Foo.getDefaultInstance());
-                      }
 
                   Example 3: Pack and unpack a message in Python.
 
@@ -18479,6 +18277,7 @@ paths:
                   type
 
                   name "y.z".
+
 
 
                   JSON
@@ -18792,10 +18591,6 @@ paths:
                         if (any.is(Foo.class)) {
                           foo = any.unpack(Foo.class);
                         }
-                        // or ...
-                        if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                          foo = any.unpack(Foo.getDefaultInstance());
-                        }
 
                     Example 3: Pack and unpack a message in Python.
 
@@ -18833,6 +18628,7 @@ paths:
                     type
 
                     name "y.z".
+
 
 
                     JSON
@@ -19095,8 +18891,6 @@ paths:
                     type: string
                   deactivated:
                     type: boolean
-                  versionId:
-                    type: string
               sequence:
                 type: string
                 format: uint64
@@ -19345,8 +19139,6 @@ paths:
                     type: string
                   deactivated:
                     type: boolean
-                  versionId:
-                    type: string
               signature:
                 type: string
               verificationMethodId:
@@ -19497,10 +19289,6 @@ definitions:
           if (any.is(Foo.class)) {
             foo = any.unpack(Foo.class);
           }
-          // or ...
-          if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-            foo = any.unpack(Foo.getDefaultInstance());
-          }
 
       Example 3: Pack and unpack a message in Python.
 
@@ -19534,6 +19322,7 @@ definitions:
       in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
       name "y.z".
+
 
 
       JSON
@@ -19669,10 +19458,6 @@ definitions:
                 if (any.is(Foo.class)) {
                   foo = any.unpack(Foo.class);
                 }
-                // or ...
-                if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                  foo = any.unpack(Foo.getDefaultInstance());
-                }
 
             Example 3: Pack and unpack a message in Python.
 
@@ -19706,6 +19491,7 @@ definitions:
             in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
             name "y.z".
+
 
 
             JSON
@@ -19831,10 +19617,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -19868,6 +19650,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -20013,10 +19796,6 @@ definitions:
                 if (any.is(Foo.class)) {
                   foo = any.unpack(Foo.class);
                 }
-                // or ...
-                if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                  foo = any.unpack(Foo.getDefaultInstance());
-                }
 
             Example 3: Pack and unpack a message in Python.
 
@@ -20050,6 +19829,7 @@ definitions:
             in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
             name "y.z".
+
 
 
             JSON
@@ -20206,10 +19986,6 @@ definitions:
                   if (any.is(Foo.class)) {
                     foo = any.unpack(Foo.class);
                   }
-                  // or ...
-                  if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                    foo = any.unpack(Foo.getDefaultInstance());
-                  }
 
               Example 3: Pack and unpack a message in Python.
 
@@ -20244,6 +20020,7 @@ definitions:
               in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
               name "y.z".
+
 
 
               JSON
@@ -21557,10 +21334,6 @@ definitions:
                 if (any.is(Foo.class)) {
                   foo = any.unpack(Foo.class);
                 }
-                // or ...
-                if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                  foo = any.unpack(Foo.getDefaultInstance());
-                }
 
             Example 3: Pack and unpack a message in Python.
 
@@ -21594,6 +21367,7 @@ definitions:
             in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
             name "y.z".
+
 
 
             JSON
@@ -22740,10 +22514,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -22777,6 +22547,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -25042,10 +24813,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25079,6 +24846,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -25506,10 +25274,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25543,6 +25307,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -25684,10 +25449,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25721,6 +25482,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -25889,10 +25651,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -25926,6 +25684,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -26053,10 +25812,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -26090,6 +25845,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -26314,10 +26070,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -26351,6 +26103,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -26704,10 +26457,6 @@ definitions:
               if (any.is(Foo.class)) {
                 foo = any.unpack(Foo.class);
               }
-              // or ...
-              if (any.isSameTypeAs(Foo.getDefaultInstance())) {
-                foo = any.unpack(Foo.getDefaultInstance());
-              }
 
           Example 3: Pack and unpack a message in Python.
 
@@ -26741,6 +26490,7 @@ definitions:
           in the type URL, for example "foo.bar.com/x/y.z" will yield type
 
           name "y.z".
+
 
 
           JSON
@@ -27120,8 +26870,6 @@ definitions:
         type: string
       deactivated:
         type: boolean
-      versionId:
-        type: string
   smplidentitychain.did.DidResolutionMetadata:
     type: object
     properties:
@@ -27281,8 +27029,6 @@ definitions:
             type: string
           deactivated:
             type: boolean
-          versionId:
-            type: string
       sequence:
         type: string
         format: uint64
@@ -27476,8 +27222,6 @@ definitions:
             type: string
           deactivated:
             type: boolean
-          versionId:
-            type: string
       signature:
         type: string
       verificationMethodId:

@@ -12,6 +12,7 @@ import (
 	"golang.org/x/crypto/ed25519"
 	"regexp"
 	"strings"
+	"time"
 )
 
 func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
@@ -27,16 +28,44 @@ func (k Keeper) SetDid(ctx sdk.Context, msg *types.MsgUpsertDid) {
 		storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 		store := prefix.NewStore(storeAdapter, types.DIDKeyPrefix)
 		key := []byte(msg.DidDocument.Id)
-		var Documents = &types.DidInfo{
-			DidDocument:         msg.DidDocument,
-			DidDocumentMetadata: msg.DidDocumentMetadata,
-			Sequence:            seq,
-		}
+		Documents := k.generateDocumentsToStore(msg, ctx, seq)
 		bz := k.cdc.MustMarshalLengthPrefixed(Documents)
 		store.Set(key, bz)
 	} else {
 	}
+}
 
+func (k Keeper) generateDocumentsToStore(msg *types.MsgUpsertDid, ctx sdk.Context, seq uint64) *types.DidInfo {
+	var Documents = &types.DidInfo{}
+	DocToDeactivate := k.GetDIDDocument(ctx, msg.DidDocument.Id)
+	if seq == 0 {
+		createdTime := time.Now()
+		createdString := createdTime.Format(time.RFC3339)
+		msg.DidDocumentMetadata.Created = createdString
+	} else {
+		updatedTime := time.Now()
+		updatedString := updatedTime.Format(time.RFC3339)
+		msg.DidDocumentMetadata.Updated = updatedString
+		msg.DidDocumentMetadata.Created = DocToDeactivate.DidDocumentMetadata.Created
+	}
+	if msg.DidDocumentMetadata.Deactivated == false {
+		Documents = &types.DidInfo{
+			DidDocument:         msg.DidDocument,
+			DidDocumentMetadata: msg.DidDocumentMetadata,
+			Sequence:            seq,
+		}
+	} else {
+		if DocToDeactivate == nil {
+			return nil
+		} else {
+			Documents = &types.DidInfo{
+				DidDocument:         DocToDeactivate.DidDocument,
+				DidDocumentMetadata: msg.DidDocumentMetadata,
+				Sequence:            seq,
+			}
+		}
+	}
+	return Documents
 }
 
 func (k Keeper) GetDIDDocument(ctx sdk.Context, did string) *types.QueryResolveDidResponse {
