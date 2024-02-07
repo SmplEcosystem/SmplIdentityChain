@@ -8,5 +8,4 @@ message DidDocumentMetadata {
   string created = 1;
   string updated = 2;
   bool deactivated = 3;
-  string versionId = 4;
 }
