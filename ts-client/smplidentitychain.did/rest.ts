@@ -94,6 +94,9 @@ export interface QueryResolveDidResponse {
   };
   didResolutionMetadata?: { contentType?: string; error?: string };
   didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
+
+  /** @format uint64 */
+  sequence?: string;
 }
 
 export interface Service {
@@ -294,6 +297,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         };
         didResolutionMetadata?: { contentType?: string; error?: string };
         didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean; versionId?: string };
+        sequence?: string;
       },
       { code?: number; message?: string; details?: { "@type"?: string }[] }
     >({

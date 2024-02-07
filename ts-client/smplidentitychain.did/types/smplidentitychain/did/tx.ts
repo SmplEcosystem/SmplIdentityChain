@@ -26,6 +26,7 @@ export interface MsgUpsertDid {
   didDocument: DIDDocument | undefined;
   didDocumentMetadata: DidDocumentMetadata | undefined;
   signature: string;
+  verificationMethodId: string;
 }
 
 export interface MsgUpsertDidResponse {
@@ -151,7 +152,13 @@ export const MsgUpdateParamsResponse = {
 };
 
 function createBaseMsgUpsertDid(): MsgUpsertDid {
-  return { creator: "", didDocument: undefined, didDocumentMetadata: undefined, signature: "" };
+  return {
+    creator: "",
+    didDocument: undefined,
+    didDocumentMetadata: undefined,
+    signature: "",
+    verificationMethodId: "",
+  };
 }
 
 export const MsgUpsertDid = {
@@ -167,6 +174,9 @@ export const MsgUpsertDid = {
     }
     if (message.signature !== "") {
       writer.uint32(34).string(message.signature);
+    }
+    if (message.verificationMethodId !== "") {
+      writer.uint32(42).string(message.verificationMethodId);
     }
     return writer;
   },
@@ -206,6 +216,13 @@ export const MsgUpsertDid = {
 
           message.signature = reader.string();
           continue;
+        case 5:
+          if (tag !== 42) {
+            break;
+          }
+
+          message.verificationMethodId = reader.string();
+          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -223,6 +240,7 @@ export const MsgUpsertDid = {
         ? DidDocumentMetadata.fromJSON(object.didDocumentMetadata)
         : undefined,
       signature: isSet(object.signature) ? String(object.signature) : "",
+      verificationMethodId: isSet(object.verificationMethodId) ? String(object.verificationMethodId) : "",
     };
   },
 
@@ -240,6 +258,9 @@ export const MsgUpsertDid = {
     if (message.signature !== "") {
       obj.signature = message.signature;
     }
+    if (message.verificationMethodId !== "") {
+      obj.verificationMethodId = message.verificationMethodId;
+    }
     return obj;
   },
 
@@ -256,6 +277,7 @@ export const MsgUpsertDid = {
       ? DidDocumentMetadata.fromPartial(object.didDocumentMetadata)
       : undefined;
     message.signature = object.signature ?? "";
+    message.verificationMethodId = object.verificationMethodId ?? "";
     return message;
   },
 };

@@ -185,6 +185,9 @@ paths:
                     type: boolean
                   versionId:
                     type: string
+              sequence:
+                type: string
+                format: uint64
         default:
           description: An unexpected error response.
           schema:
@@ -525,6 +528,9 @@ definitions:
             type: boolean
           versionId:
             type: string
+      sequence:
+        type: string
+        format: uint64
   Service:
     type: object
     properties:

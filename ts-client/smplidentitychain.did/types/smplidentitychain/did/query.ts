@@ -1,4 +1,5 @@
 /* eslint-disable */
+import Long from "long";
 import _m0 from "protobufjs/minimal";
 import { DIDDocument } from "./did_document";
 import { DidDocumentMetadata } from "./did_document_metadata";
@@ -25,6 +26,7 @@ export interface QueryResolveDidResponse {
   didDocument: DIDDocument | undefined;
   didResolutionMetadata: DidResolutionMetadata | undefined;
   didDocumentMetadata: DidDocumentMetadata | undefined;
+  sequence: number;
 }
 
 function createBaseQueryParamsRequest(): QueryParamsRequest {
@@ -187,7 +189,7 @@ export const QueryResolveDidRequest = {
 };
 
 function createBaseQueryResolveDidResponse(): QueryResolveDidResponse {
-  return { didDocument: undefined, didResolutionMetadata: undefined, didDocumentMetadata: undefined };
+  return { didDocument: undefined, didResolutionMetadata: undefined, didDocumentMetadata: undefined, sequence: 0 };
 }
 
 export const QueryResolveDidResponse = {
@@ -200,6 +202,9 @@ export const QueryResolveDidResponse = {
     }
     if (message.didDocumentMetadata !== undefined) {
       DidDocumentMetadata.encode(message.didDocumentMetadata, writer.uint32(26).fork()).ldelim();
+    }
+    if (message.sequence !== 0) {
+      writer.uint32(32).uint64(message.sequence);
     }
     return writer;
   },
@@ -232,6 +237,13 @@ export const QueryResolveDidResponse = {
 
           message.didDocumentMetadata = DidDocumentMetadata.decode(reader, reader.uint32());
           continue;
+        case 4:
+          if (tag !== 32) {
+            break;
+          }
+
+          message.sequence = longToNumber(reader.uint64() as Long);
+          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -250,6 +262,7 @@ export const QueryResolveDidResponse = {
       didDocumentMetadata: isSet(object.didDocumentMetadata)
         ? DidDocumentMetadata.fromJSON(object.didDocumentMetadata)
         : undefined,
+      sequence: isSet(object.sequence) ? Number(object.sequence) : 0,
     };
   },
 
@@ -263,6 +276,9 @@ export const QueryResolveDidResponse = {
     }
     if (message.didDocumentMetadata !== undefined) {
       obj.didDocumentMetadata = DidDocumentMetadata.toJSON(message.didDocumentMetadata);
+    }
+    if (message.sequence !== 0) {
+      obj.sequence = Math.round(message.sequence);
     }
     return obj;
   },
@@ -282,6 +298,7 @@ export const QueryResolveDidResponse = {
     message.didDocumentMetadata = (object.didDocumentMetadata !== undefined && object.didDocumentMetadata !== null)
       ? DidDocumentMetadata.fromPartial(object.didDocumentMetadata)
       : undefined;
+    message.sequence = object.sequence ?? 0;
     return message;
   },
 };
@@ -321,6 +338,25 @@ interface Rpc {
   request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;
 }
 
+declare const self: any | undefined;
+declare const window: any | undefined;
+declare const global: any | undefined;
+const tsProtoGlobalThis: any = (() => {
+  if (typeof globalThis !== "undefined") {
+    return globalThis;
+  }
+  if (typeof self !== "undefined") {
+    return self;
+  }
+  if (typeof window !== "undefined") {
+    return window;
+  }
+  if (typeof global !== "undefined") {
+    return global;
+  }
+  throw "Unable to locate global object";
+})();
+
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
 export type DeepPartial<T> = T extends Builtin ? T
@@ -331,6 +367,18 @@ export type DeepPartial<T> = T extends Builtin ? T
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+
+function longToNumber(long: Long): number {
+  if (long.gt(Number.MAX_SAFE_INTEGER)) {
+    throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+  }
+  return long.toNumber();
+}
+
+if (_m0.util.Long !== Long) {
+  _m0.util.Long = Long as any;
+  _m0.configure();
+}
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;
