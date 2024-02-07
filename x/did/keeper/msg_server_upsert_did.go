@@ -18,32 +18,35 @@ func (k msgServer) UpsertDid(goCtx context.Context, msg *types.MsgUpsertDid) (*t
 	} else {
 		seq = CurrentDoc.Sequence
 	}
-	DocBytes, _ := json.Marshal(msg.DidDocument)
-	CurrentDocBytes, _ := json.Marshal(CurrentDoc)
-	hasher := sha256.New()
-	hasher.Write(DocBytes)
-	DocHash := hasher.Sum(nil)
-	hasher.Reset()
-	hasher.Write(CurrentDocBytes)
-	CurrentDocHash := hasher.Sum(nil)
-	if hex.EncodeToString(DocHash) == hex.EncodeToString(CurrentDocHash) {
-		if msg.DidDocumentMetadata.Deactivated == true {
-			_, err := k.VerifyDidOwnership(msg.DidDocument, seq, msg.Signature, msg.VerificationMethodId)
-			if err != nil {
-				return nil, err
+	_, err := k.VerifyDidOwnership(msg.DidDocument, seq, msg.Signature, msg.VerificationMethodId)
+	if err != nil {
+		return nil, err
+	}
+	if CurrentDoc != nil {
+		DocBytes, _ := json.Marshal(msg.DidDocument)
+		CurrentDocBytes, _ := json.Marshal(CurrentDoc.DidDocument)
+		hasher := sha256.New()
+		hasher.Write(DocBytes)
+		DocHash := hasher.Sum(nil)
+		hasher.Reset()
+		hasher.Write(CurrentDocBytes)
+		CurrentDocHash := hasher.Sum(nil)
+		if hex.EncodeToString(DocHash) == hex.EncodeToString(CurrentDocHash) {
+			if msg.DidDocumentMetadata.Deactivated == true {
+				k.SetDid(ctx, msg)
+				_ = ctx
+
+				return &types.MsgUpsertDidResponse{}, nil
+			} else {
+				return nil, nil
 			}
+		} else {
 			k.SetDid(ctx, msg)
 			_ = ctx
 
 			return &types.MsgUpsertDidResponse{}, nil
-		} else {
-			return nil, nil
 		}
 	} else {
-		_, err := k.VerifyDidOwnership(msg.DidDocument, seq, msg.Signature, msg.VerificationMethodId)
-		if err != nil {
-			return nil, err
-		}
 		k.SetDid(ctx, msg)
 		_ = ctx
 
