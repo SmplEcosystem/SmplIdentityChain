@@ -10,11 +10,11 @@ option java_multiple_files = true;
 message DIDDocument {
   repeated string contexts = 1;
   string id = 2;
-  repeated VerificationMethod verification_methods = 3 [json_name = "verificationMethod"];
-  repeated VerificationRelationship authentications = 4[json_name = "authentication"];
-  repeated VerificationRelationship assertion_methods = 5 [json_name = "assertionMethod"];
-  repeated VerificationRelationship key_agreements = 6 [json_name = "keyAgreement"];
-  repeated VerificationRelationship capability_invocations = 7 [json_name = "capabilityInvocation"];
-  repeated VerificationRelationship capability_delegations = 8 [json_name = "capabilityDelegation"];
+  repeated VerificationMethod verification_method = 3 [json_name = "verificationMethod"];
+  repeated VerificationRelationship authentication = 4[json_name = "authentication"];
+  repeated VerificationRelationship assertion_method = 5 [json_name = "assertionMethod"];
+  repeated VerificationRelationship key_agreement = 6 [json_name = "keyAgreement"];
+  repeated VerificationRelationship capability_invocation = 7 [json_name = "capabilityInvocation"];
+  repeated VerificationRelationship capability_delegation = 8 [json_name = "capabilityDelegation"];
   repeated Service services = 9 [json_name = "service"];
 }

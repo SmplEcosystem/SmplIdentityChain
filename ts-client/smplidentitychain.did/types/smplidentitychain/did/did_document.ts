@@ -9,12 +9,12 @@ export const protobufPackage = "smplidentitychain.did";
 export interface DIDDocument {
   contexts: string[];
   id: string;
-  verificationMethods: VerificationMethod[];
-  authentications: VerificationRelationship[];
-  assertionMethods: VerificationRelationship[];
-  keyAgreements: VerificationRelationship[];
-  capabilityInvocations: VerificationRelationship[];
-  capabilityDelegations: VerificationRelationship[];
+  verificationMethod: VerificationMethod[];
+  authentication: VerificationRelationship[];
+  assertionMethod: VerificationRelationship[];
+  keyAgreement: VerificationRelationship[];
+  capabilityInvocation: VerificationRelationship[];
+  capabilityDelegation: VerificationRelationship[];
   services: Service[];
 }
 
@@ -22,12 +22,12 @@ function createBaseDIDDocument(): DIDDocument {
   return {
     contexts: [],
     id: "",
-    verificationMethods: [],
-    authentications: [],
-    assertionMethods: [],
-    keyAgreements: [],
-    capabilityInvocations: [],
-    capabilityDelegations: [],
+    verificationMethod: [],
+    authentication: [],
+    assertionMethod: [],
+    keyAgreement: [],
+    capabilityInvocation: [],
+    capabilityDelegation: [],
     services: [],
   };
 }
@@ -40,22 +40,22 @@ export const DIDDocument = {
     if (message.id !== "") {
       writer.uint32(18).string(message.id);
     }
-    for (const v of message.verificationMethods) {
+    for (const v of message.verificationMethod) {
       VerificationMethod.encode(v!, writer.uint32(26).fork()).ldelim();
     }
-    for (const v of message.authentications) {
+    for (const v of message.authentication) {
       VerificationRelationship.encode(v!, writer.uint32(34).fork()).ldelim();
     }
-    for (const v of message.assertionMethods) {
+    for (const v of message.assertionMethod) {
       VerificationRelationship.encode(v!, writer.uint32(42).fork()).ldelim();
     }
-    for (const v of message.keyAgreements) {
+    for (const v of message.keyAgreement) {
       VerificationRelationship.encode(v!, writer.uint32(50).fork()).ldelim();
     }
-    for (const v of message.capabilityInvocations) {
+    for (const v of message.capabilityInvocation) {
       VerificationRelationship.encode(v!, writer.uint32(58).fork()).ldelim();
     }
-    for (const v of message.capabilityDelegations) {
+    for (const v of message.capabilityDelegation) {
       VerificationRelationship.encode(v!, writer.uint32(66).fork()).ldelim();
     }
     for (const v of message.services) {
@@ -90,42 +90,42 @@ export const DIDDocument = {
             break;
           }
 
-          message.verificationMethods.push(VerificationMethod.decode(reader, reader.uint32()));
+          message.verificationMethod.push(VerificationMethod.decode(reader, reader.uint32()));
           continue;
         case 4:
           if (tag !== 34) {
             break;
           }
 
-          message.authentications.push(VerificationRelationship.decode(reader, reader.uint32()));
+          message.authentication.push(VerificationRelationship.decode(reader, reader.uint32()));
           continue;
         case 5:
           if (tag !== 42) {
             break;
           }
 
-          message.assertionMethods.push(VerificationRelationship.decode(reader, reader.uint32()));
+          message.assertionMethod.push(VerificationRelationship.decode(reader, reader.uint32()));
           continue;
         case 6:
           if (tag !== 50) {
             break;
           }
 
-          message.keyAgreements.push(VerificationRelationship.decode(reader, reader.uint32()));
+          message.keyAgreement.push(VerificationRelationship.decode(reader, reader.uint32()));
           continue;
         case 7:
           if (tag !== 58) {
             break;
           }
 
-          message.capabilityInvocations.push(VerificationRelationship.decode(reader, reader.uint32()));
+          message.capabilityInvocation.push(VerificationRelationship.decode(reader, reader.uint32()));
           continue;
         case 8:
           if (tag !== 66) {
             break;
           }
 
-          message.capabilityDelegations.push(VerificationRelationship.decode(reader, reader.uint32()));
+          message.capabilityDelegation.push(VerificationRelationship.decode(reader, reader.uint32()));
           continue;
         case 9:
           if (tag !== 74) {
@@ -147,22 +147,22 @@ export const DIDDocument = {
     return {
       contexts: Array.isArray(object?.contexts) ? object.contexts.map((e: any) => String(e)) : [],
       id: isSet(object.id) ? String(object.id) : "",
-      verificationMethods: Array.isArray(object?.verificationMethod)
+      verificationMethod: Array.isArray(object?.verificationMethod)
         ? object.verificationMethod.map((e: any) => VerificationMethod.fromJSON(e))
         : [],
-      authentications: Array.isArray(object?.authentication)
+      authentication: Array.isArray(object?.authentication)
         ? object.authentication.map((e: any) => VerificationRelationship.fromJSON(e))
         : [],
-      assertionMethods: Array.isArray(object?.assertionMethod)
+      assertionMethod: Array.isArray(object?.assertionMethod)
         ? object.assertionMethod.map((e: any) => VerificationRelationship.fromJSON(e))
         : [],
-      keyAgreements: Array.isArray(object?.keyAgreement)
+      keyAgreement: Array.isArray(object?.keyAgreement)
         ? object.keyAgreement.map((e: any) => VerificationRelationship.fromJSON(e))
         : [],
-      capabilityInvocations: Array.isArray(object?.capabilityInvocation)
+      capabilityInvocation: Array.isArray(object?.capabilityInvocation)
         ? object.capabilityInvocation.map((e: any) => VerificationRelationship.fromJSON(e))
         : [],
-      capabilityDelegations: Array.isArray(object?.capabilityDelegation)
+      capabilityDelegation: Array.isArray(object?.capabilityDelegation)
         ? object.capabilityDelegation.map((e: any) => VerificationRelationship.fromJSON(e))
         : [],
       services: Array.isArray(object?.service)
@@ -179,23 +179,23 @@ export const DIDDocument = {
     if (message.id !== "") {
       obj.id = message.id;
     }
-    if (message.verificationMethods?.length) {
-      obj.verificationMethod = message.verificationMethods.map((e) => VerificationMethod.toJSON(e));
+    if (message.verificationMethod?.length) {
+      obj.verificationMethod = message.verificationMethod.map((e) => VerificationMethod.toJSON(e));
     }
-    if (message.authentications?.length) {
-      obj.authentication = message.authentications.map((e) => VerificationRelationship.toJSON(e));
+    if (message.authentication?.length) {
+      obj.authentication = message.authentication.map((e) => VerificationRelationship.toJSON(e));
     }
-    if (message.assertionMethods?.length) {
-      obj.assertionMethod = message.assertionMethods.map((e) => VerificationRelationship.toJSON(e));
+    if (message.assertionMethod?.length) {
+      obj.assertionMethod = message.assertionMethod.map((e) => VerificationRelationship.toJSON(e));
     }
-    if (message.keyAgreements?.length) {
-      obj.keyAgreement = message.keyAgreements.map((e) => VerificationRelationship.toJSON(e));
+    if (message.keyAgreement?.length) {
+      obj.keyAgreement = message.keyAgreement.map((e) => VerificationRelationship.toJSON(e));
     }
-    if (message.capabilityInvocations?.length) {
-      obj.capabilityInvocation = message.capabilityInvocations.map((e) => VerificationRelationship.toJSON(e));
+    if (message.capabilityInvocation?.length) {
+      obj.capabilityInvocation = message.capabilityInvocation.map((e) => VerificationRelationship.toJSON(e));
     }
-    if (message.capabilityDelegations?.length) {
-      obj.capabilityDelegation = message.capabilityDelegations.map((e) => VerificationRelationship.toJSON(e));
+    if (message.capabilityDelegation?.length) {
+      obj.capabilityDelegation = message.capabilityDelegation.map((e) => VerificationRelationship.toJSON(e));
     }
     if (message.services?.length) {
       obj.service = message.services.map((e) => Service.toJSON(e));
@@ -210,13 +210,13 @@ export const DIDDocument = {
     const message = createBaseDIDDocument();
     message.contexts = object.contexts?.map((e) => e) || [];
     message.id = object.id ?? "";
-    message.verificationMethods = object.verificationMethods?.map((e) => VerificationMethod.fromPartial(e)) || [];
-    message.authentications = object.authentications?.map((e) => VerificationRelationship.fromPartial(e)) || [];
-    message.assertionMethods = object.assertionMethods?.map((e) => VerificationRelationship.fromPartial(e)) || [];
-    message.keyAgreements = object.keyAgreements?.map((e) => VerificationRelationship.fromPartial(e)) || [];
-    message.capabilityInvocations = object.capabilityInvocations?.map((e) => VerificationRelationship.fromPartial(e)) ||
+    message.verificationMethod = object.verificationMethod?.map((e) => VerificationMethod.fromPartial(e)) || [];
+    message.authentication = object.authentication?.map((e) => VerificationRelationship.fromPartial(e)) || [];
+    message.assertionMethod = object.assertionMethod?.map((e) => VerificationRelationship.fromPartial(e)) || [];
+    message.keyAgreement = object.keyAgreement?.map((e) => VerificationRelationship.fromPartial(e)) || [];
+    message.capabilityInvocation = object.capabilityInvocation?.map((e) => VerificationRelationship.fromPartial(e)) ||
       [];
-    message.capabilityDelegations = object.capabilityDelegations?.map((e) => VerificationRelationship.fromPartial(e)) ||
+    message.capabilityDelegation = object.capabilityDelegation?.map((e) => VerificationRelationship.fromPartial(e)) ||
       [];
     message.services = object.services?.map((e) => Service.fromPartial(e)) || [];
     return message;

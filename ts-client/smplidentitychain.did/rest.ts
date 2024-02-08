@@ -23,24 +23,24 @@ export interface Status {
 export interface DIDDocument {
   contexts?: string[];
   id?: string;
-  verification_methods?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
-  authentications?: {
+  verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+  authentication?: {
     verification_method_id?: string;
     verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
   }[];
-  assertion_methods?: {
+  assertion_method?: {
     verification_method_id?: string;
     verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
   }[];
-  key_agreements?: {
+  key_agreement?: {
     verification_method_id?: string;
     verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
   }[];
-  capability_invocations?: {
+  capability_invocation?: {
     verification_method_id?: string;
     verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
   }[];
-  capability_delegations?: {
+  capability_delegation?: {
     verification_method_id?: string;
     verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
   }[];
@@ -68,24 +68,24 @@ export interface QueryResolveDidResponse {
   didDocument?: {
     contexts?: string[];
     id?: string;
-    verification_methods?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
-    authentications?: {
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+    authentication?: {
       verification_method_id?: string;
       verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
     }[];
-    assertion_methods?: {
+    assertion_method?: {
       verification_method_id?: string;
       verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
     }[];
-    key_agreements?: {
+    key_agreement?: {
       verification_method_id?: string;
       verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
     }[];
-    capability_invocations?: {
+    capability_invocation?: {
       verification_method_id?: string;
       verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
     }[];
-    capability_delegations?: {
+    capability_delegation?: {
       verification_method_id?: string;
       verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
     }[];
@@ -271,24 +271,24 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         didDocument?: {
           contexts?: string[];
           id?: string;
-          verification_methods?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
-          authentications?: {
+          verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+          authentication?: {
             verification_method_id?: string;
             verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
           }[];
-          assertion_methods?: {
+          assertion_method?: {
             verification_method_id?: string;
             verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
           }[];
-          key_agreements?: {
+          key_agreement?: {
             verification_method_id?: string;
             verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
           }[];
-          capability_invocations?: {
+          capability_invocation?: {
             verification_method_id?: string;
             verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
           }[];
-          capability_delegations?: {
+          capability_delegation?: {
             verification_method_id?: string;
             verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
           }[];

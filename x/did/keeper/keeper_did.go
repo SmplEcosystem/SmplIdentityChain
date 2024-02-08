@@ -120,7 +120,7 @@ func verifyIdStruct(input string) error {
 }
 
 func (k Keeper) VerifyDidOwnership(doc *types.DIDDocument, seq uint64, verificationMethodID string, sig []byte) (uint64, error) {
-	verificationMethod, found := k.VerificationMethodFrom(doc.VerificationMethods, verificationMethodID)
+	verificationMethod, found := k.VerificationMethodFrom(doc.VerificationMethod, verificationMethodID)
 	if !found {
 		return 0, sdkerrors.Wrapf(types.ErrVerificationMethodIDNotFound, "VerificationMethodId: %s not found", verificationMethodID)
 	}

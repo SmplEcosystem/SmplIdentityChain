@@ -23,15 +23,15 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type DIDDocument struct {
-	Contexts              []string                    `protobuf:"bytes,1,rep,name=contexts,proto3" json:"contexts,omitempty"`
-	Id                    string                      `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
-	VerificationMethods   []*VerificationMethod       `protobuf:"bytes,3,rep,name=verification_methods,json=verificationMethod,proto3" json:"verification_methods,omitempty"`
-	Authentications       []*VerificationRelationship `protobuf:"bytes,4,rep,name=authentications,json=authentication,proto3" json:"authentications,omitempty"`
-	AssertionMethods      []*VerificationRelationship `protobuf:"bytes,5,rep,name=assertion_methods,json=assertionMethod,proto3" json:"assertion_methods,omitempty"`
-	KeyAgreements         []*VerificationRelationship `protobuf:"bytes,6,rep,name=key_agreements,json=keyAgreement,proto3" json:"key_agreements,omitempty"`
-	CapabilityInvocations []*VerificationRelationship `protobuf:"bytes,7,rep,name=capability_invocations,json=capabilityInvocation,proto3" json:"capability_invocations,omitempty"`
-	CapabilityDelegations []*VerificationRelationship `protobuf:"bytes,8,rep,name=capability_delegations,json=capabilityDelegation,proto3" json:"capability_delegations,omitempty"`
-	Services              []*Service                  `protobuf:"bytes,9,rep,name=services,json=service,proto3" json:"services,omitempty"`
+	Contexts             []string                    `protobuf:"bytes,1,rep,name=contexts,proto3" json:"contexts,omitempty"`
+	Id                   string                      `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	VerificationMethod   []*VerificationMethod       `protobuf:"bytes,3,rep,name=verification_method,json=verificationMethod,proto3" json:"verification_method,omitempty"`
+	Authentication       []*VerificationRelationship `protobuf:"bytes,4,rep,name=authentication,proto3" json:"authentication,omitempty"`
+	AssertionMethod      []*VerificationRelationship `protobuf:"bytes,5,rep,name=assertion_method,json=assertionMethod,proto3" json:"assertion_method,omitempty"`
+	KeyAgreement         []*VerificationRelationship `protobuf:"bytes,6,rep,name=key_agreement,json=keyAgreement,proto3" json:"key_agreement,omitempty"`
+	CapabilityInvocation []*VerificationRelationship `protobuf:"bytes,7,rep,name=capability_invocation,json=capabilityInvocation,proto3" json:"capability_invocation,omitempty"`
+	CapabilityDelegation []*VerificationRelationship `protobuf:"bytes,8,rep,name=capability_delegation,json=capabilityDelegation,proto3" json:"capability_delegation,omitempty"`
+	Services             []*Service                  `protobuf:"bytes,9,rep,name=services,json=service,proto3" json:"services,omitempty"`
 }
 
 func (m *DIDDocument) Reset()         { *m = DIDDocument{} }
@@ -81,44 +81,44 @@ func (m *DIDDocument) GetId() string {
 	return ""
 }
 
-func (m *DIDDocument) GetVerificationMethods() []*VerificationMethod {
+func (m *DIDDocument) GetVerificationMethod() []*VerificationMethod {
 	if m != nil {
-		return m.VerificationMethods
+		return m.VerificationMethod
 	}
 	return nil
 }
 
-func (m *DIDDocument) GetAuthentications() []*VerificationRelationship {
+func (m *DIDDocument) GetAuthentication() []*VerificationRelationship {
 	if m != nil {
-		return m.Authentications
+		return m.Authentication
 	}
 	return nil
 }
 
-func (m *DIDDocument) GetAssertionMethods() []*VerificationRelationship {
+func (m *DIDDocument) GetAssertionMethod() []*VerificationRelationship {
 	if m != nil {
-		return m.AssertionMethods
+		return m.AssertionMethod
 	}
 	return nil
 }
 
-func (m *DIDDocument) GetKeyAgreements() []*VerificationRelationship {
+func (m *DIDDocument) GetKeyAgreement() []*VerificationRelationship {
 	if m != nil {
-		return m.KeyAgreements
+		return m.KeyAgreement
 	}
 	return nil
 }
 
-func (m *DIDDocument) GetCapabilityInvocations() []*VerificationRelationship {
+func (m *DIDDocument) GetCapabilityInvocation() []*VerificationRelationship {
 	if m != nil {
-		return m.CapabilityInvocations
+		return m.CapabilityInvocation
 	}
 	return nil
 }
 
-func (m *DIDDocument) GetCapabilityDelegations() []*VerificationRelationship {
+func (m *DIDDocument) GetCapabilityDelegation() []*VerificationRelationship {
 	if m != nil {
-		return m.CapabilityDelegations
+		return m.CapabilityDelegation
 	}
 	return nil
 }
@@ -139,33 +139,33 @@ func init() {
 }
 
 var fileDescriptor_93dd9bf00216960a = []byte{
-	// 414 bytes of a gzipped FileDescriptorProto
+	// 409 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x93, 0xc1, 0xaa, 0xd3, 0x40,
-	0x14, 0x86, 0x9b, 0xd6, 0x7b, 0x6f, 0x3b, 0x57, 0x7a, 0x71, 0xa8, 0x12, 0xba, 0x08, 0x45, 0x37,
-	0x71, 0x93, 0x80, 0xa2, 0xe0, 0x52, 0x8d, 0x8b, 0x2e, 0x04, 0x49, 0x51, 0xc4, 0x2e, 0x42, 0x3a,
-	0x73, 0x6c, 0x0e, 0x4d, 0x32, 0x21, 0x33, 0x0d, 0xcd, 0x5b, 0xf8, 0x22, 0xbe, 0x87, 0xcb, 0x2e,
-	0x5d, 0x4a, 0xfb, 0x22, 0xd2, 0x24, 0x8d, 0xad, 0x8d, 0x50, 0xea, 0x22, 0x90, 0x19, 0xfe, 0xff,
-	0x3b, 0xff, 0x39, 0xcc, 0x21, 0xa6, 0x8c, 0x92, 0x10, 0x39, 0xc4, 0x0a, 0x55, 0xce, 0x02, 0x1f,
-	0x63, 0x9b, 0x23, 0xdf, 0x7d, 0x1e, 0x17, 0x6c, 0x19, 0x41, 0xac, 0xac, 0x24, 0x15, 0x4a, 0xd0,
-	0x87, 0x27, 0x4a, 0x8b, 0x23, 0x1f, 0x3e, 0x69, 0x06, 0x48, 0x48, 0x33, 0x64, 0x50, 0x7a, 0x87,
-	0x76, 0xb3, 0x28, 0x83, 0x14, 0xbf, 0x22, 0xf3, 0x15, 0x8a, 0xd8, 0x8b, 0x40, 0x05, 0x82, 0x57,
-	0x86, 0x17, 0x67, 0x18, 0x52, 0x08, 0x8b, 0x1f, 0x19, 0x60, 0x52, 0xda, 0x1e, 0x7f, 0xbf, 0x22,
-	0xb7, 0xce, 0xd8, 0x71, 0xaa, 0xe4, 0x74, 0x48, 0xba, 0x4c, 0xc4, 0x0a, 0x56, 0x4a, 0xea, 0xda,
-	0xa8, 0x63, 0xf6, 0xdc, 0xfa, 0x4c, 0xfb, 0xa4, 0x8d, 0x5c, 0x6f, 0x8f, 0x34, 0xb3, 0xe7, 0xb6,
-	0x91, 0xd3, 0x29, 0x19, 0x34, 0xe4, 0x91, 0x7a, 0x67, 0xd4, 0x31, 0x6f, 0x9f, 0x3d, 0xb5, 0x1a,
-	0xdb, 0xb7, 0x3e, 0x1d, 0x58, 0xde, 0x17, 0x0e, 0x97, 0x66, 0x27, 0x77, 0xf4, 0x33, 0xb9, 0xf3,
-	0x97, 0x2a, 0xd8, 0xb9, 0xcb, 0x7b, 0xa9, 0xdf, 0x2b, 0xb8, 0xf6, 0x19, 0x5c, 0xf7, 0xa0, 0x51,
-	0xb7, 0x7f, 0xcc, 0xa1, 0x53, 0xf2, 0xc0, 0x97, 0x12, 0xd2, 0xa3, 0xcc, 0x57, 0x97, 0xb1, 0xef,
-	0x6a, 0x52, 0x15, 0xfb, 0x23, 0xe9, 0x2f, 0x20, 0xf7, 0xfc, 0x79, 0x0a, 0xb0, 0x1b, 0xa8, 0xd4,
-	0xaf, 0x2f, 0x23, 0xdf, 0x5f, 0x40, 0xfe, 0x7a, 0x4f, 0xa1, 0x40, 0x1e, 0x31, 0x3f, 0xf1, 0x67,
-	0x18, 0xa2, 0xca, 0x3d, 0x8c, 0x33, 0xb1, 0x1f, 0xca, 0xcd, 0x65, 0xf8, 0xc1, 0x1f, 0xdc, 0xb8,
-	0xa6, 0xfd, 0x55, 0x86, 0x43, 0x08, 0xf3, 0xaa, 0x4c, 0xf7, 0xbf, 0xcb, 0x38, 0x35, 0x8d, 0xbe,
-	0x22, 0xdd, 0xea, 0xb5, 0x4b, 0xbd, 0x57, 0x80, 0x8d, 0x7f, 0x80, 0x27, 0xa5, 0xcc, 0xbd, 0xa9,
-	0xf4, 0x6f, 0xdc, 0x1f, 0x1b, 0x43, 0x5b, 0x6f, 0x0c, 0xed, 0xd7, 0xc6, 0xd0, 0xbe, 0x6d, 0x8d,
-	0xd6, 0x7a, 0x6b, 0xb4, 0x7e, 0x6e, 0x8d, 0xd6, 0x07, 0xed, 0xcb, 0xcb, 0x39, 0xaa, 0x60, 0x39,
-	0xb3, 0x98, 0x88, 0xec, 0x49, 0x94, 0x84, 0xef, 0x98, 0x90, 0xb9, 0x54, 0x50, 0x9e, 0xc6, 0x15,
-	0xfc, 0x6d, 0xb1, 0x1b, 0xab, 0x62, 0x3b, 0x54, 0x9e, 0x80, 0x9c, 0x5d, 0x17, 0xab, 0xf0, 0xfc,
-	0x77, 0x00, 0x00, 0x00, 0xff, 0xff, 0x97, 0x0d, 0x9f, 0x87, 0xda, 0x03, 0x00, 0x00,
+	0x14, 0x86, 0x9b, 0xd6, 0x7b, 0xdb, 0x4e, 0xb5, 0xca, 0x68, 0x21, 0x74, 0x11, 0x8a, 0x6e, 0xe2,
+	0x26, 0x01, 0x45, 0xc1, 0xa5, 0x1a, 0x17, 0x5d, 0x08, 0x92, 0x8a, 0x42, 0x37, 0x21, 0x9d, 0x39,
+	0x36, 0x87, 0x26, 0x99, 0x90, 0x99, 0x86, 0xe6, 0x2d, 0x7c, 0x0b, 0x5f, 0xc5, 0x65, 0x97, 0x2e,
+	0xa5, 0x7d, 0x11, 0x69, 0x12, 0x63, 0x69, 0x23, 0x94, 0xde, 0x45, 0x20, 0x33, 0xfc, 0xff, 0x77,
+	0xfe, 0x73, 0x98, 0x43, 0x4c, 0x19, 0x25, 0x21, 0x72, 0x88, 0x15, 0xaa, 0x9c, 0x05, 0x3e, 0xc6,
+	0x36, 0x47, 0x7e, 0xf8, 0x3c, 0x2e, 0xd8, 0x3a, 0x82, 0x58, 0x59, 0x49, 0x2a, 0x94, 0xa0, 0xa3,
+	0x33, 0xa5, 0xc5, 0x91, 0x8f, 0x9f, 0x35, 0x03, 0x24, 0xa4, 0x19, 0x32, 0x28, 0xbd, 0x63, 0xbb,
+	0x59, 0x94, 0x41, 0x8a, 0xdf, 0x90, 0xf9, 0x0a, 0x45, 0xec, 0x45, 0xa0, 0x02, 0xc1, 0x2b, 0xc3,
+	0xab, 0x0b, 0x0c, 0x29, 0x84, 0xc5, 0x8f, 0x0c, 0x30, 0x29, 0x6d, 0x4f, 0x7f, 0xdc, 0x90, 0x81,
+	0x33, 0x75, 0x9c, 0x2a, 0x39, 0x1d, 0x93, 0x1e, 0x13, 0xb1, 0x82, 0x8d, 0x92, 0xba, 0x36, 0xe9,
+	0x98, 0x7d, 0xb7, 0x3e, 0xd3, 0x21, 0x69, 0x23, 0xd7, 0xdb, 0x13, 0xcd, 0xec, 0xbb, 0x6d, 0xe4,
+	0x74, 0x4e, 0x1e, 0x37, 0xe4, 0xd1, 0x3b, 0x93, 0x8e, 0x39, 0x78, 0xf1, 0xdc, 0x6a, 0xec, 0xde,
+	0xfa, 0x72, 0xe4, 0xf8, 0x58, 0x18, 0x5c, 0x9a, 0x9d, 0xdd, 0xd1, 0xaf, 0x64, 0xe8, 0xaf, 0x55,
+	0x70, 0x70, 0x97, 0xf7, 0xfa, 0xbd, 0x02, 0x6b, 0x5f, 0x80, 0x75, 0x8f, 0xda, 0x74, 0x4f, 0x30,
+	0x74, 0x4e, 0x1e, 0xf9, 0x52, 0x42, 0x7a, 0x9c, 0xf8, 0xe6, 0x3a, 0xf4, 0xc3, 0x1a, 0x54, 0x85,
+	0xfe, 0x4c, 0x1e, 0xac, 0x20, 0xf7, 0xfc, 0x65, 0x0a, 0x70, 0x98, 0xa6, 0x7e, 0x7b, 0x1d, 0xf8,
+	0xfe, 0x0a, 0xf2, 0xb7, 0x7f, 0x21, 0x94, 0x93, 0x11, 0xf3, 0x13, 0x7f, 0x81, 0x21, 0xaa, 0xdc,
+	0xc3, 0x38, 0x13, 0xd5, 0x44, 0xba, 0xd7, 0xd1, 0x9f, 0xfc, 0xa3, 0x4d, 0x6b, 0xd8, 0x49, 0x15,
+	0x0e, 0x21, 0x2c, 0xcb, 0x2a, 0xbd, 0x3b, 0x57, 0x71, 0x6a, 0x18, 0x7d, 0x43, 0x7a, 0xd5, 0x3b,
+	0x97, 0x7a, 0xbf, 0x00, 0x1b, 0xff, 0x01, 0xcf, 0x4a, 0x99, 0xdb, 0xad, 0xf4, 0xef, 0xdc, 0x9f,
+	0x3b, 0x43, 0xdb, 0xee, 0x0c, 0xed, 0xf7, 0xce, 0xd0, 0xbe, 0xef, 0x8d, 0xd6, 0x76, 0x6f, 0xb4,
+	0x7e, 0xed, 0x8d, 0xd6, 0x27, 0x6d, 0xfe, 0x7a, 0x89, 0x2a, 0x58, 0x2f, 0x2c, 0x26, 0x22, 0x7b,
+	0x16, 0x25, 0xe1, 0x07, 0x26, 0x64, 0x2e, 0x15, 0x94, 0xa7, 0x69, 0x05, 0x7f, 0x5f, 0x6c, 0xc5,
+	0xa6, 0xd8, 0x0b, 0x95, 0x27, 0x20, 0x17, 0xb7, 0xc5, 0x12, 0xbc, 0xfc, 0x13, 0x00, 0x00, 0xff,
+	0xff, 0xa6, 0xcd, 0xa3, 0x80, 0xd4, 0x03, 0x00, 0x00,
 }
 
 func (m *DIDDocument) Marshal() (dAtA []byte, err error) {
@@ -202,10 +202,10 @@ func (m *DIDDocument) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x4a
 		}
 	}
-	if len(m.CapabilityDelegations) > 0 {
-		for iNdEx := len(m.CapabilityDelegations) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.CapabilityDelegation) > 0 {
+		for iNdEx := len(m.CapabilityDelegation) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.CapabilityDelegations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.CapabilityDelegation[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -216,10 +216,10 @@ func (m *DIDDocument) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x42
 		}
 	}
-	if len(m.CapabilityInvocations) > 0 {
-		for iNdEx := len(m.CapabilityInvocations) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.CapabilityInvocation) > 0 {
+		for iNdEx := len(m.CapabilityInvocation) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.CapabilityInvocations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.CapabilityInvocation[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -230,10 +230,10 @@ func (m *DIDDocument) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x3a
 		}
 	}
-	if len(m.KeyAgreements) > 0 {
-		for iNdEx := len(m.KeyAgreements) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.KeyAgreement) > 0 {
+		for iNdEx := len(m.KeyAgreement) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.KeyAgreements[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.KeyAgreement[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -244,10 +244,10 @@ func (m *DIDDocument) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x32
 		}
 	}
-	if len(m.AssertionMethods) > 0 {
-		for iNdEx := len(m.AssertionMethods) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.AssertionMethod) > 0 {
+		for iNdEx := len(m.AssertionMethod) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.AssertionMethods[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.AssertionMethod[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -258,10 +258,10 @@ func (m *DIDDocument) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x2a
 		}
 	}
-	if len(m.Authentications) > 0 {
-		for iNdEx := len(m.Authentications) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.Authentication) > 0 {
+		for iNdEx := len(m.Authentication) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.Authentications[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.Authentication[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -272,10 +272,10 @@ func (m *DIDDocument) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x22
 		}
 	}
-	if len(m.VerificationMethods) > 0 {
-		for iNdEx := len(m.VerificationMethods) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.VerificationMethod) > 0 {
+		for iNdEx := len(m.VerificationMethod) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.VerificationMethods[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.VerificationMethod[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -332,38 +332,38 @@ func (m *DIDDocument) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovDidDocument(uint64(l))
 	}
-	if len(m.VerificationMethods) > 0 {
-		for _, e := range m.VerificationMethods {
+	if len(m.VerificationMethod) > 0 {
+		for _, e := range m.VerificationMethod {
 			l = e.Size()
 			n += 1 + l + sovDidDocument(uint64(l))
 		}
 	}
-	if len(m.Authentications) > 0 {
-		for _, e := range m.Authentications {
+	if len(m.Authentication) > 0 {
+		for _, e := range m.Authentication {
 			l = e.Size()
 			n += 1 + l + sovDidDocument(uint64(l))
 		}
 	}
-	if len(m.AssertionMethods) > 0 {
-		for _, e := range m.AssertionMethods {
+	if len(m.AssertionMethod) > 0 {
+		for _, e := range m.AssertionMethod {
 			l = e.Size()
 			n += 1 + l + sovDidDocument(uint64(l))
 		}
 	}
-	if len(m.KeyAgreements) > 0 {
-		for _, e := range m.KeyAgreements {
+	if len(m.KeyAgreement) > 0 {
+		for _, e := range m.KeyAgreement {
 			l = e.Size()
 			n += 1 + l + sovDidDocument(uint64(l))
 		}
 	}
-	if len(m.CapabilityInvocations) > 0 {
-		for _, e := range m.CapabilityInvocations {
+	if len(m.CapabilityInvocation) > 0 {
+		for _, e := range m.CapabilityInvocation {
 			l = e.Size()
 			n += 1 + l + sovDidDocument(uint64(l))
 		}
 	}
-	if len(m.CapabilityDelegations) > 0 {
-		for _, e := range m.CapabilityDelegations {
+	if len(m.CapabilityDelegation) > 0 {
+		for _, e := range m.CapabilityDelegation {
 			l = e.Size()
 			n += 1 + l + sovDidDocument(uint64(l))
 		}
@@ -478,7 +478,7 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VerificationMethods", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field VerificationMethod", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -505,14 +505,14 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.VerificationMethods = append(m.VerificationMethods, &VerificationMethod{})
-			if err := m.VerificationMethods[len(m.VerificationMethods)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.VerificationMethod = append(m.VerificationMethod, &VerificationMethod{})
+			if err := m.VerificationMethod[len(m.VerificationMethod)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Authentications", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Authentication", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -539,14 +539,14 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Authentications = append(m.Authentications, &VerificationRelationship{})
-			if err := m.Authentications[len(m.Authentications)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Authentication = append(m.Authentication, &VerificationRelationship{})
+			if err := m.Authentication[len(m.Authentication)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AssertionMethods", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AssertionMethod", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -573,14 +573,14 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AssertionMethods = append(m.AssertionMethods, &VerificationRelationship{})
-			if err := m.AssertionMethods[len(m.AssertionMethods)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AssertionMethod = append(m.AssertionMethod, &VerificationRelationship{})
+			if err := m.AssertionMethod[len(m.AssertionMethod)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 6:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field KeyAgreements", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field KeyAgreement", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -607,14 +607,14 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.KeyAgreements = append(m.KeyAgreements, &VerificationRelationship{})
-			if err := m.KeyAgreements[len(m.KeyAgreements)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.KeyAgreement = append(m.KeyAgreement, &VerificationRelationship{})
+			if err := m.KeyAgreement[len(m.KeyAgreement)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CapabilityInvocations", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field CapabilityInvocation", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -641,14 +641,14 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CapabilityInvocations = append(m.CapabilityInvocations, &VerificationRelationship{})
-			if err := m.CapabilityInvocations[len(m.CapabilityInvocations)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.CapabilityInvocation = append(m.CapabilityInvocation, &VerificationRelationship{})
+			if err := m.CapabilityInvocation[len(m.CapabilityInvocation)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CapabilityDelegations", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field CapabilityDelegation", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -675,8 +675,8 @@ func (m *DIDDocument) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CapabilityDelegations = append(m.CapabilityDelegations, &VerificationRelationship{})
-			if err := m.CapabilityDelegations[len(m.CapabilityDelegations)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.CapabilityDelegation = append(m.CapabilityDelegation, &VerificationRelationship{})
+			if err := m.CapabilityDelegation[len(m.CapabilityDelegation)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

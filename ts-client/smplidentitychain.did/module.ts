@@ -6,103 +6,31 @@ import { msgTypes } from './registry';
 import { IgniteClient } from "../client"
 import { MissingWalletError } from "../helpers"
 import { Api } from "./rest";
-import { QueryResolveDidRequest } from "./types/smplidentitychain/did/query";
 import { MsgUpdateParams } from "./types/smplidentitychain/did/tx";
-import { DIDDocument } from "./types/smplidentitychain/did/did_document";
-import { QueryParamsRequest } from "./types/smplidentitychain/did/query";
-import { VerificationRelationship } from "./types/smplidentitychain/did/verification_relationship";
-import { DidInfo } from "./types/smplidentitychain/did/did_info";
-import { DataWithSequence } from "./types/smplidentitychain/did/data_with_sequence";
-import { VerificationMethod } from "./types/smplidentitychain/did/verification_method";
-import { ResolutionOptions } from "./types/smplidentitychain/did/resolution_options";
-import { DidDocumentMetadata } from "./types/smplidentitychain/did/did_document_metadata";
-import { Service } from "./types/smplidentitychain/did/service";
-import { QueryParamsResponse } from "./types/smplidentitychain/did/query";
-import { MsgUpsertDidResponse } from "./types/smplidentitychain/did/tx";
 import { GenesisState } from "./types/smplidentitychain/did/genesis";
-import { QueryResolveDidResponse } from "./types/smplidentitychain/did/query";
-import { Params } from "./types/smplidentitychain/did/params";
 import { MsgUpdateParamsResponse } from "./types/smplidentitychain/did/tx";
+import { QueryParamsRequest } from "./types/smplidentitychain/did/query";
+import { QueryParamsResponse } from "./types/smplidentitychain/did/query";
+import { ResolutionOptions } from "./types/smplidentitychain/did/resolution_options";
+import { MsgUpsertDidResponse } from "./types/smplidentitychain/did/tx";
+import { DIDDocument } from "./types/smplidentitychain/did/did_document";
+import { VerificationRelationship } from "./types/smplidentitychain/did/verification_relationship";
+import { QueryResolveDidRequest } from "./types/smplidentitychain/did/query";
+import { QueryResolveDidResponse } from "./types/smplidentitychain/did/query";
+import { DidDocumentMetadata } from "./types/smplidentitychain/did/did_document_metadata";
+import { DataWithSequence } from "./types/smplidentitychain/did/data_with_sequence";
+import { Service } from "./types/smplidentitychain/did/service";
+import { Params } from "./types/smplidentitychain/did/params";
+import { VerificationMethod } from "./types/smplidentitychain/did/verification_method";
 import { MsgUpsertDid } from "./types/smplidentitychain/did/tx";
+import { DidInfo } from "./types/smplidentitychain/did/did_info";
 import { DidResolutionMetadata } from "./types/smplidentitychain/did/did_resolution_metadata";
 
 
-export { QueryResolveDidRequest, MsgUpdateParams, DIDDocument, QueryParamsRequest, VerificationRelationship, DidInfo, DataWithSequence, VerificationMethod, ResolutionOptions, DidDocumentMetadata, Service, QueryParamsResponse, MsgUpsertDidResponse, GenesisState, QueryResolveDidResponse, Params, MsgUpdateParamsResponse, MsgUpsertDid, DidResolutionMetadata };
-
-type sendQueryResolveDidRequestParams = {
-  value: QueryResolveDidRequest,
-  fee?: StdFee,
-  memo?: string
-};
+export { MsgUpdateParams, GenesisState, MsgUpdateParamsResponse, QueryParamsRequest, QueryParamsResponse, ResolutionOptions, MsgUpsertDidResponse, DIDDocument, VerificationRelationship, QueryResolveDidRequest, QueryResolveDidResponse, DidDocumentMetadata, DataWithSequence, Service, Params, VerificationMethod, MsgUpsertDid, DidInfo, DidResolutionMetadata };
 
 type sendMsgUpdateParamsParams = {
   value: MsgUpdateParams,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendDIDDocumentParams = {
-  value: DIDDocument,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendQueryParamsRequestParams = {
-  value: QueryParamsRequest,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendVerificationRelationshipParams = {
-  value: VerificationRelationship,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendDidInfoParams = {
-  value: DidInfo,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendDataWithSequenceParams = {
-  value: DataWithSequence,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendVerificationMethodParams = {
-  value: VerificationMethod,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendResolutionOptionsParams = {
-  value: ResolutionOptions,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendDidDocumentMetadataParams = {
-  value: DidDocumentMetadata,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendServiceParams = {
-  value: Service,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendQueryParamsResponseParams = {
-  value: QueryParamsResponse,
-  fee?: StdFee,
-  memo?: string
-};
-
-type sendMsgUpsertDidResponseParams = {
-  value: MsgUpsertDidResponse,
   fee?: StdFee,
   memo?: string
 };
@@ -113,8 +41,74 @@ type sendGenesisStateParams = {
   memo?: string
 };
 
+type sendMsgUpdateParamsResponseParams = {
+  value: MsgUpdateParamsResponse,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendQueryParamsRequestParams = {
+  value: QueryParamsRequest,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendQueryParamsResponseParams = {
+  value: QueryParamsResponse,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendResolutionOptionsParams = {
+  value: ResolutionOptions,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendMsgUpsertDidResponseParams = {
+  value: MsgUpsertDidResponse,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendDIDDocumentParams = {
+  value: DIDDocument,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendVerificationRelationshipParams = {
+  value: VerificationRelationship,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendQueryResolveDidRequestParams = {
+  value: QueryResolveDidRequest,
+  fee?: StdFee,
+  memo?: string
+};
+
 type sendQueryResolveDidResponseParams = {
   value: QueryResolveDidResponse,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendDidDocumentMetadataParams = {
+  value: DidDocumentMetadata,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendDataWithSequenceParams = {
+  value: DataWithSequence,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendServiceParams = {
+  value: Service,
   fee?: StdFee,
   memo?: string
 };
@@ -125,14 +119,20 @@ type sendParamsParams = {
   memo?: string
 };
 
-type sendMsgUpdateParamsResponseParams = {
-  value: MsgUpdateParamsResponse,
+type sendVerificationMethodParams = {
+  value: VerificationMethod,
   fee?: StdFee,
   memo?: string
 };
 
 type sendMsgUpsertDidParams = {
   value: MsgUpsertDid,
+  fee?: StdFee,
+  memo?: string
+};
+
+type sendDidInfoParams = {
+  value: DidInfo,
   fee?: StdFee,
   memo?: string
 };
@@ -144,76 +144,76 @@ type sendDidResolutionMetadataParams = {
 };
 
 
-type queryResolveDidRequestParams = {
-  value: QueryResolveDidRequest,
-};
-
 type msgUpdateParamsParams = {
   value: MsgUpdateParams,
-};
-
-type diddocumentParams = {
-  value: DIDDocument,
-};
-
-type queryParamsRequestParams = {
-  value: QueryParamsRequest,
-};
-
-type verificationRelationshipParams = {
-  value: VerificationRelationship,
-};
-
-type didInfoParams = {
-  value: DidInfo,
-};
-
-type dataWithSequenceParams = {
-  value: DataWithSequence,
-};
-
-type verificationMethodParams = {
-  value: VerificationMethod,
-};
-
-type resolutionOptionsParams = {
-  value: ResolutionOptions,
-};
-
-type didDocumentMetadataParams = {
-  value: DidDocumentMetadata,
-};
-
-type serviceParams = {
-  value: Service,
-};
-
-type queryParamsResponseParams = {
-  value: QueryParamsResponse,
-};
-
-type msgUpsertDidResponseParams = {
-  value: MsgUpsertDidResponse,
 };
 
 type genesisStateParams = {
   value: GenesisState,
 };
 
+type msgUpdateParamsResponseParams = {
+  value: MsgUpdateParamsResponse,
+};
+
+type queryParamsRequestParams = {
+  value: QueryParamsRequest,
+};
+
+type queryParamsResponseParams = {
+  value: QueryParamsResponse,
+};
+
+type resolutionOptionsParams = {
+  value: ResolutionOptions,
+};
+
+type msgUpsertDidResponseParams = {
+  value: MsgUpsertDidResponse,
+};
+
+type diddocumentParams = {
+  value: DIDDocument,
+};
+
+type verificationRelationshipParams = {
+  value: VerificationRelationship,
+};
+
+type queryResolveDidRequestParams = {
+  value: QueryResolveDidRequest,
+};
+
 type queryResolveDidResponseParams = {
   value: QueryResolveDidResponse,
+};
+
+type didDocumentMetadataParams = {
+  value: DidDocumentMetadata,
+};
+
+type dataWithSequenceParams = {
+  value: DataWithSequence,
+};
+
+type serviceParams = {
+  value: Service,
 };
 
 type paramsParams = {
   value: Params,
 };
 
-type msgUpdateParamsResponseParams = {
-  value: MsgUpdateParamsResponse,
+type verificationMethodParams = {
+  value: VerificationMethod,
 };
 
 type msgUpsertDidParams = {
   value: MsgUpsertDid,
+};
+
+type didInfoParams = {
+  value: DidInfo,
 };
 
 type didResolutionMetadataParams = {
@@ -250,20 +250,6 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 
   return {
 		
-		async sendQueryResolveDidRequest({ value, fee, memo }: sendQueryResolveDidRequestParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendQueryResolveDidRequest: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryResolveDidRequest({ value: QueryResolveDidRequest.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendQueryResolveDidRequest: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
 		async sendMsgUpdateParams({ value, fee, memo }: sendMsgUpdateParamsParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendMsgUpdateParams: Unable to sign Tx. Signer is not present.')
@@ -275,160 +261,6 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
 				throw new Error('TxClient:sendMsgUpdateParams: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendDIDDocument({ value, fee, memo }: sendDIDDocumentParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendDIDDocument: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.diddocument({ value: DIDDocument.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendDIDDocument: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendQueryParamsRequest({ value, fee, memo }: sendQueryParamsRequestParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendQueryParamsRequest: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryParamsRequest({ value: QueryParamsRequest.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendQueryParamsRequest: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendVerificationRelationship({ value, fee, memo }: sendVerificationRelationshipParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendVerificationRelationship: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.verificationRelationship({ value: VerificationRelationship.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendVerificationRelationship: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendDidInfo({ value, fee, memo }: sendDidInfoParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendDidInfo: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.didInfo({ value: DidInfo.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendDidInfo: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendDataWithSequence({ value, fee, memo }: sendDataWithSequenceParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendDataWithSequence: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.dataWithSequence({ value: DataWithSequence.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendDataWithSequence: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendVerificationMethod({ value, fee, memo }: sendVerificationMethodParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendVerificationMethod: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.verificationMethod({ value: VerificationMethod.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendVerificationMethod: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendResolutionOptions({ value, fee, memo }: sendResolutionOptionsParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendResolutionOptions: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.resolutionOptions({ value: ResolutionOptions.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendResolutionOptions: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendDidDocumentMetadata({ value, fee, memo }: sendDidDocumentMetadataParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendDidDocumentMetadata: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.didDocumentMetadata({ value: DidDocumentMetadata.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendDidDocumentMetadata: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendService({ value, fee, memo }: sendServiceParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendService: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.service({ value: Service.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendService: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendQueryParamsResponse({ value, fee, memo }: sendQueryParamsResponseParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendQueryParamsResponse: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.queryParamsResponse({ value: QueryParamsResponse.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendQueryParamsResponse: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
-		async sendMsgUpsertDidResponse({ value, fee, memo }: sendMsgUpsertDidResponseParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendMsgUpsertDidResponse: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.msgUpsertDidResponse({ value: MsgUpsertDidResponse.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendMsgUpsertDidResponse: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -446,6 +278,118 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
+		async sendMsgUpdateParamsResponse({ value, fee, memo }: sendMsgUpdateParamsResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgUpdateParamsResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.msgUpdateParamsResponse({ value: MsgUpdateParamsResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendMsgUpdateParamsResponse: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendQueryParamsRequest({ value, fee, memo }: sendQueryParamsRequestParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendQueryParamsRequest: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.queryParamsRequest({ value: QueryParamsRequest.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendQueryParamsRequest: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendQueryParamsResponse({ value, fee, memo }: sendQueryParamsResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendQueryParamsResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.queryParamsResponse({ value: QueryParamsResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendQueryParamsResponse: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendResolutionOptions({ value, fee, memo }: sendResolutionOptionsParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendResolutionOptions: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.resolutionOptions({ value: ResolutionOptions.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendResolutionOptions: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendMsgUpsertDidResponse({ value, fee, memo }: sendMsgUpsertDidResponseParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgUpsertDidResponse: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.msgUpsertDidResponse({ value: MsgUpsertDidResponse.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendMsgUpsertDidResponse: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendDIDDocument({ value, fee, memo }: sendDIDDocumentParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendDIDDocument: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.diddocument({ value: DIDDocument.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendDIDDocument: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendVerificationRelationship({ value, fee, memo }: sendVerificationRelationshipParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendVerificationRelationship: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.verificationRelationship({ value: VerificationRelationship.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendVerificationRelationship: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendQueryResolveDidRequest({ value, fee, memo }: sendQueryResolveDidRequestParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendQueryResolveDidRequest: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.queryResolveDidRequest({ value: QueryResolveDidRequest.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendQueryResolveDidRequest: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
 		async sendQueryResolveDidResponse({ value, fee, memo }: sendQueryResolveDidResponseParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendQueryResolveDidResponse: Unable to sign Tx. Signer is not present.')
@@ -457,6 +401,48 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
 				throw new Error('TxClient:sendQueryResolveDidResponse: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendDidDocumentMetadata({ value, fee, memo }: sendDidDocumentMetadataParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendDidDocumentMetadata: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.didDocumentMetadata({ value: DidDocumentMetadata.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendDidDocumentMetadata: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendDataWithSequence({ value, fee, memo }: sendDataWithSequenceParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendDataWithSequence: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.dataWithSequence({ value: DataWithSequence.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendDataWithSequence: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendService({ value, fee, memo }: sendServiceParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendService: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.service({ value: Service.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendService: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -474,17 +460,17 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		async sendMsgUpdateParamsResponse({ value, fee, memo }: sendMsgUpdateParamsResponseParams): Promise<DeliverTxResponse> {
+		async sendVerificationMethod({ value, fee, memo }: sendVerificationMethodParams): Promise<DeliverTxResponse> {
 			if (!signer) {
-					throw new Error('TxClient:sendMsgUpdateParamsResponse: Unable to sign Tx. Signer is not present.')
+					throw new Error('TxClient:sendVerificationMethod: Unable to sign Tx. Signer is not present.')
 			}
 			try {			
 				const { address } = (await signer.getAccounts())[0]; 
 				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
-				let msg = this.msgUpdateParamsResponse({ value: MsgUpdateParamsResponse.fromPartial(value) })
+				let msg = this.verificationMethod({ value: VerificationMethod.fromPartial(value) })
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
-				throw new Error('TxClient:sendMsgUpdateParamsResponse: Could not broadcast Tx: '+ e.message)
+				throw new Error('TxClient:sendVerificationMethod: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -499,6 +485,20 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
 				throw new Error('TxClient:sendMsgUpsertDid: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendDidInfo({ value, fee, memo }: sendDidInfoParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendDidInfo: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry});
+				let msg = this.didInfo({ value: DidInfo.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendDidInfo: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -517,107 +517,11 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 		},
 		
 		
-		queryResolveDidRequest({ value }: queryResolveDidRequestParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.QueryResolveDidRequest", value: QueryResolveDidRequest.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:QueryResolveDidRequest: Could not create message: ' + e.message)
-			}
-		},
-		
 		msgUpdateParams({ value }: msgUpdateParamsParams): EncodeObject {
 			try {
 				return { typeUrl: "/smplidentitychain.did.MsgUpdateParams", value: MsgUpdateParams.fromPartial( value ) }  
 			} catch (e: any) {
 				throw new Error('TxClient:MsgUpdateParams: Could not create message: ' + e.message)
-			}
-		},
-		
-		diddocument({ value }: diddocumentParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.DIDDocument", value: DIDDocument.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:DIDDocument: Could not create message: ' + e.message)
-			}
-		},
-		
-		queryParamsRequest({ value }: queryParamsRequestParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.QueryParamsRequest", value: QueryParamsRequest.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:QueryParamsRequest: Could not create message: ' + e.message)
-			}
-		},
-		
-		verificationRelationship({ value }: verificationRelationshipParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.VerificationRelationship", value: VerificationRelationship.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:VerificationRelationship: Could not create message: ' + e.message)
-			}
-		},
-		
-		didInfo({ value }: didInfoParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.DidInfo", value: DidInfo.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:DidInfo: Could not create message: ' + e.message)
-			}
-		},
-		
-		dataWithSequence({ value }: dataWithSequenceParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.DataWithSequence", value: DataWithSequence.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:DataWithSequence: Could not create message: ' + e.message)
-			}
-		},
-		
-		verificationMethod({ value }: verificationMethodParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.VerificationMethod", value: VerificationMethod.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:VerificationMethod: Could not create message: ' + e.message)
-			}
-		},
-		
-		resolutionOptions({ value }: resolutionOptionsParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.ResolutionOptions", value: ResolutionOptions.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:ResolutionOptions: Could not create message: ' + e.message)
-			}
-		},
-		
-		didDocumentMetadata({ value }: didDocumentMetadataParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.DidDocumentMetadata", value: DidDocumentMetadata.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:DidDocumentMetadata: Could not create message: ' + e.message)
-			}
-		},
-		
-		service({ value }: serviceParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.Service", value: Service.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:Service: Could not create message: ' + e.message)
-			}
-		},
-		
-		queryParamsResponse({ value }: queryParamsResponseParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.QueryParamsResponse", value: QueryParamsResponse.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:QueryParamsResponse: Could not create message: ' + e.message)
-			}
-		},
-		
-		msgUpsertDidResponse({ value }: msgUpsertDidResponseParams): EncodeObject {
-			try {
-				return { typeUrl: "/smplidentitychain.did.MsgUpsertDidResponse", value: MsgUpsertDidResponse.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:MsgUpsertDidResponse: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -629,11 +533,99 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
+		msgUpdateParamsResponse({ value }: msgUpdateParamsResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.MsgUpdateParamsResponse", value: MsgUpdateParamsResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgUpdateParamsResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		queryParamsRequest({ value }: queryParamsRequestParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.QueryParamsRequest", value: QueryParamsRequest.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:QueryParamsRequest: Could not create message: ' + e.message)
+			}
+		},
+		
+		queryParamsResponse({ value }: queryParamsResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.QueryParamsResponse", value: QueryParamsResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:QueryParamsResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		resolutionOptions({ value }: resolutionOptionsParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.ResolutionOptions", value: ResolutionOptions.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:ResolutionOptions: Could not create message: ' + e.message)
+			}
+		},
+		
+		msgUpsertDidResponse({ value }: msgUpsertDidResponseParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.MsgUpsertDidResponse", value: MsgUpsertDidResponse.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgUpsertDidResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		diddocument({ value }: diddocumentParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.DIDDocument", value: DIDDocument.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:DIDDocument: Could not create message: ' + e.message)
+			}
+		},
+		
+		verificationRelationship({ value }: verificationRelationshipParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.VerificationRelationship", value: VerificationRelationship.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:VerificationRelationship: Could not create message: ' + e.message)
+			}
+		},
+		
+		queryResolveDidRequest({ value }: queryResolveDidRequestParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.QueryResolveDidRequest", value: QueryResolveDidRequest.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:QueryResolveDidRequest: Could not create message: ' + e.message)
+			}
+		},
+		
 		queryResolveDidResponse({ value }: queryResolveDidResponseParams): EncodeObject {
 			try {
 				return { typeUrl: "/smplidentitychain.did.QueryResolveDidResponse", value: QueryResolveDidResponse.fromPartial( value ) }  
 			} catch (e: any) {
 				throw new Error('TxClient:QueryResolveDidResponse: Could not create message: ' + e.message)
+			}
+		},
+		
+		didDocumentMetadata({ value }: didDocumentMetadataParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.DidDocumentMetadata", value: DidDocumentMetadata.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:DidDocumentMetadata: Could not create message: ' + e.message)
+			}
+		},
+		
+		dataWithSequence({ value }: dataWithSequenceParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.DataWithSequence", value: DataWithSequence.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:DataWithSequence: Could not create message: ' + e.message)
+			}
+		},
+		
+		service({ value }: serviceParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.Service", value: Service.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:Service: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -645,11 +637,11 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		msgUpdateParamsResponse({ value }: msgUpdateParamsResponseParams): EncodeObject {
+		verificationMethod({ value }: verificationMethodParams): EncodeObject {
 			try {
-				return { typeUrl: "/smplidentitychain.did.MsgUpdateParamsResponse", value: MsgUpdateParamsResponse.fromPartial( value ) }  
+				return { typeUrl: "/smplidentitychain.did.VerificationMethod", value: VerificationMethod.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:MsgUpdateParamsResponse: Could not create message: ' + e.message)
+				throw new Error('TxClient:VerificationMethod: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -658,6 +650,14 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				return { typeUrl: "/smplidentitychain.did.MsgUpsertDid", value: MsgUpsertDid.fromPartial( value ) }  
 			} catch (e: any) {
 				throw new Error('TxClient:MsgUpsertDid: Could not create message: ' + e.message)
+			}
+		},
+		
+		didInfo({ value }: didInfoParams): EncodeObject {
+			try {
+				return { typeUrl: "/smplidentitychain.did.DidInfo", value: DidInfo.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:DidInfo: Could not create message: ' + e.message)
 			}
 		},
 		

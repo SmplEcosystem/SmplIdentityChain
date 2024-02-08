@@ -416,16 +416,16 @@ func (x *_DIDDocument_9_list) IsValid() bool {
 }
 
 var (
-	md_DIDDocument                        protoreflect.MessageDescriptor
-	fd_DIDDocument_contexts               protoreflect.FieldDescriptor
-	fd_DIDDocument_id                     protoreflect.FieldDescriptor
-	fd_DIDDocument_verification_methods   protoreflect.FieldDescriptor
-	fd_DIDDocument_authentications        protoreflect.FieldDescriptor
-	fd_DIDDocument_assertion_methods      protoreflect.FieldDescriptor
-	fd_DIDDocument_key_agreements         protoreflect.FieldDescriptor
-	fd_DIDDocument_capability_invocations protoreflect.FieldDescriptor
-	fd_DIDDocument_capability_delegations protoreflect.FieldDescriptor
-	fd_DIDDocument_services               protoreflect.FieldDescriptor
+	md_DIDDocument                       protoreflect.MessageDescriptor
+	fd_DIDDocument_contexts              protoreflect.FieldDescriptor
+	fd_DIDDocument_id                    protoreflect.FieldDescriptor
+	fd_DIDDocument_verification_method   protoreflect.FieldDescriptor
+	fd_DIDDocument_authentication        protoreflect.FieldDescriptor
+	fd_DIDDocument_assertion_method      protoreflect.FieldDescriptor
+	fd_DIDDocument_key_agreement         protoreflect.FieldDescriptor
+	fd_DIDDocument_capability_invocation protoreflect.FieldDescriptor
+	fd_DIDDocument_capability_delegation protoreflect.FieldDescriptor
+	fd_DIDDocument_services              protoreflect.FieldDescriptor
 )
 
 func init() {
@@ -433,12 +433,12 @@ func init() {
 	md_DIDDocument = File_smplidentitychain_did_did_document_proto.Messages().ByName("DIDDocument")
 	fd_DIDDocument_contexts = md_DIDDocument.Fields().ByName("contexts")
 	fd_DIDDocument_id = md_DIDDocument.Fields().ByName("id")
-	fd_DIDDocument_verification_methods = md_DIDDocument.Fields().ByName("verification_methods")
-	fd_DIDDocument_authentications = md_DIDDocument.Fields().ByName("authentications")
-	fd_DIDDocument_assertion_methods = md_DIDDocument.Fields().ByName("assertion_methods")
-	fd_DIDDocument_key_agreements = md_DIDDocument.Fields().ByName("key_agreements")
-	fd_DIDDocument_capability_invocations = md_DIDDocument.Fields().ByName("capability_invocations")
-	fd_DIDDocument_capability_delegations = md_DIDDocument.Fields().ByName("capability_delegations")
+	fd_DIDDocument_verification_method = md_DIDDocument.Fields().ByName("verification_method")
+	fd_DIDDocument_authentication = md_DIDDocument.Fields().ByName("authentication")
+	fd_DIDDocument_assertion_method = md_DIDDocument.Fields().ByName("assertion_method")
+	fd_DIDDocument_key_agreement = md_DIDDocument.Fields().ByName("key_agreement")
+	fd_DIDDocument_capability_invocation = md_DIDDocument.Fields().ByName("capability_invocation")
+	fd_DIDDocument_capability_delegation = md_DIDDocument.Fields().ByName("capability_delegation")
 	fd_DIDDocument_services = md_DIDDocument.Fields().ByName("services")
 }
 
@@ -519,39 +519,39 @@ func (x *fastReflection_DIDDocument) Range(f func(protoreflect.FieldDescriptor, 
 			return
 		}
 	}
-	if len(x.VerificationMethods) != 0 {
-		value := protoreflect.ValueOfList(&_DIDDocument_3_list{list: &x.VerificationMethods})
-		if !f(fd_DIDDocument_verification_methods, value) {
+	if len(x.VerificationMethod) != 0 {
+		value := protoreflect.ValueOfList(&_DIDDocument_3_list{list: &x.VerificationMethod})
+		if !f(fd_DIDDocument_verification_method, value) {
 			return
 		}
 	}
-	if len(x.Authentications) != 0 {
-		value := protoreflect.ValueOfList(&_DIDDocument_4_list{list: &x.Authentications})
-		if !f(fd_DIDDocument_authentications, value) {
+	if len(x.Authentication) != 0 {
+		value := protoreflect.ValueOfList(&_DIDDocument_4_list{list: &x.Authentication})
+		if !f(fd_DIDDocument_authentication, value) {
 			return
 		}
 	}
-	if len(x.AssertionMethods) != 0 {
-		value := protoreflect.ValueOfList(&_DIDDocument_5_list{list: &x.AssertionMethods})
-		if !f(fd_DIDDocument_assertion_methods, value) {
+	if len(x.AssertionMethod) != 0 {
+		value := protoreflect.ValueOfList(&_DIDDocument_5_list{list: &x.AssertionMethod})
+		if !f(fd_DIDDocument_assertion_method, value) {
 			return
 		}
 	}
-	if len(x.KeyAgreements) != 0 {
-		value := protoreflect.ValueOfList(&_DIDDocument_6_list{list: &x.KeyAgreements})
-		if !f(fd_DIDDocument_key_agreements, value) {
+	if len(x.KeyAgreement) != 0 {
+		value := protoreflect.ValueOfList(&_DIDDocument_6_list{list: &x.KeyAgreement})
+		if !f(fd_DIDDocument_key_agreement, value) {
 			return
 		}
 	}
-	if len(x.CapabilityInvocations) != 0 {
-		value := protoreflect.ValueOfList(&_DIDDocument_7_list{list: &x.CapabilityInvocations})
-		if !f(fd_DIDDocument_capability_invocations, value) {
+	if len(x.CapabilityInvocation) != 0 {
+		value := protoreflect.ValueOfList(&_DIDDocument_7_list{list: &x.CapabilityInvocation})
+		if !f(fd_DIDDocument_capability_invocation, value) {
 			return
 		}
 	}
-	if len(x.CapabilityDelegations) != 0 {
-		value := protoreflect.ValueOfList(&_DIDDocument_8_list{list: &x.CapabilityDelegations})
-		if !f(fd_DIDDocument_capability_delegations, value) {
+	if len(x.CapabilityDelegation) != 0 {
+		value := protoreflect.ValueOfList(&_DIDDocument_8_list{list: &x.CapabilityDelegation})
+		if !f(fd_DIDDocument_capability_delegation, value) {
 			return
 		}
 	}
@@ -580,18 +580,18 @@ func (x *fastReflection_DIDDocument) Has(fd protoreflect.FieldDescriptor) bool {
 		return len(x.Contexts) != 0
 	case "smplidentitychain.did.DIDDocument.id":
 		return x.Id != ""
-	case "smplidentitychain.did.DIDDocument.verification_methods":
-		return len(x.VerificationMethods) != 0
-	case "smplidentitychain.did.DIDDocument.authentications":
-		return len(x.Authentications) != 0
-	case "smplidentitychain.did.DIDDocument.assertion_methods":
-		return len(x.AssertionMethods) != 0
-	case "smplidentitychain.did.DIDDocument.key_agreements":
-		return len(x.KeyAgreements) != 0
-	case "smplidentitychain.did.DIDDocument.capability_invocations":
-		return len(x.CapabilityInvocations) != 0
-	case "smplidentitychain.did.DIDDocument.capability_delegations":
-		return len(x.CapabilityDelegations) != 0
+	case "smplidentitychain.did.DIDDocument.verification_method":
+		return len(x.VerificationMethod) != 0
+	case "smplidentitychain.did.DIDDocument.authentication":
+		return len(x.Authentication) != 0
+	case "smplidentitychain.did.DIDDocument.assertion_method":
+		return len(x.AssertionMethod) != 0
+	case "smplidentitychain.did.DIDDocument.key_agreement":
+		return len(x.KeyAgreement) != 0
+	case "smplidentitychain.did.DIDDocument.capability_invocation":
+		return len(x.CapabilityInvocation) != 0
+	case "smplidentitychain.did.DIDDocument.capability_delegation":
+		return len(x.CapabilityDelegation) != 0
 	case "smplidentitychain.did.DIDDocument.services":
 		return len(x.Services) != 0
 	default:
@@ -614,18 +614,18 @@ func (x *fastReflection_DIDDocument) Clear(fd protoreflect.FieldDescriptor) {
 		x.Contexts = nil
 	case "smplidentitychain.did.DIDDocument.id":
 		x.Id = ""
-	case "smplidentitychain.did.DIDDocument.verification_methods":
-		x.VerificationMethods = nil
-	case "smplidentitychain.did.DIDDocument.authentications":
-		x.Authentications = nil
-	case "smplidentitychain.did.DIDDocument.assertion_methods":
-		x.AssertionMethods = nil
-	case "smplidentitychain.did.DIDDocument.key_agreements":
-		x.KeyAgreements = nil
-	case "smplidentitychain.did.DIDDocument.capability_invocations":
-		x.CapabilityInvocations = nil
-	case "smplidentitychain.did.DIDDocument.capability_delegations":
-		x.CapabilityDelegations = nil
+	case "smplidentitychain.did.DIDDocument.verification_method":
+		x.VerificationMethod = nil
+	case "smplidentitychain.did.DIDDocument.authentication":
+		x.Authentication = nil
+	case "smplidentitychain.did.DIDDocument.assertion_method":
+		x.AssertionMethod = nil
+	case "smplidentitychain.did.DIDDocument.key_agreement":
+		x.KeyAgreement = nil
+	case "smplidentitychain.did.DIDDocument.capability_invocation":
+		x.CapabilityInvocation = nil
+	case "smplidentitychain.did.DIDDocument.capability_delegation":
+		x.CapabilityDelegation = nil
 	case "smplidentitychain.did.DIDDocument.services":
 		x.Services = nil
 	default:
@@ -653,41 +653,41 @@ func (x *fastReflection_DIDDocument) Get(descriptor protoreflect.FieldDescriptor
 	case "smplidentitychain.did.DIDDocument.id":
 		value := x.Id
 		return protoreflect.ValueOfString(value)
-	case "smplidentitychain.did.DIDDocument.verification_methods":
-		if len(x.VerificationMethods) == 0 {
+	case "smplidentitychain.did.DIDDocument.verification_method":
+		if len(x.VerificationMethod) == 0 {
 			return protoreflect.ValueOfList(&_DIDDocument_3_list{})
 		}
-		listValue := &_DIDDocument_3_list{list: &x.VerificationMethods}
+		listValue := &_DIDDocument_3_list{list: &x.VerificationMethod}
 		return protoreflect.ValueOfList(listValue)
-	case "smplidentitychain.did.DIDDocument.authentications":
-		if len(x.Authentications) == 0 {
+	case "smplidentitychain.did.DIDDocument.authentication":
+		if len(x.Authentication) == 0 {
 			return protoreflect.ValueOfList(&_DIDDocument_4_list{})
 		}
-		listValue := &_DIDDocument_4_list{list: &x.Authentications}
+		listValue := &_DIDDocument_4_list{list: &x.Authentication}
 		return protoreflect.ValueOfList(listValue)
-	case "smplidentitychain.did.DIDDocument.assertion_methods":
-		if len(x.AssertionMethods) == 0 {
+	case "smplidentitychain.did.DIDDocument.assertion_method":
+		if len(x.AssertionMethod) == 0 {
 			return protoreflect.ValueOfList(&_DIDDocument_5_list{})
 		}
-		listValue := &_DIDDocument_5_list{list: &x.AssertionMethods}
+		listValue := &_DIDDocument_5_list{list: &x.AssertionMethod}
 		return protoreflect.ValueOfList(listValue)
-	case "smplidentitychain.did.DIDDocument.key_agreements":
-		if len(x.KeyAgreements) == 0 {
+	case "smplidentitychain.did.DIDDocument.key_agreement":
+		if len(x.KeyAgreement) == 0 {
 			return protoreflect.ValueOfList(&_DIDDocument_6_list{})
 		}
-		listValue := &_DIDDocument_6_list{list: &x.KeyAgreements}
+		listValue := &_DIDDocument_6_list{list: &x.KeyAgreement}
 		return protoreflect.ValueOfList(listValue)
-	case "smplidentitychain.did.DIDDocument.capability_invocations":
-		if len(x.CapabilityInvocations) == 0 {
+	case "smplidentitychain.did.DIDDocument.capability_invocation":
+		if len(x.CapabilityInvocation) == 0 {
 			return protoreflect.ValueOfList(&_DIDDocument_7_list{})
 		}
-		listValue := &_DIDDocument_7_list{list: &x.CapabilityInvocations}
+		listValue := &_DIDDocument_7_list{list: &x.CapabilityInvocation}
 		return protoreflect.ValueOfList(listValue)
-	case "smplidentitychain.did.DIDDocument.capability_delegations":
-		if len(x.CapabilityDelegations) == 0 {
+	case "smplidentitychain.did.DIDDocument.capability_delegation":
+		if len(x.CapabilityDelegation) == 0 {
 			return protoreflect.ValueOfList(&_DIDDocument_8_list{})
 		}
-		listValue := &_DIDDocument_8_list{list: &x.CapabilityDelegations}
+		listValue := &_DIDDocument_8_list{list: &x.CapabilityDelegation}
 		return protoreflect.ValueOfList(listValue)
 	case "smplidentitychain.did.DIDDocument.services":
 		if len(x.Services) == 0 {
@@ -721,30 +721,30 @@ func (x *fastReflection_DIDDocument) Set(fd protoreflect.FieldDescriptor, value 
 		x.Contexts = *clv.list
 	case "smplidentitychain.did.DIDDocument.id":
 		x.Id = value.Interface().(string)
-	case "smplidentitychain.did.DIDDocument.verification_methods":
+	case "smplidentitychain.did.DIDDocument.verification_method":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_3_list)
-		x.VerificationMethods = *clv.list
-	case "smplidentitychain.did.DIDDocument.authentications":
+		x.VerificationMethod = *clv.list
+	case "smplidentitychain.did.DIDDocument.authentication":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_4_list)
-		x.Authentications = *clv.list
-	case "smplidentitychain.did.DIDDocument.assertion_methods":
+		x.Authentication = *clv.list
+	case "smplidentitychain.did.DIDDocument.assertion_method":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_5_list)
-		x.AssertionMethods = *clv.list
-	case "smplidentitychain.did.DIDDocument.key_agreements":
+		x.AssertionMethod = *clv.list
+	case "smplidentitychain.did.DIDDocument.key_agreement":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_6_list)
-		x.KeyAgreements = *clv.list
-	case "smplidentitychain.did.DIDDocument.capability_invocations":
+		x.KeyAgreement = *clv.list
+	case "smplidentitychain.did.DIDDocument.capability_invocation":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_7_list)
-		x.CapabilityInvocations = *clv.list
-	case "smplidentitychain.did.DIDDocument.capability_delegations":
+		x.CapabilityInvocation = *clv.list
+	case "smplidentitychain.did.DIDDocument.capability_delegation":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_8_list)
-		x.CapabilityDelegations = *clv.list
+		x.CapabilityDelegation = *clv.list
 	case "smplidentitychain.did.DIDDocument.services":
 		lv := value.List()
 		clv := lv.(*_DIDDocument_9_list)
@@ -775,41 +775,41 @@ func (x *fastReflection_DIDDocument) Mutable(fd protoreflect.FieldDescriptor) pr
 		}
 		value := &_DIDDocument_1_list{list: &x.Contexts}
 		return protoreflect.ValueOfList(value)
-	case "smplidentitychain.did.DIDDocument.verification_methods":
-		if x.VerificationMethods == nil {
-			x.VerificationMethods = []*VerificationMethod{}
+	case "smplidentitychain.did.DIDDocument.verification_method":
+		if x.VerificationMethod == nil {
+			x.VerificationMethod = []*VerificationMethod{}
 		}
-		value := &_DIDDocument_3_list{list: &x.VerificationMethods}
+		value := &_DIDDocument_3_list{list: &x.VerificationMethod}
 		return protoreflect.ValueOfList(value)
-	case "smplidentitychain.did.DIDDocument.authentications":
-		if x.Authentications == nil {
-			x.Authentications = []*VerificationRelationship{}
+	case "smplidentitychain.did.DIDDocument.authentication":
+		if x.Authentication == nil {
+			x.Authentication = []*VerificationRelationship{}
 		}
-		value := &_DIDDocument_4_list{list: &x.Authentications}
+		value := &_DIDDocument_4_list{list: &x.Authentication}
 		return protoreflect.ValueOfList(value)
-	case "smplidentitychain.did.DIDDocument.assertion_methods":
-		if x.AssertionMethods == nil {
-			x.AssertionMethods = []*VerificationRelationship{}
+	case "smplidentitychain.did.DIDDocument.assertion_method":
+		if x.AssertionMethod == nil {
+			x.AssertionMethod = []*VerificationRelationship{}
 		}
-		value := &_DIDDocument_5_list{list: &x.AssertionMethods}
+		value := &_DIDDocument_5_list{list: &x.AssertionMethod}
 		return protoreflect.ValueOfList(value)
-	case "smplidentitychain.did.DIDDocument.key_agreements":
-		if x.KeyAgreements == nil {
-			x.KeyAgreements = []*VerificationRelationship{}
+	case "smplidentitychain.did.DIDDocument.key_agreement":
+		if x.KeyAgreement == nil {
+			x.KeyAgreement = []*VerificationRelationship{}
 		}
-		value := &_DIDDocument_6_list{list: &x.KeyAgreements}
+		value := &_DIDDocument_6_list{list: &x.KeyAgreement}
 		return protoreflect.ValueOfList(value)
-	case "smplidentitychain.did.DIDDocument.capability_invocations":
-		if x.CapabilityInvocations == nil {
-			x.CapabilityInvocations = []*VerificationRelationship{}
+	case "smplidentitychain.did.DIDDocument.capability_invocation":
+		if x.CapabilityInvocation == nil {
+			x.CapabilityInvocation = []*VerificationRelationship{}
 		}
-		value := &_DIDDocument_7_list{list: &x.CapabilityInvocations}
+		value := &_DIDDocument_7_list{list: &x.CapabilityInvocation}
 		return protoreflect.ValueOfList(value)
-	case "smplidentitychain.did.DIDDocument.capability_delegations":
-		if x.CapabilityDelegations == nil {
-			x.CapabilityDelegations = []*VerificationRelationship{}
+	case "smplidentitychain.did.DIDDocument.capability_delegation":
+		if x.CapabilityDelegation == nil {
+			x.CapabilityDelegation = []*VerificationRelationship{}
 		}
-		value := &_DIDDocument_8_list{list: &x.CapabilityDelegations}
+		value := &_DIDDocument_8_list{list: &x.CapabilityDelegation}
 		return protoreflect.ValueOfList(value)
 	case "smplidentitychain.did.DIDDocument.services":
 		if x.Services == nil {
@@ -837,22 +837,22 @@ func (x *fastReflection_DIDDocument) NewField(fd protoreflect.FieldDescriptor) p
 		return protoreflect.ValueOfList(&_DIDDocument_1_list{list: &list})
 	case "smplidentitychain.did.DIDDocument.id":
 		return protoreflect.ValueOfString("")
-	case "smplidentitychain.did.DIDDocument.verification_methods":
+	case "smplidentitychain.did.DIDDocument.verification_method":
 		list := []*VerificationMethod{}
 		return protoreflect.ValueOfList(&_DIDDocument_3_list{list: &list})
-	case "smplidentitychain.did.DIDDocument.authentications":
+	case "smplidentitychain.did.DIDDocument.authentication":
 		list := []*VerificationRelationship{}
 		return protoreflect.ValueOfList(&_DIDDocument_4_list{list: &list})
-	case "smplidentitychain.did.DIDDocument.assertion_methods":
+	case "smplidentitychain.did.DIDDocument.assertion_method":
 		list := []*VerificationRelationship{}
 		return protoreflect.ValueOfList(&_DIDDocument_5_list{list: &list})
-	case "smplidentitychain.did.DIDDocument.key_agreements":
+	case "smplidentitychain.did.DIDDocument.key_agreement":
 		list := []*VerificationRelationship{}
 		return protoreflect.ValueOfList(&_DIDDocument_6_list{list: &list})
-	case "smplidentitychain.did.DIDDocument.capability_invocations":
+	case "smplidentitychain.did.DIDDocument.capability_invocation":
 		list := []*VerificationRelationship{}
 		return protoreflect.ValueOfList(&_DIDDocument_7_list{list: &list})
-	case "smplidentitychain.did.DIDDocument.capability_delegations":
+	case "smplidentitychain.did.DIDDocument.capability_delegation":
 		list := []*VerificationRelationship{}
 		return protoreflect.ValueOfList(&_DIDDocument_8_list{list: &list})
 	case "smplidentitychain.did.DIDDocument.services":
@@ -937,38 +937,38 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		if len(x.VerificationMethods) > 0 {
-			for _, e := range x.VerificationMethods {
+		if len(x.VerificationMethod) > 0 {
+			for _, e := range x.VerificationMethod {
 				l = options.Size(e)
 				n += 1 + l + runtime.Sov(uint64(l))
 			}
 		}
-		if len(x.Authentications) > 0 {
-			for _, e := range x.Authentications {
+		if len(x.Authentication) > 0 {
+			for _, e := range x.Authentication {
 				l = options.Size(e)
 				n += 1 + l + runtime.Sov(uint64(l))
 			}
 		}
-		if len(x.AssertionMethods) > 0 {
-			for _, e := range x.AssertionMethods {
+		if len(x.AssertionMethod) > 0 {
+			for _, e := range x.AssertionMethod {
 				l = options.Size(e)
 				n += 1 + l + runtime.Sov(uint64(l))
 			}
 		}
-		if len(x.KeyAgreements) > 0 {
-			for _, e := range x.KeyAgreements {
+		if len(x.KeyAgreement) > 0 {
+			for _, e := range x.KeyAgreement {
 				l = options.Size(e)
 				n += 1 + l + runtime.Sov(uint64(l))
 			}
 		}
-		if len(x.CapabilityInvocations) > 0 {
-			for _, e := range x.CapabilityInvocations {
+		if len(x.CapabilityInvocation) > 0 {
+			for _, e := range x.CapabilityInvocation {
 				l = options.Size(e)
 				n += 1 + l + runtime.Sov(uint64(l))
 			}
 		}
-		if len(x.CapabilityDelegations) > 0 {
-			for _, e := range x.CapabilityDelegations {
+		if len(x.CapabilityDelegation) > 0 {
+			for _, e := range x.CapabilityDelegation {
 				l = options.Size(e)
 				n += 1 + l + runtime.Sov(uint64(l))
 			}
@@ -1024,9 +1024,9 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0x4a
 			}
 		}
-		if len(x.CapabilityDelegations) > 0 {
-			for iNdEx := len(x.CapabilityDelegations) - 1; iNdEx >= 0; iNdEx-- {
-				encoded, err := options.Marshal(x.CapabilityDelegations[iNdEx])
+		if len(x.CapabilityDelegation) > 0 {
+			for iNdEx := len(x.CapabilityDelegation) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.CapabilityDelegation[iNdEx])
 				if err != nil {
 					return protoiface.MarshalOutput{
 						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1040,9 +1040,9 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0x42
 			}
 		}
-		if len(x.CapabilityInvocations) > 0 {
-			for iNdEx := len(x.CapabilityInvocations) - 1; iNdEx >= 0; iNdEx-- {
-				encoded, err := options.Marshal(x.CapabilityInvocations[iNdEx])
+		if len(x.CapabilityInvocation) > 0 {
+			for iNdEx := len(x.CapabilityInvocation) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.CapabilityInvocation[iNdEx])
 				if err != nil {
 					return protoiface.MarshalOutput{
 						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1056,9 +1056,9 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0x3a
 			}
 		}
-		if len(x.KeyAgreements) > 0 {
-			for iNdEx := len(x.KeyAgreements) - 1; iNdEx >= 0; iNdEx-- {
-				encoded, err := options.Marshal(x.KeyAgreements[iNdEx])
+		if len(x.KeyAgreement) > 0 {
+			for iNdEx := len(x.KeyAgreement) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.KeyAgreement[iNdEx])
 				if err != nil {
 					return protoiface.MarshalOutput{
 						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1072,9 +1072,9 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0x32
 			}
 		}
-		if len(x.AssertionMethods) > 0 {
-			for iNdEx := len(x.AssertionMethods) - 1; iNdEx >= 0; iNdEx-- {
-				encoded, err := options.Marshal(x.AssertionMethods[iNdEx])
+		if len(x.AssertionMethod) > 0 {
+			for iNdEx := len(x.AssertionMethod) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.AssertionMethod[iNdEx])
 				if err != nil {
 					return protoiface.MarshalOutput{
 						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1088,9 +1088,9 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0x2a
 			}
 		}
-		if len(x.Authentications) > 0 {
-			for iNdEx := len(x.Authentications) - 1; iNdEx >= 0; iNdEx-- {
-				encoded, err := options.Marshal(x.Authentications[iNdEx])
+		if len(x.Authentication) > 0 {
+			for iNdEx := len(x.Authentication) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.Authentication[iNdEx])
 				if err != nil {
 					return protoiface.MarshalOutput{
 						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1104,9 +1104,9 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				dAtA[i] = 0x22
 			}
 		}
-		if len(x.VerificationMethods) > 0 {
-			for iNdEx := len(x.VerificationMethods) - 1; iNdEx >= 0; iNdEx-- {
-				encoded, err := options.Marshal(x.VerificationMethods[iNdEx])
+		if len(x.VerificationMethod) > 0 {
+			for iNdEx := len(x.VerificationMethod) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.VerificationMethod[iNdEx])
 				if err != nil {
 					return protoiface.MarshalOutput{
 						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1251,7 +1251,7 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				iNdEx = postIndex
 			case 3:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field VerificationMethods", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field VerificationMethod", wireType)
 				}
 				var msglen int
 				for shift := uint(0); ; shift += 7 {
@@ -1278,14 +1278,14 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.VerificationMethods = append(x.VerificationMethods, &VerificationMethod{})
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.VerificationMethods[len(x.VerificationMethods)-1]); err != nil {
+				x.VerificationMethod = append(x.VerificationMethod, &VerificationMethod{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.VerificationMethod[len(x.VerificationMethod)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
 			case 4:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Authentications", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Authentication", wireType)
 				}
 				var msglen int
 				for shift := uint(0); ; shift += 7 {
@@ -1312,14 +1312,14 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Authentications = append(x.Authentications, &VerificationRelationship{})
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Authentications[len(x.Authentications)-1]); err != nil {
+				x.Authentication = append(x.Authentication, &VerificationRelationship{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Authentication[len(x.Authentication)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
 			case 5:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field AssertionMethods", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field AssertionMethod", wireType)
 				}
 				var msglen int
 				for shift := uint(0); ; shift += 7 {
@@ -1346,14 +1346,14 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.AssertionMethods = append(x.AssertionMethods, &VerificationRelationship{})
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.AssertionMethods[len(x.AssertionMethods)-1]); err != nil {
+				x.AssertionMethod = append(x.AssertionMethod, &VerificationRelationship{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.AssertionMethod[len(x.AssertionMethod)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
 			case 6:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field KeyAgreements", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field KeyAgreement", wireType)
 				}
 				var msglen int
 				for shift := uint(0); ; shift += 7 {
@@ -1380,14 +1380,14 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.KeyAgreements = append(x.KeyAgreements, &VerificationRelationship{})
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.KeyAgreements[len(x.KeyAgreements)-1]); err != nil {
+				x.KeyAgreement = append(x.KeyAgreement, &VerificationRelationship{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.KeyAgreement[len(x.KeyAgreement)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
 			case 7:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CapabilityInvocations", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CapabilityInvocation", wireType)
 				}
 				var msglen int
 				for shift := uint(0); ; shift += 7 {
@@ -1414,14 +1414,14 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.CapabilityInvocations = append(x.CapabilityInvocations, &VerificationRelationship{})
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.CapabilityInvocations[len(x.CapabilityInvocations)-1]); err != nil {
+				x.CapabilityInvocation = append(x.CapabilityInvocation, &VerificationRelationship{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.CapabilityInvocation[len(x.CapabilityInvocation)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
 			case 8:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CapabilityDelegations", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CapabilityDelegation", wireType)
 				}
 				var msglen int
 				for shift := uint(0); ; shift += 7 {
@@ -1448,8 +1448,8 @@ func (x *fastReflection_DIDDocument) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.CapabilityDelegations = append(x.CapabilityDelegations, &VerificationRelationship{})
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.CapabilityDelegations[len(x.CapabilityDelegations)-1]); err != nil {
+				x.CapabilityDelegation = append(x.CapabilityDelegation, &VerificationRelationship{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.CapabilityDelegation[len(x.CapabilityDelegation)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
@@ -1540,15 +1540,15 @@ type DIDDocument struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Contexts              []string                    `protobuf:"bytes,1,rep,name=contexts,proto3" json:"contexts,omitempty"`
-	Id                    string                      `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
-	VerificationMethods   []*VerificationMethod       `protobuf:"bytes,3,rep,name=verification_methods,json=verificationMethod,proto3" json:"verification_methods,omitempty"`
-	Authentications       []*VerificationRelationship `protobuf:"bytes,4,rep,name=authentications,json=authentication,proto3" json:"authentications,omitempty"`
-	AssertionMethods      []*VerificationRelationship `protobuf:"bytes,5,rep,name=assertion_methods,json=assertionMethod,proto3" json:"assertion_methods,omitempty"`
-	KeyAgreements         []*VerificationRelationship `protobuf:"bytes,6,rep,name=key_agreements,json=keyAgreement,proto3" json:"key_agreements,omitempty"`
-	CapabilityInvocations []*VerificationRelationship `protobuf:"bytes,7,rep,name=capability_invocations,json=capabilityInvocation,proto3" json:"capability_invocations,omitempty"`
-	CapabilityDelegations []*VerificationRelationship `protobuf:"bytes,8,rep,name=capability_delegations,json=capabilityDelegation,proto3" json:"capability_delegations,omitempty"`
-	Services              []*Service                  `protobuf:"bytes,9,rep,name=services,json=service,proto3" json:"services,omitempty"`
+	Contexts             []string                    `protobuf:"bytes,1,rep,name=contexts,proto3" json:"contexts,omitempty"`
+	Id                   string                      `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	VerificationMethod   []*VerificationMethod       `protobuf:"bytes,3,rep,name=verification_method,json=verificationMethod,proto3" json:"verification_method,omitempty"`
+	Authentication       []*VerificationRelationship `protobuf:"bytes,4,rep,name=authentication,proto3" json:"authentication,omitempty"`
+	AssertionMethod      []*VerificationRelationship `protobuf:"bytes,5,rep,name=assertion_method,json=assertionMethod,proto3" json:"assertion_method,omitempty"`
+	KeyAgreement         []*VerificationRelationship `protobuf:"bytes,6,rep,name=key_agreement,json=keyAgreement,proto3" json:"key_agreement,omitempty"`
+	CapabilityInvocation []*VerificationRelationship `protobuf:"bytes,7,rep,name=capability_invocation,json=capabilityInvocation,proto3" json:"capability_invocation,omitempty"`
+	CapabilityDelegation []*VerificationRelationship `protobuf:"bytes,8,rep,name=capability_delegation,json=capabilityDelegation,proto3" json:"capability_delegation,omitempty"`
+	Services             []*Service                  `protobuf:"bytes,9,rep,name=services,json=service,proto3" json:"services,omitempty"`
 }
 
 func (x *DIDDocument) Reset() {
@@ -1585,44 +1585,44 @@ func (x *DIDDocument) GetId() string {
 	return ""
 }
 
-func (x *DIDDocument) GetVerificationMethods() []*VerificationMethod {
+func (x *DIDDocument) GetVerificationMethod() []*VerificationMethod {
 	if x != nil {
-		return x.VerificationMethods
+		return x.VerificationMethod
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetAuthentications() []*VerificationRelationship {
+func (x *DIDDocument) GetAuthentication() []*VerificationRelationship {
 	if x != nil {
-		return x.Authentications
+		return x.Authentication
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetAssertionMethods() []*VerificationRelationship {
+func (x *DIDDocument) GetAssertionMethod() []*VerificationRelationship {
 	if x != nil {
-		return x.AssertionMethods
+		return x.AssertionMethod
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetKeyAgreements() []*VerificationRelationship {
+func (x *DIDDocument) GetKeyAgreement() []*VerificationRelationship {
 	if x != nil {
-		return x.KeyAgreements
+		return x.KeyAgreement
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetCapabilityInvocations() []*VerificationRelationship {
+func (x *DIDDocument) GetCapabilityInvocation() []*VerificationRelationship {
 	if x != nil {
-		return x.CapabilityInvocations
+		return x.CapabilityInvocation
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetCapabilityDelegations() []*VerificationRelationship {
+func (x *DIDDocument) GetCapabilityDelegation() []*VerificationRelationship {
 	if x != nil {
-		return x.CapabilityDelegations
+		return x.CapabilityDelegation
 	}
 	return nil
 }
@@ -1649,64 +1649,63 @@ var file_smplidentitychain_did_did_document_proto_rawDesc = []byte{
 	0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x35, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65,
 	0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x64, 0x69, 0x64, 0x2f, 0x76,
 	0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x6c, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xad,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xa7,
 	0x05, 0x0a, 0x0b, 0x44, 0x49, 0x44, 0x44, 0x6f, 0x63, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x1a,
 	0x0a, 0x08, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09,
 	0x52, 0x08, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x5b, 0x0a, 0x14, 0x76, 0x65,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x5a, 0x0a, 0x13, 0x76, 0x65,
 	0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x65, 0x74, 0x68, 0x6f,
-	0x64, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69,
-	0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64,
-	0x2e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x74,
-	0x68, 0x6f, 0x64, 0x52, 0x12, 0x76, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x58, 0x0a, 0x0f, 0x61, 0x75, 0x74, 0x68, 0x65,
-	0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b,
+	0x64, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64,
+	0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e,
+	0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x74, 0x68,
+	0x6f, 0x64, 0x52, 0x12, 0x76, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x57, 0x0a, 0x0e, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e,
+	0x74, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f,
+	0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52,
+	0x0e, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x5a, 0x0a, 0x10, 0x61, 0x73, 0x73, 0x65, 0x72, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x65, 0x74,
+	0x68, 0x6f, 0x64, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73, 0x6d, 0x70, 0x6c,
+	0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69,
+	0x64, 0x2e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52, 0x0f, 0x61, 0x73, 0x73, 0x65,
+	0x72, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x54, 0x0a, 0x0d, 0x6b,
+	0x65, 0x79, 0x5f, 0x61, 0x67, 0x72, 0x65, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x06, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74,
+	0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56, 0x65, 0x72, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x68, 0x69, 0x70, 0x52, 0x0c, 0x6b, 0x65, 0x79, 0x41, 0x67, 0x72, 0x65, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x12, 0x64, 0x0a, 0x15, 0x63, 0x61, 0x70, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x5f,
+	0x69, 0x6e, 0x76, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x2f, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63,
 	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69,
-	0x70, 0x52, 0x0e, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x12, 0x5b, 0x0a, 0x11, 0x61, 0x73, 0x73, 0x65, 0x72, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d,
-	0x65, 0x74, 0x68, 0x6f, 0x64, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73,
-	0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e,
-	0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52, 0x0f, 0x61,
-	0x73, 0x73, 0x65, 0x72, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x55,
-	0x0a, 0x0e, 0x6b, 0x65, 0x79, 0x5f, 0x61, 0x67, 0x72, 0x65, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73,
-	0x18, 0x06, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65,
+	0x70, 0x52, 0x14, 0x63, 0x61, 0x70, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x76,
+	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x64, 0x0a, 0x15, 0x63, 0x61, 0x70, 0x61, 0x62,
+	0x69, 0x6c, 0x69, 0x74, 0x79, 0x5f, 0x64, 0x65, 0x6c, 0x65, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x08, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65,
 	0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56,
 	0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52, 0x0c, 0x6b, 0x65, 0x79, 0x41, 0x67, 0x72, 0x65,
-	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x65, 0x0a, 0x16, 0x63, 0x61, 0x70, 0x61, 0x62, 0x69, 0x6c,
-	0x69, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x76, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18,
-	0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e,
-	0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56, 0x65,
-	0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52, 0x14, 0x63, 0x61, 0x70, 0x61, 0x62, 0x69, 0x6c, 0x69,
-	0x74, 0x79, 0x49, 0x6e, 0x76, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x65, 0x0a, 0x16,
-	0x63, 0x61, 0x70, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x5f, 0x64, 0x65, 0x6c, 0x65, 0x67,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x08, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x73,
+	0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52, 0x14, 0x63, 0x61, 0x70, 0x61, 0x62, 0x69, 0x6c,
+	0x69, 0x74, 0x79, 0x44, 0x65, 0x6c, 0x65, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x0a,
+	0x08, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x18, 0x09, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x1e, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x52,
+	0x07, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0xca, 0x01, 0x0a, 0x19, 0x63, 0x6f, 0x6d,
+	0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x42, 0x10, 0x44, 0x69, 0x64, 0x44, 0x6f, 0x63, 0x75, 0x6d,
+	0x65, 0x6e, 0x74, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x26, 0x63, 0x6f, 0x73, 0x6d,
+	0x6f, 0x73, 0x73, 0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x6d, 0x70,
+	0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x64,
+	0x69, 0x64, 0xa2, 0x02, 0x03, 0x53, 0x44, 0x58, 0xaa, 0x02, 0x15, 0x53, 0x6d, 0x70, 0x6c, 0x69,
+	0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x44, 0x69, 0x64,
+	0xca, 0x02, 0x15, 0x53, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x5c, 0x44, 0x69, 0x64, 0xe2, 0x02, 0x21, 0x53, 0x6d, 0x70, 0x6c, 0x69,
+	0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x44, 0x69, 0x64,
+	0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x16, 0x53,
 	0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e,
-	0x2e, 0x64, 0x69, 0x64, 0x2e, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x68, 0x69, 0x70, 0x52, 0x14, 0x63,
-	0x61, 0x70, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x44, 0x65, 0x6c, 0x65, 0x67, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x12, 0x39, 0x0a, 0x08, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x18,
-	0x09, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e,
-	0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x2e, 0x53, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x52, 0x07, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0xca,
-	0x01, 0x0a, 0x19, 0x63, 0x6f, 0x6d, 0x2e, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74,
-	0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x64, 0x69, 0x64, 0x42, 0x10, 0x44, 0x69,
-	0x64, 0x44, 0x6f, 0x63, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
-	0x5a, 0x26, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x73, 0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61,
-	0x70, 0x69, 0x2f, 0x73, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63,
-	0x68, 0x61, 0x69, 0x6e, 0x2f, 0x64, 0x69, 0x64, 0xa2, 0x02, 0x03, 0x53, 0x44, 0x58, 0xaa, 0x02,
-	0x15, 0x53, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x2e, 0x44, 0x69, 0x64, 0xca, 0x02, 0x15, 0x53, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65,
-	0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x44, 0x69, 0x64, 0xe2, 0x02,
-	0x21, 0x53, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0x5c, 0x44, 0x69, 0x64, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61,
-	0x74, 0x61, 0xea, 0x02, 0x16, 0x53, 0x6d, 0x70, 0x6c, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74,
-	0x79, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x3a, 0x3a, 0x44, 0x69, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x3a, 0x3a, 0x44, 0x69, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1729,12 +1728,12 @@ var file_smplidentitychain_did_did_document_proto_goTypes = []interface{}{
 	(*Service)(nil),                  // 3: smplidentitychain.did.Service
 }
 var file_smplidentitychain_did_did_document_proto_depIdxs = []int32{
-	1, // 0: smplidentitychain.did.DIDDocument.verification_methods:type_name -> smplidentitychain.did.VerificationMethod
-	2, // 1: smplidentitychain.did.DIDDocument.authentications:type_name -> smplidentitychain.did.VerificationRelationship
-	2, // 2: smplidentitychain.did.DIDDocument.assertion_methods:type_name -> smplidentitychain.did.VerificationRelationship
-	2, // 3: smplidentitychain.did.DIDDocument.key_agreements:type_name -> smplidentitychain.did.VerificationRelationship
-	2, // 4: smplidentitychain.did.DIDDocument.capability_invocations:type_name -> smplidentitychain.did.VerificationRelationship
-	2, // 5: smplidentitychain.did.DIDDocument.capability_delegations:type_name -> smplidentitychain.did.VerificationRelationship
+	1, // 0: smplidentitychain.did.DIDDocument.verification_method:type_name -> smplidentitychain.did.VerificationMethod
+	2, // 1: smplidentitychain.did.DIDDocument.authentication:type_name -> smplidentitychain.did.VerificationRelationship
+	2, // 2: smplidentitychain.did.DIDDocument.assertion_method:type_name -> smplidentitychain.did.VerificationRelationship
+	2, // 3: smplidentitychain.did.DIDDocument.key_agreement:type_name -> smplidentitychain.did.VerificationRelationship
+	2, // 4: smplidentitychain.did.DIDDocument.capability_invocation:type_name -> smplidentitychain.did.VerificationRelationship
+	2, // 5: smplidentitychain.did.DIDDocument.capability_delegation:type_name -> smplidentitychain.did.VerificationRelationship
 	3, // 6: smplidentitychain.did.DIDDocument.services:type_name -> smplidentitychain.did.Service
 	7, // [7:7] is the sub-list for method output_type
 	7, // [7:7] is the sub-list for method input_type
