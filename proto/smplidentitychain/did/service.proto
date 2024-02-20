@@ -1,0 +1,11 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+option java_multiple_files = true;
+
+message Service {
+  string id = 1;
+  string type = 2;
+  string service_endpoint = 3;
+}

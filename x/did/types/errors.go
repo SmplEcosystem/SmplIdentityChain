@@ -1,12 +1,19 @@
 package types
 
-// DONTCOVER
-
 import (
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	sdkerrors "cosmossdk.io/errors"
 )
 
 // x/did module sentinel errors
 var (
-	ErrSample = sdkerrors.Register(ModuleName, 1100, "sample error")
+	ErrInvalidSigner                           = sdkerrors.Register(ModuleName, 1100, "expected gov account as only signer for proposal message")
+	ErrVerificationMethodIDNotFound            = sdkerrors.Register(ModuleName, 1101, "VerificationMethodID not found")
+	ErrVerificationMethodKeyTypeNotImplemented = sdkerrors.Register(ModuleName, 1102, "Verification not implemented with key type")
+	ErrInvalidSecp256k1PublicKey               = sdkerrors.Register(ModuleName, 1103, "Invalid Secp256k1 public key")
+	ErrSigVerificationFailed                   = sdkerrors.Register(ModuleName, 1104, "DID signature verification was failed")
+	DidDocumentMarshalFailed                   = sdkerrors.Register(ModuleName, 1105, "DID Document marshaling to byte array failed")
+	ErrNoChanges                               = sdkerrors.Register(ModuleName, 1106, "No changes to did document found")
+	ErrInvalidDidId                            = sdkerrors.Register(ModuleName, 1107, "Invalid Did Id provided")
+	ErrCantDeactivate                          = sdkerrors.Register(ModuleName, 1108, "Can't Deactivate Did")
+	ErrNoDidFound                              = sdkerrors.Register(ModuleName, 1109, "Can't find did")
 )

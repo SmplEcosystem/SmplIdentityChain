@@ -1,0 +1,14 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+import "smplidentitychain/did/verification_method.proto";
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+option java_multiple_files = true;
+
+
+message VerificationRelationship {
+  oneof content {
+    string verification_method_id = 1;
+    VerificationMethod verification_method = 2;
+  }
+}

@@ -9,29 +9,116 @@
  * ---------------------------------------------------------------
  */
 
-/**
- * Params defines the parameters for the module.
- */
-export type DidParams = object;
-
-/**
- * QueryParamsResponse is response type for the Query/Params RPC method.
- */
-export interface DidQueryParamsResponse {
-  /** params holds all the parameters of this module. */
-  params?: DidParams;
-}
-
-export interface ProtobufAny {
+export interface Any {
   "@type"?: string;
 }
 
-export interface RpcStatus {
+export interface Status {
   /** @format int32 */
   code?: number;
   message?: string;
-  details?: ProtobufAny[];
+  details?: { "@type"?: string }[];
 }
+
+export interface DIDDocument {
+  contexts?: string[];
+  id?: string;
+  verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+  authentication?: {
+    verification_method_id?: string;
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+  }[];
+  assertion_method?: {
+    verification_method_id?: string;
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+  }[];
+  key_agreement?: {
+    verification_method_id?: string;
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+  }[];
+  capability_invocation?: {
+    verification_method_id?: string;
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+  }[];
+  capability_delegation?: {
+    verification_method_id?: string;
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+  }[];
+  services?: { id?: string; type?: string; service_endpoint?: string }[];
+}
+
+export interface DidDocumentMetadata {
+  created?: string;
+  updated?: string;
+  deactivated?: boolean;
+}
+
+export interface DidResolutionMetadata {
+  contentType?: string;
+  error?: string;
+}
+
+export type Params = object;
+
+export interface QueryParamsResponse {
+  params?: object;
+}
+
+export interface QueryResolveDidResponse {
+  didDocument?: {
+    contexts?: string[];
+    id?: string;
+    verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+    authentication?: {
+      verification_method_id?: string;
+      verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+    }[];
+    assertion_method?: {
+      verification_method_id?: string;
+      verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+    }[];
+    key_agreement?: {
+      verification_method_id?: string;
+      verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+    }[];
+    capability_invocation?: {
+      verification_method_id?: string;
+      verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+    }[];
+    capability_delegation?: {
+      verification_method_id?: string;
+      verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+    }[];
+    services?: { id?: string; type?: string; service_endpoint?: string }[];
+  };
+  didResolutionMetadata?: { contentType?: string; error?: string };
+  didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean };
+
+  /** @format uint64 */
+  sequence?: string;
+}
+
+export interface Service {
+  id?: string;
+  type?: string;
+  service_endpoint?: string;
+}
+
+export interface VerificationMethod {
+  id?: string;
+  type?: string;
+  controller?: string;
+  public_key_base58?: string;
+}
+
+export interface VerificationRelationship {
+  verification_method_id?: string;
+  verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+}
+
+export type MsgUpdateParamsResponse = object;
+
+export type MsgUpsertDidResponse = object;
 
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from "axios";
 
@@ -154,8 +241,7 @@ export class HttpClient<SecurityDataType = unknown> {
 }
 
 /**
- * @title smplidentitychain/did/genesis.proto
- * @version version not set
+ * @title HTTP API Console smplidentitychain.did
  */
 export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDataType> {
   /**
@@ -163,14 +249,59 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
    *
    * @tags Query
    * @name QueryParams
-   * @summary Parameters queries the parameters of the module.
    * @request GET:/SmplEcosystem/SmplIdentityChain/did/params
    */
   queryParams = (params: RequestParams = {}) =>
-    this.request<DidQueryParamsResponse, RpcStatus>({
+    this.request<{ params?: object }, { code?: number; message?: string; details?: { "@type"?: string }[] }>({
       path: `/SmplEcosystem/SmplIdentityChain/did/params`,
       method: "GET",
-      format: "json",
+      ...params,
+    });
+
+  /**
+   * No description
+   *
+   * @tags Query
+   * @name QueryResolveDidRequest
+   * @request GET:/SmplEcosystem/SmplIdentityChain/did/resolve_did_request/{did}
+   */
+  queryResolveDidRequest = (did: string, params: RequestParams = {}) =>
+    this.request<
+      {
+        didDocument?: {
+          contexts?: string[];
+          id?: string;
+          verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string }[];
+          authentication?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          assertion_method?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          key_agreement?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          capability_invocation?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          capability_delegation?: {
+            verification_method_id?: string;
+            verification_method?: { id?: string; type?: string; controller?: string; public_key_base58?: string };
+          }[];
+          services?: { id?: string; type?: string; service_endpoint?: string }[];
+        };
+        didResolutionMetadata?: { contentType?: string; error?: string };
+        didDocumentMetadata?: { created?: string; updated?: string; deactivated?: boolean };
+        sequence?: string;
+      },
+      { code?: number; message?: string; details?: { "@type"?: string }[] }
+    >({
+      path: `/SmplEcosystem/SmplIdentityChain/did/resolve_did_request/${did}`,
+      method: "GET",
       ...params,
     });
 }

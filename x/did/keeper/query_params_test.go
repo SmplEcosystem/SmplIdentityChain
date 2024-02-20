@@ -3,19 +3,18 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "github.com/SmplEcosystem/SmplIdentityChain/testutil/keeper"
-	"github.com/SmplEcosystem/SmplIdentityChain/x/did/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
+
+	keepertest "github.com/SmplEcosystem/SmplIdentityChain/testutil/keeper"
+	"github.com/SmplEcosystem/SmplIdentityChain/x/did/types"
 )
 
 func TestParamsQuery(t *testing.T) {
-	keeper, ctx := testkeeper.DidKeeper(t)
-	wctx := sdk.WrapSDKContext(ctx)
+	keeper, ctx := keepertest.DidKeeper(t)
 	params := types.DefaultParams()
-	keeper.SetParams(ctx, params)
+	require.NoError(t, keeper.SetParams(ctx, params))
 
-	response, err := keeper.Params(wctx, &types.QueryParamsRequest{})
+	response, err := keeper.Params(ctx, &types.QueryParamsRequest{})
 	require.NoError(t, err)
 	require.Equal(t, &types.QueryParamsResponse{Params: params}, response)
 }

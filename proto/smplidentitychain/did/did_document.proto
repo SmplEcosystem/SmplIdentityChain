@@ -1,0 +1,20 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+import "smplidentitychain/did/service.proto";
+import "smplidentitychain/did/verification_method.proto";
+import "smplidentitychain/did/verification_relationship.proto";
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+option java_multiple_files = true;
+
+message DIDDocument {
+  repeated string contexts = 1;
+  string id = 2;
+  repeated VerificationMethod verification_method = 3 [json_name = "verificationMethod"];
+  repeated VerificationRelationship authentication = 4[json_name = "authentication"];
+  repeated VerificationRelationship assertion_method = 5 [json_name = "assertionMethod"];
+  repeated VerificationRelationship key_agreement = 6 [json_name = "keyAgreement"];
+  repeated VerificationRelationship capability_invocation = 7 [json_name = "capabilityInvocation"];
+  repeated VerificationRelationship capability_delegation = 8 [json_name = "capabilityDelegation"];
+  repeated Service services = 9 [json_name = "service"];
+}

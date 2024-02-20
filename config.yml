@@ -1,106 +1,24 @@
 version: 1
 accounts:
-  - name: validator1
-    coins:
-      - 200000000000000000garden
-    mnemonic: trigger toilet promote rebel figure monkey flame seat paddle ice make episode property warrior symbol
-      rib hedgehog zoo kitchen valley stock waste muffin rocket
-  - name: alice
-    coins:
-      - 200000000000000garden
-    mnemonic: lazy foster air cruel pilot bring client sock poet release mix hair private obey mandate net mango
-      coconut myth omit second frown knee file
-  - name: bob
-    coins:
-      - 10000000000000garden
-    mnemonic: admit happy fat search sugar focus sick section slender spread always saddle private daughter blood
-      employ pistol bid milk begin odor grain toddler sketch
-faucet:
-  name: alice
+- name: alice
   coins:
-    - 100smpl
-  coins_max:
-    - 2000smpl
+  - 20000token
+  - 200000000stake
+- name: bob
+  coins:
+  - 10000token
+  - 100000000stake
+faucet:
+  name: bob
+  coins:
+  - 5token
+  - 100000stake
 client:
   typescript:
     path: ts-client
+    package: "@smplecosystem/smpl-identity-core"
   openapi:
     path: docs/static/openapi.yml
-genesis:
-  app_state:
-    bank:
-      denom_metadata:
-        - base: busdst
-          denom_units:
-            - denom: busdst
-              exponent: 0
-            - denom: usdst
-              exponent: 6
-          description: Stable token
-          display: usdst
-          name: usdst
-          symbol: usdst
-        - base: busdse
-          denom_units:
-            - denom: busdse
-              exponent: 0
-            - denom: usdse
-              exponent: 6
-          description: Pegged USD token
-          display: usdse
-          name: usdse
-          symbol: usdse
-        - base: garden
-          denom_units:
-            - aliases:
-                - bsmpl
-              denom: garden
-              exponent: 0
-            - denom: usmpl
-              exponent: 3
-            - denom: msmpl
-              exponent: 6
-            - denom: smpl
-              exponent: 9
-          description: SMPL token
-          display: smpl
-          name: SMPL
-          symbol: smpl
-    crisis:
-      constant_fee:
-        denom: garden
-    mint:
-      minter:
-        inflation: "0.0"
-      params:
-        inflation_max: "0.0"
-        inflation_min: "0.0"
-        inflation_rate_change: "0.0"
-        mint_denom: garden
-    staking:
-      params:
-        bond_denom: garden
-    gov:
-      params:
-        min_deposit:
-          - amount: "10000000"
-            denom: garden
-  chain_id: cosmos:smpl-id
 validators:
-  - name: validator1
-    bonded: 10000000000000000garden
-    config:
-      consensus:
-        create_empty_blocks: "false"
-        create_empty_blocks_interval: 10s
-      rpc:
-        cors_allowed_origins: [ ]
-    app:
-      pruning: everything
-      api:
-        enabled-unsafe-cors: false
-      grpc-web:
-        enable-unsafe-cors: false
-      rpc:
-        cors_allowed_origins: [ ]
-      minimum-gas-prices: 0smpl
+- name: alice
+  bonded: 100000000stake

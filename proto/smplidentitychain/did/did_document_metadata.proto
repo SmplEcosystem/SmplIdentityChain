@@ -1,0 +1,11 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+option java_multiple_files = true;
+
+message DidDocumentMetadata {
+  string created = 1;
+  string updated = 2;
+  bool deactivated = 3;
+}

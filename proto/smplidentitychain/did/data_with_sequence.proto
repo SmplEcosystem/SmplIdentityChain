@@ -1,0 +1,10 @@
+syntax = "proto3";
+package smplidentitychain.did;
+
+option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
+
+message DataWithSequence {
+  
+  bytes data = 1;
+  uint64 sequence = 2; 
+}

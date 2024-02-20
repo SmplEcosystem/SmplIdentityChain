@@ -5,13 +5,13 @@ export const protobufPackage = "smplidentitychain.did";
 
 export interface VerificationMethod {
   id: string;
-  vmType: string;
-  controller: string[];
+  type: string;
+  controller: string;
   publicKeyBase58: string;
 }
 
 function createBaseVerificationMethod(): VerificationMethod {
-  return { id: "", vmType: "", controller: [], publicKeyBase58: "" };
+  return { id: "", type: "", controller: "", publicKeyBase58: "" };
 }
 
 export const VerificationMethod = {
@@ -19,11 +19,11 @@ export const VerificationMethod = {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
-    if (message.vmType !== "") {
-      writer.uint32(18).string(message.vmType);
+    if (message.type !== "") {
+      writer.uint32(18).string(message.type);
     }
-    for (const v of message.controller) {
-      writer.uint32(26).string(v!);
+    if (message.controller !== "") {
+      writer.uint32(26).string(message.controller);
     }
     if (message.publicKeyBase58 !== "") {
       writer.uint32(34).string(message.publicKeyBase58);
@@ -32,28 +32,45 @@ export const VerificationMethod = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): VerificationMethod {
-    const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
+    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseVerificationMethod();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
+          if (tag !== 10) {
+            break;
+          }
+
           message.id = reader.string();
-          break;
+          continue;
         case 2:
-          message.vmType = reader.string();
-          break;
+          if (tag !== 18) {
+            break;
+          }
+
+          message.type = reader.string();
+          continue;
         case 3:
-          message.controller.push(reader.string());
-          break;
+          if (tag !== 26) {
+            break;
+          }
+
+          message.controller = reader.string();
+          continue;
         case 4:
+          if (tag !== 34) {
+            break;
+          }
+
           message.publicKeyBase58 = reader.string();
-          break;
-        default:
-          reader.skipType(tag & 7);
-          break;
+          continue;
       }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
     }
     return message;
   },
@@ -61,30 +78,37 @@ export const VerificationMethod = {
   fromJSON(object: any): VerificationMethod {
     return {
       id: isSet(object.id) ? String(object.id) : "",
-      vmType: isSet(object.vmType) ? String(object.vmType) : "",
-      controller: Array.isArray(object?.controller) ? object.controller.map((e: any) => String(e)) : [],
+      type: isSet(object.type) ? String(object.type) : "",
+      controller: isSet(object.controller) ? String(object.controller) : "",
       publicKeyBase58: isSet(object.publicKeyBase58) ? String(object.publicKeyBase58) : "",
     };
   },
 
   toJSON(message: VerificationMethod): unknown {
     const obj: any = {};
-    message.id !== undefined && (obj.id = message.id);
-    message.vmType !== undefined && (obj.vmType = message.vmType);
-    if (message.controller) {
-      obj.controller = message.controller.map((e) => e);
-    } else {
-      obj.controller = [];
+    if (message.id !== "") {
+      obj.id = message.id;
     }
-    message.publicKeyBase58 !== undefined && (obj.publicKeyBase58 = message.publicKeyBase58);
+    if (message.type !== "") {
+      obj.type = message.type;
+    }
+    if (message.controller !== "") {
+      obj.controller = message.controller;
+    }
+    if (message.publicKeyBase58 !== "") {
+      obj.publicKeyBase58 = message.publicKeyBase58;
+    }
     return obj;
   },
 
+  create<I extends Exact<DeepPartial<VerificationMethod>, I>>(base?: I): VerificationMethod {
+    return VerificationMethod.fromPartial(base ?? ({} as any));
+  },
   fromPartial<I extends Exact<DeepPartial<VerificationMethod>, I>>(object: I): VerificationMethod {
     const message = createBaseVerificationMethod();
     message.id = object.id ?? "";
-    message.vmType = object.vmType ?? "";
-    message.controller = object.controller?.map((e) => e) || [];
+    message.type = object.type ?? "";
+    message.controller = object.controller ?? "";
     message.publicKeyBase58 = object.publicKeyBase58 ?? "";
     return message;
   },

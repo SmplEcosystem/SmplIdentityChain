@@ -1,26 +1,51 @@
 syntax = "proto3";
+
 package smplidentitychain.did;
 
+import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "smplidentitychain/did/params.proto";
+import "smplidentitychain/did/did_document.proto";
+import "smplidentitychain/did/did_document_metadata.proto";
+import "smplidentitychain/did/did_resolution_metadata.proto";
 
 option go_package = "github.com/SmplEcosystem/SmplIdentityChain/x/did/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/SmplEcosystem/SmplIdentityChain/did/params";
+  
+  }
+  
+  // Queries a list of ResolveDidRequest items.
+  rpc ResolveDidRequest (QueryResolveDidRequest) returns (QueryResolveDidResponse) {
+    option (google.api.http).get = "/SmplEcosystem/SmplIdentityChain/did/resolve_did_request/{did}";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
-  Params params = 1 [(gogoproto.nullable) = false];
+  Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
 }
+
+message QueryResolveDidRequest {
+  string did = 1;
+}
+
+message QueryResolveDidResponse {
+  DIDDocument didDocument = 1;
+  DidResolutionMetadata didResolutionMetadata = 2;
+  DidDocumentMetadata didDocumentMetadata = 3;
+  uint64              sequence            = 4;
+}
+
